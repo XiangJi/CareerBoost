@@ -27,4 +27,4 @@ Experience with one or more general purpose programming languages including but 
 Extensive knowledge of Unix/Linux environments.
 Proficient in refactoring, test automation, emergent design, testable and modular code, build infrastructure and test-driven development.
 Excellent analytical and problem-solving skills; commitment to delivering great software and releasing it quickly, efficiently and with increasing quality.
-Deep knowledge of internet technologies.
+Deep knowledge of internet technologies. 
