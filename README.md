@@ -4,10 +4,12 @@ Practice DSA, test plan (system test, integration test, unit test, write a simpl
 
 Root folder
 1. DSA
- Question Types
+ Question Types and frequency
 
 2. Test plan
 
+Basically, general answer about how to test a software or web service using test knowledge from all angles.
+Unit test, integration test, system test(end to end client side test, selenium for web APP) 
 3. System design
 
 Responsibilities
