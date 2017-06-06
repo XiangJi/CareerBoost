@@ -1,11 +1,27 @@
 # CareerBoost
-Practice DSA, test plan (system test, integration test, unit test, write a simple test framework) design, system design problems
-
+Practice DSA, test plan (system test, integration test, unit test, write a simple test framework) design, system design (load balancer, firewall) and OOP problems
 
 Root folder
+
 1. DSA
  Question Types and frequency
+ DP: 1d, 2d correctness arguements. greedy
+ Graph
+ Segment tree, trie
+ OS, recursion
 
+ Tips:
+ Clarification questions a lot! Could this? Could that? (Does data fit memory or hard drive, scalability questions, multiple server)
+ Think aloud! Interact with interviewers.
+ Talk before write.
+ How would you unit test your code, come up with a test case and edge case. Run a test case loudly.
+ End to end, integration, load and performance, security tests
+ Know the time and space complexity
+ Bug free
+ https://youtu.be/ko-KkSmp-Lk
+ https://youtu.be/7Lz6z9k_HvE
+ 
+ Mock interview with friends
 2. Test plan
 
 Basically, general answer about how to test a software or web service using test knowledge from all angles.
@@ -23,21 +39,7 @@ Drive adoption of best practices in code health, testing, and maintainability.
 
 Analyze and decompose complex software systems and collaborate with and influence others to improve the overall design.
 
-Qualifications
-Minimum qualifications:
-BS degree in Computer Science or a similar field, or equivalent practical experience.
-
-1 year relevant work experience, including development and/or test automation experience.
-
-Preferred qualifications:
-Master's or PhD in Computer Science or related technical field.
-
-Experience with one or more general purpose programming languages including but not limited to: Java, C/C++, C#, Objective C, Python, JavaScript, or Go.
-
-Extensive knowledge of Unix/Linux environments.
-
 Proficient in refactoring, test automation, emergent design, testable and modular code, build infrastructure and test-driven development.
 
-Excellent analytical and problem-solving skills; commitment to delivering great software and releasing it quickly, efficiently and with increasing quality.
 
-Deep knowledge of internet technologies.  
+
