@@ -18,6 +18,8 @@ containsValue(value)
 
 isEmpty()
 
+
+
 size()
 
 remove(key, <optional - value>)
