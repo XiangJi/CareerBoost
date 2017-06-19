@@ -1,5 +1,5 @@
 # CareerBoost
-Practice DSA, test plan (system test, integration test, unit test, write a simple test framework) design, system design (load balancer, firewall) and OOP problems
+Practice DSA (This is actually the best practice for a interview question), test plan (system test, integration test, unit test, write a simple test framework) design, system design (load balancer, firewall) and OOP problems
 
 Root folder
 

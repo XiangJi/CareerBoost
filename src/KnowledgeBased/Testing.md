@@ -69,7 +69,7 @@ JUnit test framework provides following important features −
 - Test     runners
 - JUnit     classes
 
- 
+
 
 Name the tools with which JUnit canbe easily integrated.
 
@@ -189,8 +189,28 @@ public class TestJunit1 {
 
  
 
- 
+ Test is always part of the code, 
 
- 
+ Write a spec
+
+Engineering productivity
+
+collect effort
+
+automated testing
+
+Continuous collaboration throughout the entire SDLC
+
+Functional testing, user scenario testing
+
+product and user focused, domain experts
+
+read product code and write test code
+
+test planning, strategy, risk and test design
+
+
+
+
 
  
