@@ -41,5 +41,11 @@ Analyze and decompose complex software systems and collaborate with and influenc
 
 Proficient in refactoring, test automation, emergent design, testable and modular code, build infrastructure and test-driven development.
 
+Scripting skills in Perl, Shell or another common language.
+
+Extensive knowledge of Unix/Linux environments.
+
+Deep knowledge of Internet technologies.
+
 
 
