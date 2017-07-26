@@ -1,4 +1,5 @@
 # Clarify questions
 
-Ask for examples, would be your test cases
+Ask for basic examples, would be your test cases
 
+What's the input, what's the output
