@@ -2,7 +2,7 @@ package DSA.LinkedList.AddTwoNumbers;
 
 import DSA.LinkedList.ListNode;
 
-// æ•°å­¦Carryé—®é¢˜çš„å®žä¹ è¦�æ”¶æ•› + åŸºæœ¬é“¾è¡¨skills
+// 数学Carry进位技巧 ， 链表的基本操作
 public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) {
