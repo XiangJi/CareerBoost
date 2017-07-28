@@ -18,9 +18,13 @@ containsValue(value)
 
 isEmpty()
 
-
-
 size()
 
 remove(key, <optional - value>)
+
+HashSet
+add
+remove
+contains
+isEmpty
 
