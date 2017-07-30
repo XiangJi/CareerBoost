@@ -28,3 +28,12 @@ remove
 contains
 isEmpty
 
+
+
+When using hash map to store string count, can just use array instead.
+
+128 ACSII characters for string, next 128 are extended special characters
+
+
+
+简单的Palindrome问题要直接想到上面的hash存储方式
