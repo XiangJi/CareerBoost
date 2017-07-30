@@ -2,7 +2,7 @@ package DSA.HashTable.LongestPalindrome;
 
 import java.util.HashSet;
 
-// 有一个count统计pairs，最后看有没有独项
+// 有一个count统计pairs，最后看有没有计数项剩下 就加一
 public class Solution {
     public int longestPalindrome(String s) {
         if (s == null || s.length() == 0) {
