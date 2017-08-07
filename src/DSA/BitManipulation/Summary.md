@@ -66,3 +66,4 @@ public int negate(int x) {
 	return ~x + 1;
 }
 ```
+Summary common operations and questions
