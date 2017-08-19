@@ -66,3 +66,7 @@ public int negate(int x) {
 	return ~x + 1;
 }
 ```
+
+https://discuss.leetcode.com/topic/50315/a-summary-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently
+
+Best summary article for bit manipulate 
