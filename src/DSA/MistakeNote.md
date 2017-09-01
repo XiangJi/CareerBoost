@@ -8,3 +8,4 @@ List<List<Integer>> result = new ArrayList<List<Integer>>();
 
 Queue<TreeNode> queue = new LinkedList<TreeNode>();
 
+Time complexity of recursion algorithm: o(branch ^ depth)
