@@ -1,6 +1,8 @@
 # Tree
 
-Tree problems is a big family, usually involving recursion
+Most of them can be solved by Divide and conquer, DFS(recursive), BFS
+
+
 
 
 

@@ -44,3 +44,12 @@ delete(int index)
 toString()
 
 reverse()
+
+
+
+When back from char array to string:
+
+```java
+char[] charArray = {'a', 'b', 'c'};
+String str = String.valueOf(charArray);
+```
