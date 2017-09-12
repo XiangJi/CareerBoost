@@ -28,7 +28,7 @@ Returns a new string that is a substring of this string.
 
 
 
-toCharArray()
+toCharArray() ： 用这个节省时间
 
 
 
