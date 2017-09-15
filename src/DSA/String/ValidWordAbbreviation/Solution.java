@@ -11,7 +11,7 @@ class Solution {
                 j++;
                 continue;
             }
-            // test case, 'a', '01'
+            // test case, 'a', '01', TOT
             if (ab[j] <= '0' || ab[j] > '9') {
                 return false;
             }
