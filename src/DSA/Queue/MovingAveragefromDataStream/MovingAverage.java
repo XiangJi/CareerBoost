@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class MovingAverage {
     /** Initialize your data structure here. */
-    
+    // use rolling array to store sum's delta
     Queue<Integer> slidingWindow = new LinkedList<Integer>();
     int windowSize;
     
