@@ -17,6 +17,7 @@ N is the number of scores.
  */
 public class Solution {
     public String[] findRelativeRanks(int[] nums) {
+        // Use Integer object instead of int since using Lamda/Comparator
         Integer[] index = new Integer[nums.length];
 
         for (int i = 0; i < nums.length; i++) {
@@ -50,5 +51,11 @@ public class Solution {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {123,1234,345,4,7};
+        Solution test = new Solution();
+        test.findRelativeRanks(nums);
     }
 }
