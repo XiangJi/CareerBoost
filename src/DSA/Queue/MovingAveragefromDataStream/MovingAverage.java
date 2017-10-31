@@ -39,3 +39,31 @@ public class MovingAverage {
 
 	}
 }
+
+class MovingAverage2 {
+
+    double[] sum;
+    int id, size;
+    
+    /** Initialize your data structure here. */
+    public MovingAverage2(int s) {
+        sum = new double[s + 1];
+        id = 0;
+        size = s;
+    }
+    
+    // rolling array template
+    int mod(int x) {
+        return x % (size + 1);
+    }
+    
+    public double next(int val) {
+        id++;
+        sum[mod(id)] = sum[mod(id - 1)] + val;
+        if (id - size >= 0) {
+            return (sum[mod(id)] - sum[mod(id - size)]) / size;
+        } else {
+            return sum[mod(id)] / id;
+        }
+    }
+}
