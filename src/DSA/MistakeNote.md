@@ -31,3 +31,5 @@ Arrays.sort()
 \4. 递归结束后，所得结果需要再次加工的
 
 Design 题目 Java constuctor是拿来初始化的， 成员变量的定义应该在构造器的外面，Example: LC288
+
+size = size, ——X, dead assignment
