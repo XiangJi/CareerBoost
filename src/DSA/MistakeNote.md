@@ -33,3 +33,8 @@ Arrays.sort()
 Design 题目 Java constuctor是拿来初始化的， 成员变量的定义应该在构造器的外面，Example: LC288
 
 size = size, ——X, dead assignment
+
+== 和 = 不要写错
+
+记得初始化变量
+
