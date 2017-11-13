@@ -4,11 +4,11 @@ Practice DSA (This is actually the best practice for a interview question), test
 Root folder
 
 1. DSA
- Question Types and frequency
- DP: 1d, 2d correctness arguements. greedy
- Graph
- Segment tree, trie
- OS, recursion
+   Question Types and frequency
+    DP: 1d, 2d correctness arguements. greedy
+    Graph
+    Segment tree, trie
+    OS, recursion
 
  Tips:
  Clarification questions a lot! Could this? Could that? (Does data fit memory or hard drive, scalability questions, multiple server)
@@ -20,7 +20,7 @@ Root folder
  Bug free
  https://youtu.be/ko-KkSmp-Lk
  https://youtu.be/7Lz6z9k_HvE
- 
+
  Mock interview with friends
 2. Test plan
 
@@ -49,3 +49,4 @@ Deep knowledge of Internet technologies.
 
 
 
+Behavior: Situation-Target-Action-Result
