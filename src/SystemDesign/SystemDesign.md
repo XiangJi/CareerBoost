@@ -37,3 +37,16 @@ cache will expire
 
 
 
+## Netflix
+
+## Uber
+
+## Type ahead
+
+
+
+## Chess Game
+
+## Parking Lot
+
+## Elevator system
