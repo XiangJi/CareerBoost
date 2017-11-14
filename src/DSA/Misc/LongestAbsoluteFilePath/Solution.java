@@ -1,4 +1,7 @@
 package DSA.Misc.LongestAbsoluteFilePath;
+
+import java.util.HashMap;
+
 /**
  * Suppose we abstract our file system by a string in the following manner:
  * The string "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext" represents:
@@ -22,15 +25,22 @@ public class Solution {
             return 0;
         }
         int ans = 0;
-        int[] level_size = new int[input.length() + 1];
-
+        // store the level and the length of path to level
+        HashMap<Integer, Integer> map = new  HashMap<Integer, Integer>();
+        map.put(0, 0);
         for (String line : input.split("\n")) {
-            int level = line.lastIndexOf('\t') + 2;
-            int len = line.length() - (level - 1);
+            // read this line, get the nth 
+            System.out.println(line);
+            // \t is considered as one char
+            int level = line.lastIndexOf('\t') + 1;
+            System.out.println(level);
+            // get this line's length
+            int len = line.length() - level;
+            System.out.println(len);
             if (line.contains(".")) {
-                ans = Math.max(ans, level_size[level - 1] + len);
+                ans = Math.max(ans, map.get(level) + len);
             } else {
-                level_size[level] = level_size[level - 1] + len + 1;
+                map.put(level + 1, map.get(level) + len + 1);
             }
         }
         return ans;
@@ -38,7 +48,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution test = new Solution();
-        test.lengthLongestPath("dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext");
-
+        test.lengthLongestPath("dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext");
+        
     }
 }
+  
