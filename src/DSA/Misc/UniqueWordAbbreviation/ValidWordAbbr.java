@@ -10,7 +10,7 @@ public class ValidWordAbbr {
             if (!dict.containsKey(toAbbr(s))) {
                 dict.put(toAbbr(s), s);
             } else if (!dict.get(toAbbr(s)).equals(s)) {
-                dict.put(toAbbr(s), "");
+                dict.put(toAbbr(s), ""); // special test case, nice trick here to distiginsh  duplicate cake, or cake and cwde
             }
         }
     }
