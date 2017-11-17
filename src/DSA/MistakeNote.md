@@ -44,3 +44,4 @@ size = size, ——X, dead assignment
 
 记得初始化变量
 
+时间复杂度看每个元素访问几次，一次就是O(N)
