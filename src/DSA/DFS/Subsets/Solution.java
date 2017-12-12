@@ -1,7 +1,6 @@
 package DSA.DFS.Subsets;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -20,7 +19,7 @@ public class Solution {
             result.add(new ArrayList<Integer>());
             return result;
         }
-        Arrays.sort(nums);
+        //Arrays.sort(nums); sort not needed in subsetII
         dfs(nums, 0, list, result);
         return result;
     }
