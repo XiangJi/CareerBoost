@@ -1,5 +1,18 @@
 package DSA.BitManipulation.FindtheDifference;
 
+/*
+ * Input:
+s = "abcd"
+t = "abcde"
+
+Output:
+e
+
+Explanation:
+'e' is the letter that was added.
+
+brute force: hash map
+ */
 public class Solution {
     public char findTheDifference(String s, String t) {
         int diff = 0;
