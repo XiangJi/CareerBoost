@@ -1,7 +1,11 @@
 package DSA.LinkedList.RemoveDuplicatesfromSortedList;
 
 import DSA.LinkedList.ListNode;
-
+/*
+ * For example,
+Given 1->1->2, return 1->2.
+Given 1->1->2->3->3, return 1->2->3.
+ */
 public class Solution {
     /**
      * @param ListNode head is the head of the linked list
