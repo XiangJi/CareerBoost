@@ -45,3 +45,5 @@ size = size, ——X, dead assignment
 记得初始化变量
 
 时间复杂度看每个元素访问几次，一次就是O(N)
+
+for loop的第一个i不要忘记定义int类型
