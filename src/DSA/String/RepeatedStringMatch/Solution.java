@@ -1,4 +1,4 @@
-package DSA.String.ReverseStringII.RepeatedStringMatch;
+package DSA.String.RepeatedStringMatch;
 
 /*
  * Given two strings A and B, find the minimum number of times A has to be repeated such that B is a substring of it. If no such solution, return -1.
