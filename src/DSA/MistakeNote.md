@@ -47,3 +47,5 @@ size = size, ——X, dead assignment
 时间复杂度看每个元素访问几次，一次就是O(N)
 
 for loop的第一个i不要忘记定义int类型
+
+所以数组运算里用到了减法sum[i - 1]; 一定要做corner case处理 不然会溢出
