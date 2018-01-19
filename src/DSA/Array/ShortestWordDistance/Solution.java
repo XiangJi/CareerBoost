@@ -11,10 +11,10 @@ public class Solution {
         int p1 = -1, p2 = -1, min = Integer.MAX_VALUE;
 
         for (int i = 0; i < words.length; i++) {
-            if (words[i].equals(word1)) 
+            if (words[i].equals(word1))
                 p1 = i;
 
-            if (words[i].equals(word2)) 
+            if (words[i].equals(word2))
                 p2 = i;
 
             if (p1 != -1 && p2 != -1)
@@ -23,4 +23,8 @@ public class Solution {
 
         return min;
     }
+
+    // Follow up 1, call multiple times, use hash map to store index
+
+    // Follow up 2, two words can be the same, 暴力分类讨论
 }
