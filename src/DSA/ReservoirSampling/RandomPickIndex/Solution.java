@@ -34,6 +34,7 @@ class Solution {
             if (nums[i] != target) {
                 continue;
             }
+            // 第一个index 0 一定会被取到 所以++放在前面
             if (rnd.nextInt(++count) == 0) {
                 result = i; // Note what the question is asked for
             }
