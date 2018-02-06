@@ -78,3 +78,30 @@ Object value = entry.getValue();
 ```
 
 
+
+哈希表的实现
+
+hash funciton md5（key） % talbe size
+
+
+
+hash confliction
+
+closed hash -> array ， 新的value不离开本表
+
+开放地执法有一个公式:Hi=(H(key)+di) MOD m i=1,2,...,k(k<=m-1)
+其中，m为哈希表的表长。di 是产生冲突的时候的增量序列。如果di值可能为1,2,3,...m-1，称线性探测再散列。linear probing
+
+
+
+open hash ->  use linked list   java use this one
+
+链地址法的基本思想是，为每个 Hash 值建立一个单链表，当发生冲突时，将记录插入到链表中。
+
+
+
+rehash:
+
+当发生冲突时，使用第二个、第三个、哈希函数计算地址，直到无冲突时。缺点：计算时间增加。
+比如上面第一次按照姓首字母进行哈希，如果产生冲突可以按照姓字母首字母第二位进行哈希，再冲突，第三位，直到不冲突为止
+
