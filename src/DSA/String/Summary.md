@@ -57,3 +57,18 @@ When back from char array to string:
 char[] charArray = {'a', 'b', 'c'};
 String str = String.valueOf(charArray);
 ```
+
+
+java io:
+
+## 字符流与字节流的区别
+
+经过以上的描述，我们可以知道字节流与字符流之间主要的区别体现在以下几个方面：
+
+- 字节流操作的基本单元为字节；字符流操作的基本单元为Unicode码元。
+
+- 字节流默认不使用缓冲区；字符流使用缓冲区。
+
+- 字节流通常用于处理二进制数据，实际上它可以处理任意类型的数据，但它不支持直接写入或读取Unicode码元；字符流通常处理文本数据，它支持写入及读取Unicode码元。
+
+- #### io.File 文件和文件夹的读写查,,字节流,,InputStream, OutputStream 抽象类,,FileInputSteam FileOutputSteam,,BufferedInputStream,,BufferedOutputSteam提高读写效率,,​,,字符流,,Reader / Writer 抽象类,,BufferedReader BufferdWriter,,InputStreamReader OutputStreamWriter,,字节流转字符流,,​,,​,,​
