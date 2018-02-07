@@ -19,7 +19,7 @@ DFS, BFS, Union find
 public class Solution {
 
     // DFS (Flood Fill algorithm)
-    O（mn）
+    //O（mn）
     private int m, n;
     public int numIslands(char[][] grid) {
         int result = 0;
