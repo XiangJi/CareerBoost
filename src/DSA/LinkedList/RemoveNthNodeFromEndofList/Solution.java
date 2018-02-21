@@ -17,7 +17,7 @@ public class Solution {
         slow.next = head;
 
         //Move fast in front so that the gap between slow and fast becomes n
-        for(int i=1; i<=n+1; i++)   {
+        for(int i=0; i <= n; i++)   {
             fast = fast.next;
         }
         //Move fast to the end, maintaining the gap
