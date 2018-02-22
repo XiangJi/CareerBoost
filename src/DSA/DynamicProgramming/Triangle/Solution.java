@@ -21,6 +21,7 @@ Bonus point if you are able to do this using only O(n) extra space,
 where n is the total number of rows in the triangle.
 
 用result存一下这层从下往上的min path sum
+滚动数组 一下
  */
 public class Solution {
     public int minimumTotal(List<List<Integer>> triangle) {
