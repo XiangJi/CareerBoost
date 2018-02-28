@@ -1,0 +1,39 @@
+package DSA.DFS.LetterCombinationsofaPhoneNumber;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/*
+ * Given a digit string, return all possible letter combinations that the number could represent.
+
+A mapping of digit to letters (just like on the telephone buttons) is given below.
+
+ */
+public class Solution {
+    public List<String> letterCombinations(String digits) {
+        List<String> result = new ArrayList<String>();
+
+        if (digits == null || digits.length() == 0) {
+            return result;
+        }
+
+        dfs(digits, new StringBuilder(), result, 0);
+        return result;
+    }
+
+    private void dfs(String digits, StringBuilder sb,
+            List<String> result, int pos) {
+        String[] map = { "", "", "abc", "def", "ghi", "jkl",
+                "mno", "pqrs", "tuv", "wxyz" };
+        if (pos == digits.length()) {
+            result.add(sb.toString());
+            return;
+        }
+        String s = map[digits.charAt(pos) - '0']; // iterate current possible letters
+        for (int i = 0; i < s.length(); i++) {
+            sb.append(s.charAt(i));
+            dfs(digits, sb, result, pos + 1);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    }
+}
