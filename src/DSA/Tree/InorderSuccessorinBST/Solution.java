@@ -16,4 +16,20 @@ class Solution {
             return (left != null ? left : root);
         }
     }
+    
+    // iterative solution
+    public TreeNode inorderSuccessorII(TreeNode root, TreeNode p) {
+        TreeNode result = null;
+        while (root != null) {
+            if (root.val <= p.val) {
+                root = root.right;
+            } else {
+                result = root;
+                root = root.left;
+            }
+        }
+        return result;
+    }
+    
+    
 }
