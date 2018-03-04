@@ -3,7 +3,7 @@ package DSA.BitManipulation.BitwiseANDofNumbersRange;
 /*
  * The idea is very simple:
 
-find the left common part
+find the left common part, find the law
  */
 public class Solution {
     public int rangeBitwiseAnd(int m, int n) {
