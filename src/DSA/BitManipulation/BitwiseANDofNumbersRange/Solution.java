@@ -1,6 +1,7 @@
 package DSA.BitManipulation.BitwiseANDofNumbersRange;
 
 /*
+ * bit wise & between m and n
  * The idea is very simple:
 
 find the left common part, find the law
