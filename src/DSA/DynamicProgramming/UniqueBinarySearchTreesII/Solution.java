@@ -17,7 +17,7 @@ Given n = 3, your program should return all 5 unique BST's shown below.
  */
 public class Solution {
     // DFS
-    // DP solution is not recommended here
+    // DP solution is not recommended here.
     public ArrayList<TreeNode> generateTrees(int n) {
         return generate(1, n);
     }
