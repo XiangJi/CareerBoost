@@ -1,5 +1,8 @@
 package DSA.String.OneEditDistance;
 
+/*
+ * Given two strings S and T, determine if they are both one edit distance apart.
+ */
 public class Solution {
     /**
      * @param s a string
