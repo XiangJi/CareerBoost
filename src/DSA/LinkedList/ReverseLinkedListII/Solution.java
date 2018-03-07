@@ -2,6 +2,9 @@ package DSA.LinkedList.ReverseLinkedListII;
 
 import DSA.LinkedList.ListNode;
 
+/*
+ * range reverse
+ */
 public class Solution {
     /**
      * @param ListNode head is the head of the linked list
@@ -9,43 +12,36 @@ public class Solution {
      * @return: The head of the reversed ListNode
      */
     public ListNode reverseBetween(ListNode head, int m , int n) {
-        if (m >= n || head == null) {
-                return head;
+        if (head == null) {
+            return head;
         }
-
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        head = dummy;
-
-        // define the head of m to n
+        
+        // use pointers
+        ListNode prev = dummy;
+        ListNode cur = dummy.next;
+        
         for (int i = 1; i < m; i++) {
-                if (head == null) {
-                        return null;
-                }
-                head = head.next;
+            cur = cur.next;
+            prev = prev.next;
         }
-
-        // reverse
-        ListNode premNode = head; // the node before mth node since using dummy node
-        ListNode mNode = head.next;
-        ListNode nNode = mNode;
-        ListNode postnNode = mNode.next; // draw graph
-
+        
+        /*
+         * 1 2 3 4 5
+         * p c t
+         * 2 -> 4
+         * 3 -> 2
+         * 1 -> 3
+         * 两两互换
+         * t, cn, tn,pn
+         */
         for (int i = m; i < n; i++) {
-                if (postnNode == null) {
-                        return null;
-                }
-
-                ListNode temp = postnNode.next;
-                postnNode.next = nNode;
-                nNode = postnNode;
-                postnNode = temp;
+            ListNode temp = cur.next;
+            cur.next = temp.next;
+            temp.next = prev.next;
+            prev.next = temp;
         }
-        //connection with the chain
-        mNode.next = postnNode;
-        premNode.next = nNode;
-
-
         return dummy.next;
     }
 }
