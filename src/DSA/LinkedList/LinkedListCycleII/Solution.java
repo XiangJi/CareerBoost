@@ -26,6 +26,7 @@ public class Solution {
         ListNode fast, slow;
         slow = head;
         fast = head;
+        // check two condition since fast do two steps
         while (fast.next != null && fast.next.next != null) {
             fast = fast.next.next;
             slow = slow.next;
