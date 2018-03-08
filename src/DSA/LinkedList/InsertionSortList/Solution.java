@@ -6,37 +6,39 @@ import DSA.LinkedList.ListNode;
 //Insert sort: 每一次看一个值放到前面合适位置，前面一直维护一个有序序列 (局部有序)
 
 public class Solution {
- /**
-  * @param head: The first node of linked list.
-  * @return: The head of linked list.
-  */
- public ListNode insertionSortList(ListNode head) {
-     if (head == null) {
-             return head;
-     }
-     // head can be changed, so dummy node
-     ListNode dummy = new ListNode(-1);
+    /**
+     * @param head:
+     *            The first node of linked list.
+     * @return: The head of linked list.
+     */
+    public ListNode insertionSortList(ListNode head) {
+        if (head == null) {
+            return head;
+        }
+        // head can be changed, so dummy node, which is the new head
+        ListNode dummy = new ListNode(-1);
+        ListNode current = head;
+        // head is the out pointer
+        // node is the inner pointer start
+        while (current != null) {
+            ListNode node = dummy; // inner loop pointer, everytime point to the
+                                   // new head
+            while (node.next != null && node.next.val < current.val) {
+                node = node.next; // in++ to find the insert position
+            }
+            // add the nodes (position) into the new list and head++;
 
-     // head is the out pointer
-     // node is the inner pointer start
-     while (head != null) {
-             ListNode node = dummy; // inner loop pointer
-             while (node.next != null && node.next.val < head.val) {
-                     node = node.next; // in++ to find the insert position
-             }
-             // swap nodes (position) and head++;
+            // save the next out pointer
+            ListNode temp = current.next;
 
-             // save the next out pointer
-             ListNode temp = head.next;
+            // insert is into the position
+            current.next = node.next;
+            node.next = current;
 
-             // insert is into the position
-             head.next = node.next;
-             node.next = head;
+            // go to the next head; AKA head++
+            current = temp;
+        }
 
-             // go to the next head; AKA head++
-             head = temp;
-     }
-
-     return dummy.next; // the result is the last new node
- }
+        return dummy.next; // the result is the last new node
+    }
 }
