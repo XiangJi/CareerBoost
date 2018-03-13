@@ -4,6 +4,12 @@ ACSII code: 0 - 255 ---- int[256]
 
 if all a - z, use diff int[26], like "x" - "a" : 0 ~25
 
+注意string to int method: Integer.parseInt()
+
+  String 是对象 比较用equals
+
+
+
 Methods
 
 charAt
