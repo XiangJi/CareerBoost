@@ -50,3 +50,14 @@ Deep knowledge of Internet technologies.
 
 
 Behavior: Situation-Target-Action-Result
+
+
+
+### Build all the files
+
+```bash
+# Find all the files and use pile to put them together
+$ find
+# Convert it into a pdf file for read
+```
+
