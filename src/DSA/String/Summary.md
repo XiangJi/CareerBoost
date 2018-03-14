@@ -32,6 +32,8 @@ Splits this string around matches of the given regular expression
 substring(int beginIndex, int endIndex)
 Returns a new string that is a substring of this string.
 
+string.*substring* (j, i) mean index j to i - 1
+
 
 
 toCharArray() ： 用这个节省时间
