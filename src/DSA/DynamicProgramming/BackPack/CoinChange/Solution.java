@@ -16,10 +16,35 @@ You may assume that you have an infinite number of each kind of coin.
 
 一维的背包DP问题
 
+dp[amount] : the minimun number of coins for amount i
+
+min = Math.min(min, dp[i - coins[j]] + 1);
 
  */
 public class Solution {
     public int coinChange(int[] coins, int amount) {
-
+        // corner case: clarification and write, can be done in the end or during the implementation
+        if (amount == 0) {
+            return 0;
+        }
+        if (coins == null || coins.length == 0) {
+            return -1;
+        }
+        
+        int[] dp = new int[amount + 1];
+        dp[0] = 0;
+        for (int i = 1; i <= amount; i++) {
+            int min  = Integer.MAX_VALUE;
+            for (int j = 0; j < coins.length; j++) {
+                if (i >= coins[j] && dp[i - coins[j]] != -1) {
+                    min = Math.min(min, dp[i - coins[j]] + 1);
+                }
+            }
+            dp[i] = min == Integer.MAX_VALUE ? -1 : min;
+        }
+        
+       return dp[amount]; 
     }
+    
+    // run a simple test case: {1, 2} 4
 }
