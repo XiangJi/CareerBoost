@@ -5,6 +5,7 @@ package DSA.TwoPointers.SortColors;
 Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
 
 // 三指针的实现题目 0在左 1 不动 2在右边  0往左移动 1不动 2往右
+ * counting sort
  */
 public class Solution {
     public void sortColors(int[] nums) {
