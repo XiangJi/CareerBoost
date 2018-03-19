@@ -3,6 +3,10 @@ package DSA.String.Atoi;
  * Implement atoi to convert a string to an integer.
  * 
  * Just be careful about all the corner case
+ *  Cases: 
+ *  + - 
+ *  is valid or not
+ *  overflow
  */
 public class Solution {
     public int myAtoi(String str) {
