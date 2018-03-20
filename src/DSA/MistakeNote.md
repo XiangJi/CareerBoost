@@ -49,3 +49,5 @@ size = size, ——X, dead assignment
 for loop的第一个i不要忘记定义int类型
 
 所以数组运算里用到了减法sum[i - 1]; 一定要做corner case处理 不然会溢出
+
+stack or queue pop之前一定要确定size大于0，不然会exception
