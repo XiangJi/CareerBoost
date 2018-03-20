@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Codec {
     // used when implementing message queue
+    // many algorithms can be used, best one here: abc -> 3$abc
     // Encodes a list of strings to a single string.
     public String encode(List<String> strs) {
         // Write your code here
@@ -17,6 +18,7 @@ public class Codec {
     }
 
     /**
+     * String parser
      * @param str a string
      * @return dcodes a single string to a list of strings
      */
