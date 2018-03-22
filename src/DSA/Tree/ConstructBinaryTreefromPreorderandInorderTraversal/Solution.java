@@ -21,7 +21,7 @@ Recursively doing this on subarrays, we can build a tree out of it :)
      time : O(n)
      space : O(n)
 
-
+很少出现 但是很有意思
  */
 public class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
