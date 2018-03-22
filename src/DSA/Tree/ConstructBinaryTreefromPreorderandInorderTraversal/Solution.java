@@ -25,11 +25,11 @@ Recursively doing this on subarrays, we can build a tree out of it :)
  */
 public class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        return helper(0, 0, inorder.length - 1, preorder, inorder);
+        return helper(0, preorder.length - 1, 0, inorder.length - 1, preorder, inorder);
     }
 
     // we need a helper to store index args
-    public TreeNode helper(int preStart, int inStart, int inEnd, int[] preorder, int[] inorder) {
+    public TreeNode helper(int preStart, int preEnd, int inStart, int inEnd, int[] preorder, int[] inorder) {
         // exsit
         if (preStart > preorder.length - 1 || inStart > inEnd) {
             return null;
@@ -44,9 +44,9 @@ public class Solution {
             }
         }
         // 画图找到搜索位置
-        root.left = helper(preStart + 1,                      inStart,     inIndex - 1, preorder, inorder);
+        root.left = helper(preStart + 1,preStart + inIndex - inStart,   inStart,     inIndex - 1, preorder, inorder);
         // inIndex - inStart 可以找到左边树的数量 加上在加一找到其实位置
-        root.right = helper(preStart + inIndex - inStart + 1, inIndex + 1, inEnd, preorder, inorder);
+        root.right = helper(preStart + inIndex - inStart + 1, preEnd, inIndex + 1, inEnd, preorder, inorder);
         return root;
     }
 }
