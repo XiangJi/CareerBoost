@@ -15,9 +15,9 @@ good team player体现在：有疑问多沟通Effective communicate，有矛盾�
 公司核心产品，
 Pros and cons
 What’s the culture? How to succeed in the company? Most important skills or personality you should have?
- 
+
 1. Tell me about yourself (Self introduction)
-My name is Xiang
+My name is Xiang Ji, sde at MathWorks, what role 1min - 1:30, job responsibility, graduate from UVa.
 2. About the projects. 
 3. Why this position? Love software, capability,etc.
 4. About teamwork or confilcts
@@ -25,13 +25,18 @@ My name is Xiang
 5.. Question for the interview, interaction! 
 
 
-九章：为什么选择我们公司呢？
 
+九章：为什么选择我们公司呢？
 
 这是一个常见问题。大部分的公司希望他们招聘的人是对其公司和产品充满热情的。因此在回答此问题时，应该充分说明为什么这家公司对你来说很重要，为什么你觉得自己适合这家公司及其企业文化。
 面试官希望通过这个问题，看到你可以（有潜力）为公司/职位做出贡献。
 这个问题常常被面试官用来过滤掉那些把该公司当做跳板、而并非真正热爱这家公司的人。
 在回答时，你可以借机充分展露你对这家公司的了解（做的功课、搜集的资料等）。你也可以对公司的市场状况、比较竞争者的优劣势、未来的发展趋势等发表自己的看法。
+
+Why leave current company?
+
+Challenging, learning curve, personal choice.
+
 2
 是什么吸引你来应聘这个职位的呢？
 
