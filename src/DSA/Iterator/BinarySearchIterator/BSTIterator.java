@@ -1,4 +1,4 @@
-package DSA.Tree.BinarySearchTreeIterator;
+package DSA.Iterator.BinarySearchIterator;
 
 import java.util.Stack;
 
