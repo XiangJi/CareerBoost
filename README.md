@@ -57,7 +57,8 @@ Behavior: Situation-Target-Action-Result
 https://superuser.com/questions/601198/how-can-i-automatically-convert-all-source-code-files-in-a-folder-recursively
 ```bash
 # Find all the files and use pile to put them together
-$ find
+$ find . -type f -name '*.java' -exec cat {} + >> Solution.java
+$ find . -type f -name '*.md' -exec cat {} + >> Solution.md
 # Convert it into a pdf file for read
 ```
 
