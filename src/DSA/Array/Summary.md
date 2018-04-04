@@ -6,6 +6,10 @@ a.size();   not length()!
 
 if (//condition && make sure index not out of bound)
 
+Usage:
+
+new ArrayList<String>(Arrays.asList("0", "1", "8"));
+
 
 
 Collection——List and Set, 用iterator向后便利，set里unique
