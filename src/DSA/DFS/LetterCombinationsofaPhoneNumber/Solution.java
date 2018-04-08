@@ -8,6 +8,7 @@ import java.util.List;
 
 A mapping of digit to letters (just like on the telephone buttons) is given below.
 
+枚举实质的一堆for循环，因为不定长 所以递归实现
  */
 public class Solution {
     public List<String> letterCombinations(String digits) {
@@ -32,7 +33,7 @@ public class Solution {
         String s = map[digits.charAt(pos) - '0']; // iterate current possible letters
         for (int i = 0; i < s.length(); i++) {
             sb.append(s.charAt(i));
-            dfs(digits, sb, result, pos + 1);
+            dfs(digits, sb, result, pos + 1); 
             sb.deleteCharAt(sb.length() - 1);
         }
     }
