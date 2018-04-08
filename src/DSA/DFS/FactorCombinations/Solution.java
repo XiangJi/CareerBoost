@@ -10,6 +10,8 @@ import java.util.List;
   = 2 x 4.
 Write a function that takes an integer n and return all possible combinations of its factors.
 
+for 循环枚举prime，从start 2开始 保证顺序
+退出条件是remain == 1
 Linkedin
  */
 class Solution {
