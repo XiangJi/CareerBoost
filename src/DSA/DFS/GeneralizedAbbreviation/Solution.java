@@ -24,6 +24,8 @@ keep the current and summarize the abbr in tmp
 Exit condition:
 pos == word.length();
 Add the summarized one to the result
+
+2 ^ N branch ^ depth
  */
 class Solution {
     public List<String> generateAbbreviations(String word) {
