@@ -69,6 +69,7 @@ public class Solution {
             n -= res.size();
             // a tmp result
             List<Integer> leaves = new ArrayList<>();
+            //用两个for loop 两两删除edge 如果size为1 变成这一轮的tmp leaves
             for (int i : res) {
                 for (int j : adj.get(i)) {
                     adj.get(j).remove(i);
