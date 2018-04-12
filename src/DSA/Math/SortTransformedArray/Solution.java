@@ -18,6 +18,7 @@ nums = [-4, -2, 2, 4], a = -1, b = 3, c = 5
 
 Result: [-23, -5, 1, 7]
 
+二次函数数学题
 
  */
 public class Solution {
