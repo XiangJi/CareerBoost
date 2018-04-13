@@ -31,7 +31,7 @@ class Solution {
     }
 
     private void dfs(int[] candidates, int remain, int pos, List<Integer> tmp, List<List<Integer>> result) {
-        // exsit conditoin
+        // exist condition
         if (remain < 0) {
             return;
         }
