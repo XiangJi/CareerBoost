@@ -64,7 +64,7 @@ int[][] dirs = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
         for (int[] pair : positions) {
             // 2D converted to 1D, initialization
             int position = n * pair[0] + pair[1];
-            roots[position] = position; // initialization
+            roots[position] = position; // initialization root as it self
             count++;
 
             for (int[] dir : dirs) {
