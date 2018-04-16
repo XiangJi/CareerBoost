@@ -59,8 +59,8 @@ https://www.youtube.com/watch?v=VJnUwsE4fWA&list=PLLuMmzMTgVK5Hy1qcWYZcd7wVQQ1v0
 
 ```java
 class UnionFind {
-        private int count = 0;
-        private int[] parent, rank;
+        private int count = 0; // WEIGHT
+        private int[] parent, rank; // RANK IS FOR PATH COMPRESSION
         
         public UnionFind(int n) {
             count = n;
