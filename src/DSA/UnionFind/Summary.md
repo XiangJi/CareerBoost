@@ -20,7 +20,7 @@ Path compression: make tree flat   (happens during Find)
 
 Union by rank: merge low rank tree to high rank one
 
-rank是平均树长度
+rank是平均树长度 深度
 
 union会把低rank数merge到高rank树
 
