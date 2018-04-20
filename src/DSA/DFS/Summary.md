@@ -42,3 +42,25 @@ dfs()
 
 dfs+pruning 剪枝就是去冗余
 
+When solving a BT problem, pay attention to whether it’s a Permutation problem, or a Combination.
+
+
+
+I would say `Practice Makes Perfect`.
+
+A general recursive template for backtracking may look like this:
+
+```
+   helper (parameters of given data and current recursive level) {
+        // Handle base cases, i.e. the last level of recursive call
+        if (level == lastLevel) {
+            record result;
+            return sth;
+        }
+        // Otherwise permute every possible value for this level.
+        for (every possible value for this level) {
+            helper(parameters of given data and next recursive level);
+        }
+        return sth;
+    }
+```
