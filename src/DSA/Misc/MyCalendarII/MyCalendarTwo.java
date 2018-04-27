@@ -31,7 +31,7 @@ public class MyCalendarTwo {
         return true;
     }
 }
-//Boundary count 扫描线算法 入++ 出-- 如果到3就不行了
+//Boundary count 扫描线算法 入++ 出-- 如果到3就不行了 O(n ^ 2)
 class MyCalendarTwoII {
     TreeMap<Integer, Integer> delta;
 
