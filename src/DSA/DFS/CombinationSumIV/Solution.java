@@ -24,7 +24,15 @@ Follow up:
 What if negative numbers are allowed in the given array?
 How does it change the problem?
 What limitation we need to add to the question to allow negative numbers?
- */
-public class Solution {
 
+
+Actually permutation
+BF: DFS and hashmap to store result for memoization
+
+Counter DP
+ */
+class Solution {
+    public int combinationSum4(int[] nums, int target) {
+
+    }
 }
