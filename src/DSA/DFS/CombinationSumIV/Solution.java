@@ -30,7 +30,10 @@ Actually permutation
 BF: DFS and hashmap to store result for memoization
 
 Counter DP
+res[i] += res[i - num]
+BF
  */
+ 
 class Solution {
     public int combinationSum4(int[] nums, int target) {
         int[] dp = new int[target + 1];
