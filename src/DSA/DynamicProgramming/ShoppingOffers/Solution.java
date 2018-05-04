@@ -49,6 +49,8 @@ DP: for the subproblem, the result of it is the state
 ，说明当前coupon不可用，isValid标记为false。如果遍历完了发现isValid还为true的话，表明该coupon可用，
 我们可以更新结果res，对剩余的needs调用递归并且加上使用该coupon需要付的钱数。最后别忘了恢复needs的状态
 
+基本的思路就是采用DFS的递归算法，尝试用总需求减去 special 的供应量，如果新的需求不为负，深度优先递归，之后再加回减去的量。最后，需要对剩余需求量(没有匹配到合适的special)计算按单件采购的总金额，取较小的数返回。
+
  */
 public class Solution {
     public int shoppingOffers(List<Integer> price,
