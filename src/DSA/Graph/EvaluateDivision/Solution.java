@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 /*
  * Equations are given in the format A / B = k, where A and B are variables represented as strings, and k is a real number (floating point number). Given some queries, return the answers. If the answer does not exist, return -1.0.
@@ -24,6 +25,8 @@ The input is always valid. You may assume that evaluating the queries will resul
 
 // 汇率转换 G 面经
  * DFS
+ * 高频
+ * Union find
  */
 class Solution {
     HashMap<String, List<GraphNode>> map;
@@ -69,6 +72,81 @@ class Solution {
         GraphNode(String den, double val) {
             this.den = den;
             this.val = val;
+        }
+    }
+}
+
+//O(1) check
+class SolutionUnionFind {
+    Map<String, Integer> dict;
+
+    public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
+
+        dict = new HashMap<>();
+        int index = 0;
+        for(int i = 0; i < equations.length; i++) {
+            if(!dict.containsKey(equations[i][0])) {
+                dict.put(equations[i][0], index);
+                index++;
+            }
+            if(!dict.containsKey(equations[i][1])) {
+                dict.put(equations[i][1], index);
+                index++;
+            }
+        }
+
+        UnionFind uf = new UnionFind(equations, values);
+
+        double[] results = new double[queries.length];
+        for(int i = 0; i < queries.length; i++) {
+            if(!dict.containsKey(queries[i][0]) || !dict.containsKey(queries[i][1])) {
+                results[i] = -1.0;
+            } else {
+                if(uf.find(dict.get(queries[i][0])) != uf.find(dict.get(queries[i][1]))) {
+                    results[i] = -1.0;
+                } else {
+                    double dividend = uf.valueArray[dict.get(queries[i][0])];
+                    double divisor = uf.valueArray[dict.get(queries[i][1])];
+                    results[i] = dividend / divisor;
+                }
+            }
+        }
+
+        return results;
+    }
+
+    class UnionFind {
+        int[] parents;
+        double[] valueArray;
+
+        public UnionFind(String[][] equations, double[] values) {
+            parents = new int[dict.size()];
+            valueArray = new double[dict.size()];
+
+            for(int i = 0; i < parents.length; i++) {
+                parents[i] = i;
+                valueArray[i] = 1;
+            }
+
+            for(int i = 0; i < equations.length; i++) {
+                union(equations[i][0], equations[i][1], values[i]);
+            }
+        }
+
+        public void union(String num1, String num2, double value) {
+            int root = find(dict.get(num1));
+            parents[root] = dict.get(num2);
+            valueArray[root] = value / valueArray[dict.get(num1)];
+        }
+
+        public int find(int node) {
+            if(parents[node] == node) {
+                return node;
+            }
+            int root = find(parents[node]);
+            valueArray[node] = valueArray[node] * valueArray[parents[node]];
+            parents[node] = root;
+            return parents[node];
         }
     }
 }
