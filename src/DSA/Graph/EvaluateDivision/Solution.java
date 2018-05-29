@@ -23,6 +23,8 @@ values = [2.0, 3.0],
 queries = [ ["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"] ].
 The input is always valid. You may assume that evaluating the queries will result in no division by zero and there is no contradiction.
 
+给一些初始化的汇率转换 (USD, CNY, 6.2), (CNY, JPY, 12)，让你求比如USD -> JPY的汇率什么的。这个地里很多面经都有
+
 // 汇率转换 G 面经
  * DFS
  * 高频

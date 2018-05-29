@@ -39,6 +39,8 @@ T: O(V+E)
 直到遍历完队列中所有的值，
 若此时还有节点的入度不为0，则说明环存在，返回false，反之则返回true。
 最后看是否有遍历所有点
+
+DFS BFS 两种实现最好都掌握
  */
 public class Solution {
     public boolean canFinish(int numCourses, int[][] pairs) {

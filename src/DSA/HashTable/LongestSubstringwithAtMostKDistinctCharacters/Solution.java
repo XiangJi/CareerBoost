@@ -9,6 +9,12 @@ For example, Given s = “eceba” and k = 2,
 
 T is "ece" which its length is 3.
 
+用sliding window秒了 Time O(2n), Space O(n)
+follow up: How about stream input (infinite input) 用Mapreduce秒了
+follow upup: Any other solution？
+1. 数学归纳法 O(n) space O(k)
+2. KMP
+
 
  */
 public class Solution {

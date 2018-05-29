@@ -16,6 +16,8 @@ Output: [2,-1,2]
 遍历每一个数字，然后对于每一个遍历到的数字，遍历所有其他数字，注意不是遍历到数组末尾，
 而是通过循环数组遍历其前一个数字，遇到较大值则存入结果res中，并break，
 
+If stream, 用global index和map存储就好了
+
  */
 public class Solution {
     //BF
