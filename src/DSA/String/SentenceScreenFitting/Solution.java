@@ -57,6 +57,7 @@ The character '-' signifies an empty space on the screen.
 Rows: 5
 Cols: 4
 
+G 高频
 ab cde f ab cd f ab cd f ab cd f
 XXX
    XXXX

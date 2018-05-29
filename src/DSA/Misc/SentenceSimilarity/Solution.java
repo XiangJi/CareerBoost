@@ -18,6 +18,8 @@ Also, a word is always similar with itself. For example, the sentences words1 = 
 
 Finally, sentences can only be similar if they have the same number of words. So a sentence like words1 = ["great"] can never be similar to words2 = ["doubleplus","good"].
 
+
+高频题
  */
 // use hash, why has a set, since the a->b, a->c both need to be recorded
 // the follow up: if the similiarity the transitve? Union find question
