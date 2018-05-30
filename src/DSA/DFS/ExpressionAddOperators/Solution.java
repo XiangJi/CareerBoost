@@ -12,7 +12,8 @@ Examples:
 "00", 0 -> ["0+0", "0-0", "0*0"]
 "3456237490", 9191 -> []
  */
-//version: 高频题班
+// 高频 电面会有
+//变形 四则运算和括号 看能不能得到目标值
 public class Solution {
  /**
   * @param num a string contains only digits 0-9
