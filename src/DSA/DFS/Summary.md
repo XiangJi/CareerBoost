@@ -64,3 +64,14 @@ A general recursive template for backtracking may look like this:
         return sth;
     }
 ```
+dfs要自己多写多练
+
+subset：
+时间复杂度：递归被调用的次数应该和解的个数是一样的，所以总共递归了2^n次，每次递归里面有个for循环所以是O(n)时间，那么时间复杂度是O(n*2^n)
+空间复杂度：应该跟调用递归次数一样O(2^n)
+
+permutation:
+时间复杂度：递归被调用的次数与解的个数一样是n!次，每次有个for循环，那么总时间复杂度是O(n*n!)
+空间复杂度：与调用递归次数一样O(n!)
+
+计算复杂度的公式 `O(构造解的复杂度 * 解的个数)` 
