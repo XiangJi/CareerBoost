@@ -12,6 +12,11 @@ Design an algorithm to make robot clean up all room. Timecomplexity, linear in t
  *，如果不能移动返回false; turn_left(k), turn_right(k)是旋转k*90
  *度; 房间里可能有障碍物，机器人并不知道房间的布局，设计算法让扫地机器人清扫房间（走完房间每一格）。
  *
+OOD Cleaning Machine 给的API能让机器move turn_left turn_right 和 clean。要求打扫整个房间。
+这道题之前刷面经有刷到过但是没全部写完，所以实际写的时候有不少问题，建议还是自己写一写。
+个人觉得两个比较麻烦的点，一个是如何backtrack，一个是怎么知道全部打扫完了。
+
+
  *要自己定义各种结构，用dfs解，如何测试
  *每轮面试之间休息一下
  *
