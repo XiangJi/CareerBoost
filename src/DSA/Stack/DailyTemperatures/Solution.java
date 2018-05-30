@@ -8,6 +8,7 @@ import java.util.Stack;
 For example, given the list temperatures = [73, 74, 75, 71, 69, 72, 76, 73], your output should be [1, 1, 4, 2, 1, 1, 0, 0].
  BF is trival
  考察单调栈问题 类似有还有LC84, 85 next great element I
+ 高频题！
  O(N)
  实际上这道题应该使用递减栈Descending Stack来做，
  栈里只有递减元素，思路是这样的，我们遍历数组，如果栈不空，且当前数字大于栈顶元素，

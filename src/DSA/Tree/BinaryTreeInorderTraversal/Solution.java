@@ -42,6 +42,7 @@ public class Solution {
 
     // iterative using stack, 中序遍历最重要，死记硬背，是的 三种顺序 实现并不太一样
     // stack实现也有好几种写法
+    //这个一定要掌握
     // https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45551
     public List<Integer> inorderTraversalII(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
