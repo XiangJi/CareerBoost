@@ -18,6 +18,8 @@ testing, performance testing, environments,
 
 ### How to test gmail?
 
+How does user use it?
+
 Draw out the system design diagram
 
 CDN DNS
@@ -58,7 +60,7 @@ Use Chaos Monkey, get random tests
 
 
 
-### Test Plan the timeline for them
+### Test Plan the timeline for them (how to execute them)
 
 Develop the unit tests during the developing phase
 
