@@ -27,7 +27,9 @@ arr[i] will be a permutation of [0, 1, ..., arr.length - 1].
 记数组arr长度为N，下标x从N - 1到0逐一递减：
 
     若min(arr[x .. N - 1]) > max(arr[0 .. x - 1])，则令结果+1
-    
+
+    每当max == index ans+= 1 分成独立的一块
+    画数字看能不能独立排序
  */
 public class Solution {
     public int maxChunksToSorted(int[] arr) {
