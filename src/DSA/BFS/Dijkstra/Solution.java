@@ -1,6 +1,11 @@
 package DSA.BFS.Dijkstra;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 /*
  * 有向有权值有环的连通图中找初始点到给定目的点的最短距离，follow up是给出初始点到所有点的最短距离
  *
@@ -23,16 +28,7 @@ Graph use 2d Matrix present
 
 Heap<Point, dist> + 2  Map, V- parente, V - Dist
 https://www.youtube.com/watch?v=lAXZGERcDf4
- */
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
 
-/**
- * Date 10/11/2014
- * @author Tushar Roy
- *
  * Find single source shortest path using Dijkstra's algorithm
  *
  * Space complexity - O(E + V)
