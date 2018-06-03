@@ -28,6 +28,7 @@ BF: put all item's in heap then heap size > k, pop
 public class Solution {
     //// time : (nlogn) space : O(n)
     public int kthSmallest(int[][] matrix, int k) {
+        // pq's constructor (initCapacity, Comparator)
         PriorityQueue<Tuple> pq = new PriorityQueue<>(matrix.length, (a, b) -> (a.val - b.val));
         for (int i = 0; i < matrix.length; i++) {
             pq.offer(new Tuple(0, i, matrix[0][i]));
