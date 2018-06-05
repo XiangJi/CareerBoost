@@ -5,40 +5,56 @@ package DSA.BinarySearch.ScreenFitting;
 .
 
 # assume different characters have the same height for the same font
-def getLargestFont(s, H, W, smallest, largest):
 
-    small = smallest
-    large = largest
-    while small <= large:
-        mid = small + (large - small) // 2
-        if canFit(s, mid, H, W):
-            small = mid + 1.
-        else:
-            large = mid - 1
-
-    if large < smallest:
-        return -1    # even the smallest number cannot fit
-    else:
-        return large
-
-def canFit(s, font, H, W):
-    curH = H. from: 1point3acres
-    curW = W
-    length = len(s)
-    i = 0
-    while i < length:
-        if getHeight(s, font) < curH and getWidth(s, font) < cur
-            curW -= getWidth(c.font)
-            i += 1
-        elif getHeight(s, font) < curH and getWidth(s, font) > curW:   # need to restart with a new line.
-            curH = H - curH
-            curW = W
-        else:
-            return False
-
-    return True
 
  */
 public class Solution {
+    public int getLargestFont(String s, int H, int W, int smallest, int largest) {
+
+        int l = smallest;
+        int r = largest;
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if (canFit(s, mid, H, W)) {
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+
+        if (r < smallest) {
+            return -1; // even the smallest number cannot fit;
+        } else {
+            return r;
+        }
+    }
+
+    public boolean canFit(String s, int font, int H, int W) {
+        int curH = H;
+        int curW = W;
+        int length = s.length();
+        int i = 0;
+        while (i < length) {
+            if (getHeight(s.charAt(i), font) < curH && getWidth(s.charAt(i), font) < curW) {
+                curW -= getWidth(s.charAt(i), font);
+                i += 1;
+            } else if (getHeight(s.charAt(i), font) < curH && getWidth(s.charAt(i), font) > curW) {
+                // need to restart with a new line.
+                curH = H - curH;
+                curW = W; // reset curW
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private int getHeight(char a, int font) {
+        return 2;
+    }
+
+    private int getWidth(char a, int font) {
+        return 2;
+    }
 
 }
