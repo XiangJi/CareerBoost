@@ -19,3 +19,14 @@ BST 和二分法的思想一样
 
 
 BST 问题 分类讨论 分而治之
+
+use recursive
+
+well defined your recursive method first!
+
+
+
+what does it return?
+
+what tasks does it do?
+
