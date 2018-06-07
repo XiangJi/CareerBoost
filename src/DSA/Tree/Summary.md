@@ -30,3 +30,9 @@ what does it return?
 
 what tasks does it do?
 
+For this tasks, what's the order?
+
+recursive first, or operation first?
+
+Do not test it, think if correct first!
+
