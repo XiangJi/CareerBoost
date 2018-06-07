@@ -44,7 +44,9 @@ Use hashtable to count a serialized subtree HashMap<String, count>
 T(N^2) where NN is the number of nodes in the tree.
 We visit each node once, but each creation of serial may take O(N)O(N) work.
 
-Solution 2:
+Solution 2: optimze
+
+面经：find the number of subtree， use a number to count
 
  */
 class Solution {
