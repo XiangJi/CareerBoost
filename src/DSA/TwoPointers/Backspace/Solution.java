@@ -61,6 +61,7 @@ class Solution {
     }
 }
 
+实现类似valid abbr那题
  */
 public class Solution {
     public boolean backspaceCompare(String S, String T) {
