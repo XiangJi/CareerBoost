@@ -1,4 +1,4 @@
-package DSA.HashTable.LongestSubstringWithoutRepeatingCharacters;
+package DSA.SlidingWindow.LongestSubstringWithoutRepeatingCharacters;
 
 import java.util.HashMap;
 import java.util.HashSet;
