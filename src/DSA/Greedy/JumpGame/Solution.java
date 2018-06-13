@@ -8,12 +8,13 @@ Each element in the array represents your maximum jump length at that position.
 Determine if you are able to reach the last index.
 
  */
-// G tag: 
+// G tag:
 public class Solution {
+    // DP T: n ^ 2 S: N
     public boolean canJump(int[] A) {
         boolean[] can = new boolean[A.length];
         can[0] = true;
-        
+
         for (int i = 1; i < A.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (can[j] && j + A[j] >= i) {
@@ -22,10 +23,11 @@ public class Solution {
                 }
             }
         }
-        
+
         return can[A.length - 1];
     }
-    
+
+    // Greedy 1, 1
     public boolean canJumpII(int[] A) {
         // think it as merging n intervals
         if (A == null || A.length == 0) {
