@@ -39,7 +39,7 @@ public class Solution {
             helper(left - 1, right, current + "(", result);
         }
 
-        if (right > 0 && left < right) {
+        if (right > 0 && left < right) { // left < right condition guarantee valid
             helper(left, right - 1, current + ")", result);
         }
     }
