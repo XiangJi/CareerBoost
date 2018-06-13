@@ -37,9 +37,10 @@ Follow up:
 注意这里强调对手使用最优策略是必要的，否则我们假设对手一上来回答个"4A0B"，最少一步搞定，这题目就没有意义了。
 
 那么解法就是minimax算法，再加上alpha-beta剪枝。
-.1point3acres网
+
 此外数字以及xAyB的表示（encoding）可能有优化空间，这里就不展开了..
 
+考点 需要1Pass
  */
 public class Solution {
     public String getHint(String secret, String guess) {
