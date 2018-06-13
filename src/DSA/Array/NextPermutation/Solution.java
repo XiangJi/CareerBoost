@@ -14,7 +14,12 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 
 BF: backtracking and store data in array index, O(n!) TLE, Space O(N)
 
-找规律算法 从右往左找第一个 a[i] > a[i - 1], 交换 然后reverse后面的
+找规律算法 从右往左找第一个 a[i] > a[i - 1], swap, i 然后reverse后面的
+Intuition: 下一个最大的规律
+从右往左找第一个 a[i] > a[i - 1]
+然后A[i] 从后往前找第一个比A[i]打的数A[j]
+然后swap
+然后把j后面的数reverse
 
 // 1　　2　　7　　4　　3　　1
              ^
@@ -24,44 +29,48 @@ BF: backtracking and store data in array index, O(n!) TLE, Space O(N)
              ^            ^
      // 1　　3　　1　　2　　4　　7
  */
-public class Solution {
+class Solution {
     public void nextPermutation(int[] nums) {
-        if (nums == null || nums.length == 0) return;
-
-        int firstSmall = -1;
+        if (nums.length == 0 || nums == null) {
+            return;
+        }
+        // scan from back, find A[i] > a[i - 1]
+        int small = -1;
         for (int i = nums.length - 2; i >= 0; i--) {
             if (nums[i] < nums[i + 1]) {
-                firstSmall = i;
+                small = i;
                 break;
             }
         }
-
-        if (firstSmall == -1) {
-            reverse(nums, 0, nums.length - 1);
+        // !! Case, no such small, just reverse the whole thing
+        if (small == -1) {
+            reverse(0, nums.length - 1, nums);
             return;
         }
 
-        int firstLarge = -1;
-        for (int i = nums.length - 1; i > firstSmall; i--) {
-            if (nums[i] > nums[firstSmall]) {
-                firstLarge = i;
+        // find the one greater
+        int large = -1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            if (nums[i] > nums[small]) {
+                large = i;
                 break;
             }
         }
-        swap(nums, firstSmall, firstLarge);
-        reverse(nums, firstSmall + 1, nums.length - 1);
+
+        swap(small, large, nums);
+        reverse(small + 1, nums.length - 1, nums);
         return;
     }
 
-    public void swap(int[] nums, int i, int j) {
+    private void swap(int i, int j, int[] nums) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
     }
 
-    public void reverse(int[] nums, int i, int j) {
+    private void reverse(int i, int j, int[] nums) {
         while (i < j) {
-            swap(nums, i++, j--);
+            swap(i++, j--, nums);
         }
     }
 }
