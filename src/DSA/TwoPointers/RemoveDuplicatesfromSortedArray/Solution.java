@@ -19,6 +19,7 @@ public class Solution {
         }
         // use count and i as two pointers, count for update new array and result
         // since delete from the next one, so count start from 1
+       // keep remove the dup ones by assign the good ones later into the current dup place
         int count = 1;
         for (int i = 1; i < nums.length; i++) {
             if (nums[i - 1] != nums[i]) {
