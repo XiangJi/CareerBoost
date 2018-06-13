@@ -11,6 +11,8 @@ A mapping of digit to letters (just like on the telephone buttons) is given belo
 枚举实质的一堆for循环，因为不定长 所以递归实现
  */
 public class Solution {
+    String[] map = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+    
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<String>();
 
@@ -23,17 +25,16 @@ public class Solution {
     }
 
     private void dfs(String digits, StringBuilder sb,
-            List<String> result, int pos) {
-        String[] map = { "", "", "abc", "def", "ghi", "jkl",
-                "mno", "pqrs", "tuv", "wxyz" };
-        if (pos == digits.length()) {
+            List<String> result, int index) {
+        
+        if (index == digits.length()) {
             result.add(sb.toString());
             return;
         }
-        String s = map[digits.charAt(pos) - '0']; // iterate current possible letters
+        String s = map[digits.charAt(index) - '0']; // iterate current possible letters
         for (int i = 0; i < s.length(); i++) {
             sb.append(s.charAt(i));
-            dfs(digits, sb, result, pos + 1); 
+            dfs(digits, sb, result, index + 1);
             sb.deleteCharAt(sb.length() - 1);
         }
     }
