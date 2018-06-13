@@ -12,7 +12,7 @@ public class Solution {
         if (nums.length == 0 || nums == null) {
             return result;
         }
-        Arrays.sort(nums);
+        Arrays.sort(nums); // need sorted!
         dfs(result, new ArrayList<Integer>(), nums, new boolean[nums.length]);
         return result;
     }

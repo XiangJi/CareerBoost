@@ -19,22 +19,39 @@ You can assume that you can always reach the last index.
 
  */
 public class Solution {
-    public int jump(int[] A) {
-        if (A == null || A.length == 0) {
-            return -1;
+    public int jumpDP(int[] A) {
+        // state
+        int[] steps = new int[A.length];
+
+        // initialize
+        steps[0] = 0;
+        for (int i = 1; i < A.length; i++) {
+            steps[i] = Integer.MAX_VALUE;
         }
-        int start = 0, end = 0, jumps = 0;
-        while (end < A.length - 1) {
-            jumps++;
-            int farthest = end;
-            for (int i = start; i <= end; i++) {
-                if (A[i] + i > farthest) {
-                    farthest = A[i] + i;
+
+        // function
+        for (int i = 1; i < A.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (steps[j] != Integer.MAX_VALUE && j + A[j] >= i) {
+                    steps[i] = Math.min(steps[i], steps[j] + 1);
                 }
             }
-            start = end + 1;
-            end = farthest;
+        }
+
+        // answer
+        return steps[A.length - 1];
+    }
+
+    // o(N)
+    public int jump(int[] A) {
+        int jumps = 0, curEnd = 0, curFarthest = 0;
+        for (int i = 0; i < A.length - 1; i++) {
+                curFarthest = Math.max(curFarthest, i + A[i]);
+                if (i == curEnd) {
+                        jumps++;
+                        curEnd = curFarthest;
+                }
         }
         return jumps;
-    }
+}
 }
