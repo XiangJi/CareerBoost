@@ -27,6 +27,9 @@ enention -> exention (replace 'n' with 'x')
 exention -> exection (replace 'n' with 'c')
 exection -> execution (insert 'u')
 
+
+用dp做 学Tushar画出表格图 然后填空 找规律
+这个方程是 3种操作的最小值+1来填写
  */
 public class Solution {
     public int minDistance(String word1, String word2) {
