@@ -12,7 +12,7 @@ public class Solution {
         }
         return buildTree(head, null);
     }
-    
+    // 和上一题一样
     private TreeNode buildTree(ListNode head, ListNode tail) {
         if (head == tail) {
             return null;
@@ -27,6 +27,6 @@ public class Solution {
         root.left = buildTree(head, slow);
         root.right = buildTree(slow.next, tail);
         return root;
-        
+
     }
 }
