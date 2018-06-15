@@ -32,7 +32,7 @@ public class Solution {
              }
              return slow; // which is the middle node
      }
-
+     // 这边的实现要记住
      private ListNode merge(ListNode head1, ListNode head2) {
              ListNode dummy = new ListNode(-1);
              ListNode tail = dummy;
