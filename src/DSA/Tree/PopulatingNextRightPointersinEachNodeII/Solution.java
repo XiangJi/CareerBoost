@@ -32,6 +32,24 @@ After calling your function, the tree should look like:
     root 一直层序往后
  */
 public class Solution {
+    
+    public void connectII(TreeLinkNode root) { 
+        if (root == null || root.left == null) { // perfect binary tree. Only checking for one child
+            return;
+        }
+        
+        root.left.next = root.right;
+        TreeLinkNode next = root.right.next;
+        if (root.left.right != null) {  // check if we have another level below us
+            root.left.right.next = root.right.left;
+            if (next != null) {
+                root.right.right.next = next.left;
+            }
+        }
+        
+        connect(root.left);
+        connect(root.right);
+    }
     public void connect(TreeLinkNode root) {
         TreeLinkNode dummy = new TreeLinkNode(-1);
         TreeLinkNode pre = dummy;
