@@ -1,4 +1,4 @@
-package DSA.Tree.ConstructBinaryTreefromConstructBinaryTreefromInorderandPostorderTraversal;
+package DSA.Tree.ConstructBinaryTreefromInorderandPostorderTraversal;
 
 import DSA.Tree.TreeNode;
 
@@ -40,6 +40,7 @@ public class Solution {
         }
         // 画图找到搜索位置
         // 多传一个参数
+        // 比较两题 一个是inIndex +- 1   另一个头尾有区别 
         root.left = helper(postStart, postStart + inIndex - inStart - 1, inStart, inIndex - 1, inorder, postorder);
         root.right = helper(postStart + inIndex - inStart, postEnd - 1, inIndex + 1, inEnd, inorder, postorder);
         return root;
