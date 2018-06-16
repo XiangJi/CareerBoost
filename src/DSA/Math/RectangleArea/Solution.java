@@ -20,7 +20,7 @@ public class Solution {
         int bottom = Math.max(B, F);
 
         int overlap = 0;
-        // 算法是扫完四边看条件
+        //算法是扫完四边看条件
         if (left < right && top > bottom) {
             overlap = (right - left) * (top - bottom);
         }
