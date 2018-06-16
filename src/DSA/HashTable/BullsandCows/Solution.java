@@ -41,6 +41,8 @@ Follow up:
 此外数字以及xAyB的表示（encoding）可能有优化空间，这里就不展开了..
 
 考点 需要1Pass
+用count hash存储
+如果正负号
  */
 public class Solution {
     public String getHint(String secret, String guess) {
