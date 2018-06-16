@@ -19,7 +19,7 @@ public class Solution {
 
         return buildTree(A, 0, A.length - 1);
     }
-
+    // 用头尾index来构建数
     private TreeNode buildTree(int[] num, int start, int end) {
         if (start > end) {
             return null;
