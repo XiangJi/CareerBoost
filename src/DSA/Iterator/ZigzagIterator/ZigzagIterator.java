@@ -20,8 +20,8 @@ public class ZigzagIterator {
     }
 
     public int next() {
-        Iterator now = queue.poll();
-        Integer result = (Integer) now.next();
+        Iterator<Integer> now = queue.poll();
+        Integer result = now.next();
 
         // offer only when there are items left
         if(now.hasNext()) {
