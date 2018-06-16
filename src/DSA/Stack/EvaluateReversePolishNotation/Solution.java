@@ -13,6 +13,7 @@ Some examples:
 
   标准用stack的题，实现细节 注意string to int method: Integer.parseInt()
   String 是对象 比较用equals
+  G tag 很好记忆
  */
 
 public class Solution {
