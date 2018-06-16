@@ -6,6 +6,8 @@ package DSA.Array.BullsandCows;
 Secret number:  "1807"
 Friend's guess: "7810"
 Hint: 1 bull and 3 cows. (The bull is 8, the cows are 0, 1 and 7.)
+
+用一个count数组 hash
  */
 public class Solution {
     public String getHint(String secret, String guess) {
