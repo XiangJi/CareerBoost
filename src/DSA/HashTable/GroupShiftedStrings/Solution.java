@@ -22,6 +22,8 @@ A solution is:
 ]
 
 要点是hash表的设计 存offset的key，结果里面放list
+
+key 用string 一点点append
  */
 
 public class Solution {
@@ -34,7 +36,7 @@ public class Solution {
             String key = "";
             int offset = word.charAt(0) - 'a';
             for(int i = 1; i < word.length(); i++){
-                key += (word.charAt(i) - offset) % 26;
+                key += (word.charAt(i) - offset) % 26; // trick
             }
 
             if(!map.containsKey(key)){
@@ -44,7 +46,6 @@ public class Solution {
         }
 
         for(List<String> list : map.values()){
-            Collections.sort(list);
             res.add(list);
         }
 
