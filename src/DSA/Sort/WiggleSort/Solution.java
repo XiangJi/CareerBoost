@@ -7,6 +7,8 @@ package DSA.Sort.WiggleSort;
 For example, given nums = [3, 5, 2, 1, 6, 4], one possible answer is [1, 6, 2, 5, 3, 4].
 
 Greedy make it meet the requirement
+
+一遍扫满足条件不管 不满足就前后swap就行
  */
 public class Solution {
     public void wiggleSort(int[] nums) {
