@@ -14,6 +14,8 @@ Subarray-> use preflix sum
 Use hash set to save one pass
 Use hash map to count the sum, since negative integer may cause same sum
 use getOrDefault to save if statement
+
+因为求这样的人数 所以存个数
  */
 public class Solution {
     public int subarraySum(int[] nums, int k) {
