@@ -41,6 +41,8 @@ return [1]
      5 : 4
 
      O(n)
+     
+     G tag 出现过
  */
 public class Solution {
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
