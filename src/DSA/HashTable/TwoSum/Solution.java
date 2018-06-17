@@ -5,6 +5,7 @@ import java.util.HashMap;
 public class Solution {
     public int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
+        // key存拿来查找比较的东西 value存要求的东西 比如这题是index
         HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 
         if (nums == null) {
