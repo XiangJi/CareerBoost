@@ -30,9 +30,11 @@ public class Solution {
         if (root == p || root == q) {
             return root;
         }
+        // divide
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
-
+        
+        // if find in both, mean root is the answer
         if (left != null && right != null) {
             return root;
         }

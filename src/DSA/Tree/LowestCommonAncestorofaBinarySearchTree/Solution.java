@@ -1,4 +1,4 @@
-package DSA.BinarySearch.LowestCommonAncestorofaBinarySearchTree;
+package DSA.Tree.LowestCommonAncestorofaBinarySearchTree;
 
 import DSA.Tree.TreeNode;
 

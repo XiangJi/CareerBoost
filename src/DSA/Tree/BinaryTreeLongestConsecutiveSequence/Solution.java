@@ -37,7 +37,7 @@ public class Solution {
         dfs(root, 0, root.val);
         return max;
     }
-
+    // variable tmp, next target
     public void dfs(TreeNode current, int tmp, int target) {
         if (current == null) {
             return;
