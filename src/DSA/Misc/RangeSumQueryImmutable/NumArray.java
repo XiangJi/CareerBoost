@@ -14,27 +14,44 @@ You may assume that the array does not change.
 There are many calls to sumRange function.
 
 Prefix sum, if changed, use binary index tree
+
+BIT
  */
 public class NumArray {
-    int[] sum;
+    int[] nums;
+    int[] tree;
+    int n;
+
+    // time : O(n * logn)
     public NumArray(int[] nums) {
-        if (nums.length == 0) {
-            return;
-        }
-        sum = new int[nums.length];
-        sum[0] = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            sum[i] = sum[i - 1] + nums[i];
+        n = nums.length;
+        tree = new int[n + 1];
+        this.nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            update(i, nums[i]);
         }
     }
 
+    // time : O(logn)
+    public void update(int i, int val) {
+        if (n == 0) return;
+        int diff = val - nums[i];
+        nums[i] = val;
+        for (int j = i + 1; j <= n; j += j & (-j)) {
+            tree[j] += diff;
+        }
+    }
+
+    // time : O(logn)
     public int sumRange(int i, int j) {
-        if (sum.length == 0) {
-            return 0;
+        return sum(j + 1) - sum(i);
+    }
+
+    private int sum(int k) {
+        int sum = 0;
+        for (int i = k; i > 0; i -= i & (-i)) {
+            sum += tree[i];
         }
-        if (i == 0) {
-                return sum[j];
-        }
-        return sum[j] - sum[i - 1];
+        return sum;
     }
 }
