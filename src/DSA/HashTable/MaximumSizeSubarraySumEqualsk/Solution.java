@@ -20,9 +20,9 @@ Follow Up:
 Can you do it in O(n) time?
 
 
-check every preflix sum's delta
+用preflix来算 subarray sum N ^ 2
 
-use hash table to check
+再用hashTable来优化，那么存什么呢？ 目前为止这个prefix sum出现多少次
  */
 public class Solution {
     public int maxSubArrayLen(int[] nums, int k) {
