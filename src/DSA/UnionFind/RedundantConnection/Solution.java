@@ -15,7 +15,7 @@ If there are multiple answers, return the answer that occurs last in the given 2
 
 G高频
  Union Find
- 
+
  I II 都要掌握
 
  No cycle, remove the cycle edges
@@ -27,7 +27,7 @@ public class Solution {
         int[] parent = new int[2001];
         // init
         for(int i = 0; i < parent.length; i++){
-          parent[i] = i;
+          parent[i] = i; // 初始化成自己
         }
         // traverse and find
         for(int[] e: edges){

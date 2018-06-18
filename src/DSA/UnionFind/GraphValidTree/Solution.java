@@ -26,16 +26,19 @@ T:O (N + E)
 S: O(N)
 
 电面题：二叉树多了一条边 找到这条边 删掉
+O(1) find, union, o(n) construct
+
+当 x==y 时候 这条边多余 删掉就好了edge[0] edge[1]
  */
 class Solution {
-    // union find, 这边只需要union就可以解题
+    // union find, 这边只需要find就可以解题
     public boolean validTree(int n, int[][] edges) {
         if (n == 1 && edges.length == 0) return true;
         if (n < 1 || edges == null || edges.length != n - 1) return false;
-
+        // 只需要parent 数组
         int[] parent  = new int[n];
 
-        // initialization
+        // initialization,一开始所有
         for (int i = 0; i < n; i++) {
             parent[i] = -1;
         }
