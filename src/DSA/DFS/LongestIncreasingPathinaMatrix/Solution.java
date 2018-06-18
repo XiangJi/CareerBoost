@@ -47,7 +47,7 @@ public class Solution {
         }
         return res;
     }
-
+    // 传参 index m n pre
     private int dfs(int[][] matrix, int pre, int i, int j, int m, int n, int[][] cache) {
         if (i < 0 || j < 0 || i >= m || j >= n || matrix[i][j] <= pre) {
             return 0;
@@ -57,7 +57,7 @@ public class Solution {
             return cache[i][j];
         }
         pre = matrix[i][j]; // 这个数拿来和下一层比较
-        int a = dfs(matrix, pre, i - 1, j, m, n, cache) + 1;
+        int a = dfs(matrix, pre, i - 1, j, m, n, cache) + 1; // 别忘了+1
         int b = dfs(matrix, pre, i + 1, j, m, n, cache) + 1;
         int c = dfs(matrix, pre, i, j - 1, m, n, cache) + 1;
         int d = dfs(matrix, pre, i, j + 1, m, n, cache) + 1;
