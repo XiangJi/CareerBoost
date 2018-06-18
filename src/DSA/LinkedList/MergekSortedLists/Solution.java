@@ -22,6 +22,8 @@ Output: 1->1->2->3->4->4->5->6
  *     ListNode next;
  *     ListNode(int x) { val = x; }
  * }
+ *
+ * G tag 来merge数组的sort
  */
 public class Solution {
     /**
