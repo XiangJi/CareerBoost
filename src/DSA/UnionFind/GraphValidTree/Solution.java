@@ -40,7 +40,7 @@ class Solution {
 
         // initialization,一开始所有
         for (int i = 0; i < n; i++) {
-            parent[i] = -1;
+            parent[i] = i;
         }
 
         for (int[] edge : edges) {
@@ -55,7 +55,7 @@ class Solution {
     }
 
     private int find(int node, int[] parent) {
-        while (parent[node] != -1) {
+        while (parent[node] != node) {
             node = parent[node];
         }
         return node;
