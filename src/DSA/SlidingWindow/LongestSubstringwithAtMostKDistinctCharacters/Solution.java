@@ -1,4 +1,4 @@
-package DSA.HashTable.LongestSubstringwithAtMostKDistinctCharacters;
+package DSA.SlidingWindow.LongestSubstringwithAtMostKDistinctCharacters;
 
 import java.util.HashMap;
 

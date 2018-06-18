@@ -1,4 +1,4 @@
-package DSA.HashTable.LongestSubstringwithAtMostTwoDistinctCharacters;
+package DSA.SlidingWindow.LongestSubstringwithAtMostTwoDistinctCharacters;
 
 import java.util.HashMap;
 
@@ -25,7 +25,7 @@ public class Solution {
         if (s == null || s.length() == 0) {
             return 0;
         }
-        // Save char and index
+        // Save char and index 存法和LC3一致 用到map size
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         int max = 0;
         int left= 0;
@@ -33,7 +33,7 @@ public class Solution {
             map.put(s.charAt(i), i);
 
             while(map.size() > 2) {
-                // Delete the oldest key
+                // 如果等于左边界, 找到了要删掉的
                 if (map.get(s.charAt(left)) == left) {
                     map.remove(s.charAt(left));
                 }
