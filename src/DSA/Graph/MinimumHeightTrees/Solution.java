@@ -53,7 +53,7 @@ public class Solution {
         }
         // use hash set to avoid duplicate
         List<HashSet<Integer>> adj = new ArrayList<>();
-        // add graph
+        // add graph 用list of hashset来记录每个点的边 hash拿来去重
         for (int i = 0; i < n; i++) {
             adj.add(new HashSet<>());
         }
@@ -61,7 +61,7 @@ public class Solution {
             adj.get(edge[0]).add(edge[1]);
             adj.get(edge[1]).add(edge[0]);
         }
-        // add all the leaves to the res
+        // add all the leaves to the res, 用set的size来看边
         for (int i = 0; i < n; i++) {
             if (adj.get(i).size() == 1) {
                 res.add(i);
@@ -80,7 +80,7 @@ public class Solution {
                     }
                 }
             }
-            res = leaves;
+            res = leaves; // 结果变成最后一轮的叶子 实现题目
         }
         return res;
     }
