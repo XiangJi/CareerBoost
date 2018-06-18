@@ -36,7 +36,7 @@ class Solution {
 
     private void dfs(int count, int pos, String tmp, String word, List<String> result) {
         if (pos == word.length()) {
-            if (count > 0) {
+            if (count > 0) { // add the last count
                 tmp += count;
             }
             result.add(tmp);
@@ -47,6 +47,6 @@ class Solution {
         // 1. abbrevaite the current letter
         dfs(count + 1, pos + 1, tmp, word, result);
         // keep the current letter, count to 0
-        dfs(0, pos + 1, tmp + (count > 0 ? count : "") + word.charAt(pos), word, result);
+        dfs(0, pos + 1, tmp + (count > 0 ? count : "") + word.charAt(pos), word, result); // add the current letter
     }
 }
