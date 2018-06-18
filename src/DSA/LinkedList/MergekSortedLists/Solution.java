@@ -23,7 +23,7 @@ Output: 1->1->2->3->4->4->5->6
  *     ListNode(int x) { val = x; }
  * }
  *
- * G tag 来merge数组的sort
+ * G tag 真题：来merge数组的sort
  */
 public class Solution {
     /**
