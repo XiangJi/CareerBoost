@@ -16,7 +16,30 @@ follow up2：
 TOP K 就是O(N + NlogK) ，扫一遍统计，然后用priority queue得到 top k. Waral 博客有更多文章,
 给时间求top k就是先按时间排序票， 然后边扫边求当前的人是不是top k，是就加入到结果集。可能有好几个时间，所以最终返回是一个list，O(NlogN + NlogK)
 
+Heap Google SDET question
 用TreeMap?
+
+For the first question, just travers the vote list and if vote.T <= T increment
+the vote for person vote.Name. While doing that maximize the vote number.
+(O(n*l) time, O(c*l) space, c is the number of candidates, l is average length of name)
+
+follow-up 1: instead of maximizing one, keep the hashtable with votes[person] = no. votes
+now, put that into a vector and find the k-th element (using e.g. quicksort's partion
+method which is linear)
+(O(n*l) time, O(c*l) space)
+
+follow-up 2: I assume given are the top K candidates at a certain time T I have to find.
+I have to keep all candidates sorted at each step and compare the top k of them with
+the given list. The first part (keeping candidates sorted at each step) can be done
+using a balanced binary-tree, so I have O(n*lg(n)+n*l) for creating and maintaining that tree.
+(I will have to transpose the name into an integer, and have a nameId instead of the
+string in the tree)
+Then I would have k compare's per iteration, which is then O(k*n*lg(n)+n*l). the factor k
+I can get rid of if I implement the tree in a way, so I monitor when elements enter and
+leave the top k. If one of the desired candidates enters top k, I reduce the amount of
+candidates I need in top k, if one leaves, I increment back. If that counter (which
+starts with k) is 0 I'm done, I found the first time where the desired condition happend.
+
  */
 public class Solution {
 
