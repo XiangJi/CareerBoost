@@ -1,7 +1,6 @@
 package DSA.Tree.SerializeandDeserializeBinaryTree;
 
 import java.util.Arrays;
-import java.util.Deque;
 import java.util.LinkedList;
 
 import DSA.Tree.TreeNode;
@@ -52,19 +51,19 @@ public class Codec {
         if (node == null) {
             sb.append(NN).append(spliter);
         } else {
-            sb.append(node.val).append(spliter);
+            sb.append(node.val).append(spliter); // preorder traverse
             buildString(node.left, sb);
             buildString(node.right,sb);
         }
     }
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-        Deque<String> nodes = new LinkedList<>();
+        LinkedList<String> nodes = new LinkedList<>();
         nodes.addAll(Arrays.asList(data.split(spliter)));
         return buildTree(nodes);
     }
-
-    private TreeNode buildTree(Deque<String> nodes) {
+    // use linkedlist which has remove from the list and return method
+    private TreeNode buildTree(LinkedList<String> nodes) {
         String val = nodes.remove();
         if (val.equals(NN)) return null;
         else {
