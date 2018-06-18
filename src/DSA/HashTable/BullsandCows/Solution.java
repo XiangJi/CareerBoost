@@ -23,7 +23,11 @@ Output: "1A1B"
 Explanation: The 1st 1 in friend's guess is a bull, the 2nd or 3rd 1 is a cow.
 Note: You may assume that the secret number and your friend's guess only contain digits, and their lengths are always equal.
 
-The idea is to iterate over the numbers in secret and in guess and count all bulls right away. For cows maintain an array that stores count of the number appearances in secret and in guess. Increment cows when either number from secret was already seen in guest or vice versa.
+The idea is to iterate over the numbers in secret and in guess and count
+all bulls right away. For cows maintain an array that stores count of th
+e number appearances in secret and in guess. Increment cows when either n
+umber from secret was already seen in guest or vice versa.
+
 
 Follow up:
 猜数字题目我觉得应该是要求双人博弈的最大收益。
@@ -43,6 +47,7 @@ Follow up:
 考点 需要1Pass
 用count hash存储
 如果正负号
+secret 出现过就++ 如果<0 cows++ vice versa
  */
 public class Solution {
     public String getHint(String secret, String guess) {
