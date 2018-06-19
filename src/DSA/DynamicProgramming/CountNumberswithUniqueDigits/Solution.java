@@ -28,6 +28,8 @@ any number with length > 10 couldn’t be unique digits number.
 The problem is asking for numbers from 0 to 10^n. Hence return f(1) + f(2) + … + f(n)
 
 There are only 11 different ans. You can create a lookup table for it. This problem is O(1) in essence.
+
+先用DP实现 再做优化
  */
 class Solution {
     public int countNumbersWithUniqueDigits(int n) {
