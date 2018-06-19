@@ -3,6 +3,7 @@ package DSA.Math.ShuffleanArray;
 /*
  * Shuffle a set of numbers without duplicates.
 
+
 Example:
 
 // Init an array with set 1, 2, and 3.
@@ -39,6 +40,8 @@ generate a random integer between the current index and the last index of
  面经 shuffle一个树
  先serilized 成数组 然后shuffle 然后deserizle回去
 
+对于每人i 和之后随即范围一个树swap
+Fisher Yates O（n）
  */
 import java.util.Random;
 
