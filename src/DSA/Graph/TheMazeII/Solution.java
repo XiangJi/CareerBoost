@@ -13,6 +13,8 @@ import java.util.Queue;
  *   etc. The algorithm then
  * gives you the shortest path from your source to every node in the traversed graph.
  * DFS, BFS, Dijkstra
+ *
+ * 最短距离用BFS就够了 帅帅帅
  */
 public class Solution {
     //BFS
