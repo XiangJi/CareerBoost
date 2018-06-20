@@ -15,6 +15,7 @@ import java.util.Queue;
  * DFS, BFS, Dijkstra
  *
  * 最短距离用BFS就够了 帅帅帅
+ * 建立一个到起点的最短距离矩阵 在BFS的时候不断更新
  */
 public class Solution {
     //BFS
