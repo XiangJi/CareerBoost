@@ -26,6 +26,9 @@ stack应用实现题
 我们把当前cnt压入数字栈中，把当前t压入字符串栈中；如果遇到右中括号时，我们取出数字栈中顶元素，
 存入变量k，然后给字符串栈的顶元素循环加上k个t字符串，然后取出顶元素存入字符串t中；如果遇到字母，
 我们直接加入字符串t中即可
+
+res来存临时数组
+两个stack
  */
 public class Solution {
     public String decodeString(String s) {
