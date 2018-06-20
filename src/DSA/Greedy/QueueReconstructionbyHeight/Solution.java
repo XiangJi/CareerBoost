@@ -21,6 +21,7 @@ Output:
 
 n^2
 按身高逆序排序 然后插入
+以为已经高的插过了 你插在上面位置上前面就保证有几个比你高的
  */
 public class Solution {
     public int[][] reconstructQueue(int[][] people) {
