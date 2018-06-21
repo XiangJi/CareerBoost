@@ -28,6 +28,7 @@ G高频
 那么我们用while循环来找出所有连续为true的个数，然后在左右两端加上标签
 
 注意start with函数
+这道题是实现细节题
 Shawn Gao大神牛逼！
  */
 public class Solution {
@@ -53,7 +54,7 @@ public class Solution {
                 j++;
             }
             result.append("<b>" + s.substring(i, j) + "</b>"); // substring取到j的前一位
-            i = j - 1;
+            i = j - 1; // i要归位
         }
 
         return result.toString();
