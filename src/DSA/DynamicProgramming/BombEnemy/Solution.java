@@ -17,8 +17,9 @@ package DSA.DynamicProgramming.BombEnemy;
         j
  }
  1,遍历
- 2,扫描当前行 ：i 不变 j rowCount
- 3,扫描当前列 ：j 不变 i （colCount[]）
+ 2,扫描当前行 ：i 不变 j rowCount 用来记录到下一个墙之前的敌人个数,可以算出这一层我可以炸死多少人
+ 3,扫描当前列 ：j 不变 i （colCount[]） 其中colCnt[j]表示第j列到下一个墙之前的敌人个数
+ 一个1d一个2d是因为遍历方式是按row and col便利的
  time : O(m * n)
  space : O(n)
 
@@ -37,11 +38,17 @@ public class Solution {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (j == 0 || grid[i][j - 1] == 'W') {
-                    rowCount = 0; // 行扫 W后面从新扫描
+                    rowCount = 0; // reset row count
+                    /*
+                     * 如果当前位置是开头一个或者上面一个是墙壁，我们开始从当前位置向下
+                     * 遍历，遍历到末尾或者墙的位置停止，计算敌人个数
+                     */
+                    //行扫 W后面从新扫描
                     for (int k = j; k < n && grid[i][k] != 'W'; k++) {
                         rowCount += grid[i][k] == 'E' ? 1 : 0;
                     }
                 }
+                // 列方向同理
                 if (i == 0 || grid[i - 1][j] == 'W') {
                     colCount[j] = 0; // 列扫 W后面从新扫描
                     for (int k = i; k < m && grid[k][j] != 'W'; k++) {
