@@ -37,18 +37,18 @@ always pick the best for current local tree node
 花花酱 LeetCode 486. Predict the Winner
  */
 public class Solution {
-    // N^2
+    // 2^n
     public boolean PredictTheWinner(int[] nums) {
         return getScore(nums, 0, nums.length - 1) >= 0;
     }
-    // 递归定义的题目 只能取头或者尾部
+    // 递归定义的题目 只能取头或者尾部，所有自然是up to bottom DP
     // max diff of (my score - opponent score) of subarray s ~ e
     public int getScore(int[] nums, int s, int e) {
         if (s == e)
             return nums[s];
         int a = nums[s] - getScore(nums, s + 1, e);
         int b = nums[e] - getScore(nums, s, e - 1);
-        return Math.max(a, b);
+        return Math.max(a, b); //我每次最大化
     }
 
     // Search with cache N^2
