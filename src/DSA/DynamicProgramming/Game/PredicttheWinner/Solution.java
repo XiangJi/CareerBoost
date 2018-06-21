@@ -41,7 +41,7 @@ public class Solution {
     public boolean PredictTheWinner(int[] nums) {
         return getScore(nums, 0, nums.length - 1) >= 0;
     }
-
+    // 递归定义的题目 只能取头或者尾部
     // max diff of (my score - opponent score) of subarray s ~ e
     public int getScore(int[] nums, int s, int e) {
         if (s == e)
