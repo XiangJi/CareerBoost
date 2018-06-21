@@ -19,6 +19,8 @@ The total number of elements of the given matrix will not exceed 10,000.
 Base algorithm
 初始对角线方向为右上方（偏移量：行-1, 列+1），遇到边界时转向左下方（偏移量：行+1, 列-1）
 
+DS: k flag 1 - 1
+ di dj 坐标 看坐标怎么动
 
 向右上方移动遇到上边界时，若未达到右边界，则向右移动（偏移量：行+0，列+1），否则向下移动（偏移量：行+1，列+0）
 
