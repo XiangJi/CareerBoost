@@ -16,22 +16,24 @@ Use hash map to count the sum, since negative integer may cause same sum
 use getOrDefault to save if statement
 
 因为求这样的人数 所以存个数
+
+O(N) O(N)
  */
 public class Solution {
     public int subarraySum(int[] nums, int k) {
         int sum = 0;
         int result = 0;
-        // map: sum, count since maybe multiple sum qualified
+        // map: (sum, count) since maybe multiple sum qualified
         HashMap<Integer, Integer> map = new HashMap<>();
         map.put(0, 1);
-        
+
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
             if (map.containsKey(sum - k)) {
                 result += map.get(sum - k);
             }
             map.put(sum, map.getOrDefault(sum, 0) + 1);
-            
+
         }
         return result;
     }
