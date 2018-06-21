@@ -40,6 +40,7 @@ public class Solution {
      * 那么建立二者的映射，并且去除当前栈顶元素，最后如果i小于n，则
      * 把i压入栈。因为res的长度必须是n，超过n的部分我们只是为了给之前栈中的
      * 数字找较大值，所以不能压入栈，
+     * 递减栈 存index就可以了
      */
     public int[] nextGreaterElementsII(int[] nums) {
         int m = nums.length;
