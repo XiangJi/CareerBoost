@@ -27,6 +27,7 @@ G高频
 最后我们更新完bold数组了，就再遍历一遍字符串s，如果bold[i]为false，直接将s[i]加入结果res中；如果bold[i]为true，
 那么我们用while循环来找出所有连续为true的个数，然后在左右两端加上标签
 
+注意start with函数
 Shawn Gao大神牛逼！
  */
 public class Solution {
@@ -48,8 +49,10 @@ public class Solution {
                 continue;
             }
             int j = i;
-            while (j < s.length() && bold[j]) j++;
-            result.append("<b>" + s.substring(i, j) + "</b>");
+            while (j < s.length() && bold[j]) { // 注意j不能越界
+                j++;
+            }
+            result.append("<b>" + s.substring(i, j) + "</b>"); // substring取到j的前一位
             i = j - 1;
         }
 
