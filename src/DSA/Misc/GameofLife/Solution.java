@@ -10,9 +10,13 @@ package DSA.Misc.GameofLife;
      time : O(m * n)
      space : O(1)
      * @param board
-     * G 实现题 用运算的思想来保持之前一位 
+     * G 实现题 用运算的思想来保持之前一位
+     * 面经简化版
+     * 已知如果一个黑色棋子周围都是白棋子，则该棋子dead, 否则则alive,
+     * 给定一个棋子的位置，求问该棋子是live or dead. Follow up：如果给定的是list of position会怎么样
+     *
      */
- 
+
 public class Solution {
     public void gameOfLife(int[][] board) {
         if (board == null || board.length == 0) return;
