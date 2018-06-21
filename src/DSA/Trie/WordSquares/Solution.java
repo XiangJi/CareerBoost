@@ -1,4 +1,4 @@
-package DSA.DFS.WordSquares;
+package DSA.Trie.WordSquares;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,9 +40,9 @@ Output:
 
 Explanation:
 The output consists of two word squares. The order of output does not matter (just the order of words in each word square matter
- 
- DFS枚举然后剪枝删除冗余duplicate
- 
+
+ DFS枚举然后用Trie树剪枝删除冗余duplicate
+
  */
 public class Solution {
     class TrieNode {
