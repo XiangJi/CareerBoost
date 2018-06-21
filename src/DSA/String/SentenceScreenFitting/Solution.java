@@ -16,7 +16,7 @@ Example 1:
 Input:
 rows = 2, cols = 8, sentence = ["hello", "world"]
 
-Output: 
+Output:
 1
 
 Explanation:
@@ -29,11 +29,11 @@ Example 2:
 Input:
 rows = 3, cols = 6, sentence = ["a", "bcd", "e"]
 
-Output: 
+Output:
 2
 
 Explanation:
-a-bcd- 
+a-bcd-
 e-a---
 bcd-e-
 
@@ -43,7 +43,7 @@ Example 3:
 Input:
 rows = 4, cols = 5, sentence = ["I", "had", "apple", "pie"]
 
-Output: 
+Output:
 1
 
 Explanation:
@@ -63,11 +63,14 @@ XXX
    XXXX
        XXXXX
             XXXX
+
+            先reform成用空格隔开的string
+      start % l 是在下一行后面应该放的字符
  */
 public class Solution {
     public int wordsTyping(String[] sentence, int rows, int cols) {
-        String s = String.join(" ", sentence) + " ";
-        int start = 0, l = s.length();
+        String s = String.join(" ", sentence) + " ";// 先join成一个string 最后加个空格
+        int start = 0, l = s.length(); // 用start做完cursor
         for (int i = 0; i < rows; i++) {
             // 每次放col个
             start += cols;
@@ -75,13 +78,14 @@ public class Solution {
             if (s.charAt(start % l) == ' ') {
                 start++;
             } else {
+                // 是字符 可能要后退 后退的条件就是start - 1 不是空格 是的话不用动 画图
                 //如果不是的话就不行 要往回退一格
                 while (start > 0 && s.charAt((start-1) % l) != ' ') {
                     start--;
                 }
             }
         }
-        
+
         return start / l;
     }
 }
