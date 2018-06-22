@@ -15,6 +15,7 @@ package DSA.Misc.GameofLife;
      * 已知如果一个黑色棋子周围都是白棋子，则该棋子dead, 否则则alive,
      * 给定一个棋子的位置，求问该棋子是live or dead. Follow up：如果给定的是list of position会怎么样
      *
+     *类似风格的题目 set matrix zero/bomy eneny
      */
 
 public class Solution {
@@ -25,6 +26,18 @@ public class Solution {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 int count = countNeighbor(board, i, j);
+                /*
+                 * 我们怎么知道其未更新的状态呢，我们可以使用状态机转换：
+
+                                        状态0： 死细胞转为死细胞
+
+                                        状态1： 活细胞转为活细胞
+
+                                        状态2： 活细胞转为死细胞
+
+                                        状态3： 死细胞转为活细胞
+                                        最后我们对所有状态对2取余 或者>>1
+                 */
                 if (board[i][j] == 1) {
                     if (count == 2 || count == 3) {
                         board[i][j] += 2;
