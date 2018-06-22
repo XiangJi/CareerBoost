@@ -20,6 +20,9 @@ dp[amount] : the minimun number of coins for amount i
 
 min = Math.min(min, dp[i - coins[j]] + 1);
 
+其实是2D dp min来降维
+using first j coins
+
  */
 public class Solution {
     public int coinChange(int[] coins, int amount) {
@@ -30,7 +33,7 @@ public class Solution {
         if (coins == null || coins.length == 0) {
             return -1;
         }
-        
+
         int[] dp = new int[amount + 1];
         dp[0] = 0;
         for (int i = 1; i <= amount; i++) {
@@ -42,9 +45,9 @@ public class Solution {
             }
             dp[i] = min == Integer.MAX_VALUE ? -1 : min;
         }
-        
-       return dp[amount]; 
+
+       return dp[amount];
     }
-    
+
     // run a simple test case: {1, 2} 4
 }
