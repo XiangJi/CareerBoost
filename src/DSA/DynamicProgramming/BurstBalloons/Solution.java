@@ -12,10 +12,11 @@ You may imagine nums[-1] = nums[n] = 1. They are not real therefore you can not 
 Example:
 
 Input: [3,1,5,8]
-Output: 167 
+Output: 167
 Explanation: nums = [3,1,5,8] --> [3,5,8] -->   [3,8]   -->  [8]  --> []
              coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167
  *构建c i j 找子问题去解决
+ *重要G tag
  */
 public class Solution {
     public int maxCoins(int[] iNums) {
@@ -23,16 +24,16 @@ public class Solution {
         int n = 1;
         for (int x : iNums) if (x > 0) nums[n++] = x;
         nums[0] = nums[n++] = 1;
-    
+
         int[][] dp = new int[n][n];
         for (int k = 2; k < n; ++k)
             for (int left = 0; left < n - k; ++left) {
                 int right = left + k;
                 for (int i = left + 1; i < right; ++i)
-                    dp[left][right] = Math.max(dp[left][right], 
+                    dp[left][right] = Math.max(dp[left][right],
                     nums[left] * nums[i] * nums[right] + dp[left][i] + dp[i][right]);
             }
-    
+
         return dp[0][n - 1];
     }
 }
