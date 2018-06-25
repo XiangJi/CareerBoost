@@ -46,7 +46,7 @@ We visit each node once, but each creation of serial may take O(N)O(N) work.
 
 Solution 2: optimze
 
-面经：find the number of subtree， use a number to count
+面经：find the number of subtree， use a number to count, just res++
 
  */
 class Solution {
