@@ -4,11 +4,22 @@ Most of them can be solved by Divide and conquer, DFS(recursive), BFS
 
 
 
-BST
+DFS BFS
 
-BST的inorder遍历从小到大
+stack queue iterative solution
 
-反中根从大到小：convert BST to greater tree
+1. 选遍历方式  
+   1. preorder 从上到下 <总常用>
+   2. inorder从左到右  <常用在BST，BST的inorder遍历从小到大，反中根降序>
+   3. postorder从下到上比较 <用于子模块操作 常用于subtree 也可能和层数有关>
+   4. BFS size要用于控制每个层数的个数 没有得话也是level order 但是不知道每层有多少个
+   5. Divide and conquer两边同时往下走 双preorder 很多时候不需要helper
+2. 选recursive和iterative
+3. 套模板 special 用dfs来实现levelorder 用一个int来track level， 看right side view那题
+
+
+
+
 
 
 

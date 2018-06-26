@@ -1,4 +1,4 @@
-package DSA.Tree.TwoSuminBST.BinaryTreeRightSideView;
+package DSA.Tree.BinaryTreeRightSideView;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
