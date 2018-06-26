@@ -17,6 +17,61 @@ stack queue iterative solution
 2. 选recursive和iterative
 3. 套模板 special 用dfs来实现levelorder 用一个int来track level， 看right side view那题
 
+```java
+public List<Integer> preorder(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            if (cur.right != null) stack.push(cur.right);
+            if (cur.left != null) stack.push(cur.left); 
+            res.add(cur.val);
+        }
+        return res;
+    }
+
+public List<Integer> inorderTraversalII(TreeNode root) {
+        List<Integer> result = new ArrayList<Integer>();
+
+        if (root == null) {
+            return result;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            current = stack.pop();
+            result.add(current.val);
+            current = current.right;
+        }
+
+        return result;
+    }
+
+public List<Integer> postorderTraversalII(TreeNode root) {
+        LinkedList<Integer> res = new LinkedList<>(); // trick linked list
+        if (root == null) {
+            return res;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode cur = stack.pop();
+            res.addFirst(cur.val); // trick
+            if (cur.left != null) stack.push(cur.left);
+            if (cur.right != null) stack.push(cur.right);
+        }
+        return res;
+    }
+```
+
 
 
 
@@ -29,13 +84,9 @@ BST 和二分法的思想一样
 
 
 
-BST 问题 分类讨论 分而治之
-
-use recursive
+递归：
 
 well defined your recursive method first!
-
-
 
 what does it return?
 
