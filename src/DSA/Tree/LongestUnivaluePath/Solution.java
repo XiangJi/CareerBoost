@@ -48,6 +48,7 @@ public class Solution {
         if (current == null) {
             return 0;
         }
+        // DC
         int left = pathLength(current.left);
         int right = pathLength(current.right);
         int l = 0;
