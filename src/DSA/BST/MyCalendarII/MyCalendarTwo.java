@@ -1,4 +1,4 @@
-package DSA.Misc.MyCalendarII;
+package DSA.BST.MyCalendarII;
 
 import java.util.ArrayList;
 import java.util.List;

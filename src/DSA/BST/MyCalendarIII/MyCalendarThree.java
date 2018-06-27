@@ -1,4 +1,4 @@
-package DSA.Misc.MyCalendarIII;
+package DSA.BST.MyCalendarIII;
 
 import java.util.TreeMap;
 

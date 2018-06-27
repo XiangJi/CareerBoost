@@ -1,4 +1,4 @@
-package DSA.BFS.Dijkstra;
+package DSA.BFS.Dijkstra.NetwordDelayTime;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,7 +49,8 @@ N will be in the range [1, 100].
 K will be in the range [1, N].
 The length of times will be in the range [1, 6000].
 All edges times[i] = (u, v, w) will have 1 <= u, v <= N and 1 <= w <= 100.
-
+Bman Ford 支持negative weight
+FloydWrshall可以求任意两点之间的最短路径
  * CLRS book*/
 class Solution {
     public int networkDelayTime(int[][] times, int N, int K) {
