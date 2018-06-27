@@ -11,6 +11,7 @@ A K-booking happens when K events have some non-empty intersection (ie., there i
 
 For each call to the method MyCalendar.book, return an integer K representing the largest integer such that there exists a K-booking in the calendar.
 
+用扫描线就可以了 delta.values()
  */
 class MyCalendarThree {
     TreeMap<Integer, Integer> delta;
