@@ -1,4 +1,4 @@
-package DSA.HashTable.SortCharactersByFrequency;
+package DSA.Heap.SortCharactersByFrequency;
 
 import java.util.ArrayList;
 import java.util.Comparator;
