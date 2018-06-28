@@ -1,4 +1,4 @@
-package DSA.Misc.SentenceSimilarityII;
+package DSA.UnionFind.SentenceSimilarityII;
 
 import java.util.HashMap;
 import java.util.Map;
