@@ -12,6 +12,8 @@ Find(x): find the root of x    约等于 O(1)
 
 Union(x, y) : merge two clusters 约等于 O(1)
 
+Find: Check whether two elements are in the same set or not
+
 Space O(N)
 
 8->5->3->1 到自己
