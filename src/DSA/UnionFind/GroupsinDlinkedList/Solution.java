@@ -6,7 +6,7 @@ subset : {1,2,5}. more info on 1point3acres
 问这个subset的点能构成几个group（相连为一个group）
 
 12 和 5
-2 个 
+2 个
 没有head指针
 用Union Find
 
@@ -20,7 +20,11 @@ http://www.1point3acres.com/bbs/thread-353317-1-1.html
 Onsite面经
 doubly linked list, 给定几个节点，判断总共一共有几个strongly connected components （只能从给定的节点走）
 
+一个double linked list 有的node是连着的 求block的个数
+
 这几个月高频
+高频
+高频
  */
 public class Solution {
 
