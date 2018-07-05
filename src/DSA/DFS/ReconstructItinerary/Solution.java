@@ -1,4 +1,4 @@
-package DSA.Graph.ReconstructItinerary;
+package DSA.DFS.ReconstructItinerary;
 
 import java.util.ArrayList;
 import java.util.Collections;

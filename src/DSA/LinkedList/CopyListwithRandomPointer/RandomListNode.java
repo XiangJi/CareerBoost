@@ -1,4 +1,4 @@
-package DSA.Graph.CopyListwithRandomPointer;
+package DSA.LinkedList.CopyListwithRandomPointer;
 
 public class RandomListNode {
     int            label;

@@ -1,4 +1,4 @@
-package DSA.Graph.MinimumHeightTrees;
+package DSA.BFS.MinimumHeightTrees;
 
 import java.util.ArrayList;
 import java.util.HashSet;
