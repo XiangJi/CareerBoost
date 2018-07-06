@@ -1,6 +1,9 @@
 package DSA.Array.NumberofMatchingSubsequences;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /*
  * Given string S and a dictionary of words words, find the number of words[i] that is a subsequence of S.
@@ -43,56 +46,56 @@ public class Solution {
         }
         return j == word.length();
     }
-    // indexing and binary search
     /*
-     * We can put words into buckets by starting character. If for example we have words = ['dog', 'cat', 'cop'], then we can group them 'c' : ('cat', 'cop'), 'd' : ('dog',). This groups words by what letter they are currently waiting for. Then, while iterating through letters of S, we will move our words through different buckets.
-
-For example, if we have a string like S = 'dcaog':
-
-heads = 'c' : ('cat', 'cop'), 'd' : ('dog',) at beginning;
-heads = 'c' : ('cat', 'cop'), 'o' : ('og',) after S[0] = 'd';
-heads = 'a' : ('at',), 'o' : ('og', 'op') after S[0] = 'c';
-heads = 'o' : ('og', 'op'), 't': ('t',) after S[0] = 'a';
-heads = 'g' : ('g',), 'p': ('p',), 't': ('t',) after S[0] = 'o';
-heads = 'p': ('p',), 't': ('t',) after S[0] = 'g';
-Algorithm
-
-Instead of a dictionary, we'll use an array heads of length 26, one entry for each letter of the alphabet. For each letter in S, we'll take all the words waiting for that letter, and have them wait for the next letter in that word. If we use the last letter of some word, it adds 1 to the answer.
-
+     *  indexing and binary search
+     *  acbca
+     *  a: 0 4
+     *  b: 2
+     *  c: 1 3
      */
+    // T: S + w * L * log(s) 解法也可以用在issubsequence那题，在two pointer分类里面
     public int numMatchingSubseqII(String S, String[] words) {
-        int matchedWords = 0;
-        ArrayList<Node>[] hash = new ArrayList[26];
-        for (int i = 0; i < hash.length; i++) {
-            hash[i] = new ArrayList<Node>();
+        if (S == null || S.length() == 0 || words == null || words.length == 0) return 0;
+        // 初始化count
+        Map<Character, List<Integer>> map = new HashMap<>();
+        for (int i = 0; i < S.length(); i++) {
+            if (!map.containsKey(S.charAt(i))) {
+                map.put(S.charAt(i), new ArrayList<>());
+            }
+            map.get(S.charAt(i)).add(i);
         }
-        for (String word : words) {
-            char headCh = word.charAt(0);
-            hash[headCh - 'a'].add(new Node(word, 0));
+        
+        int res = 0;
+        for (String str : words) {
+            if (helper(map, str)) res++;
         }
-        for (char ch : S.toCharArray()) {
-            ArrayList<Node> tmpList = hash[ch - 'a'];   // need to assign new list before alter the old FOR we can't update during iteration
-            hash[ch - 'a'] = new ArrayList<>();
-            for (Node node : tmpList) {
-                node.idx++;
-                if (node.idx == node.word.length()) {
-                    matchedWords++;
-                }
-                else {
-                    hash[node.word.charAt(node.idx) - 'a'].add(node);
+        
+        return res;
+    }
+    
+    private boolean helper(Map<Character, List<Integer>> map, String str) {
+        int start = -1;
+        for (char ch : str.toCharArray()) {
+            if (!map.containsKey(ch)) return false; // 无法匹配
+            List<Integer> list = map.get(ch);
+            int i = 0;
+            int j = list.size() - 1;
+            if (map.get(ch).get(j) <= start) return false; // 如果最后面也匹配不到 直接return false
+            // search到合理的最靠前的位置
+            while (i < j) {
+                int mid = i + (j - i) / 2;
+                if (list.get(mid) > start) {
+                    j = mid;
+                } else {
+                    i = mid + 1;
                 }
             }
-            tmpList.clear();
+            if (map.get(ch).get(j) <= start) {
+                return false;
+            } 
+            start = map.get(ch).get(j);
         }
-        return matchedWords;
-    }
-
-    class Node {
-        String word;
-        int idx;
-        public Node(String word, int idx) {
-            this.word = word;
-            this.idx = idx;
-        }
+        
+        return true;
     }
 }
