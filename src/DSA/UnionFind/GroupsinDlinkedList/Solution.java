@@ -25,6 +25,8 @@ doubly linked list, 给定几个节点，判断总共一共有几个strongly con
 这几个月高频
 高频
 高频
+
+LinkedListComponent的拓展
  */
 public class Solution {
 
