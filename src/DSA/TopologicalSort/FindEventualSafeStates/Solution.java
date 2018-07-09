@@ -83,14 +83,14 @@ class Solution {
         int N = G.length;
         boolean[] safe = new boolean[N];
 
-        List<Set<Integer>> graph = new ArrayList();
-        List<Set<Integer>> rgraph = new ArrayList();
+        List<Set<Integer>> graph = new ArrayList<>();
+        List<Set<Integer>> rgraph = new ArrayList<>();
         for (int i = 0; i < N; ++i) {
-            graph.add(new HashSet());
-            rgraph.add(new HashSet());
+            graph.add(new HashSet<>());
+            rgraph.add(new HashSet<>());
         }
 
-        Queue<Integer> queue = new LinkedList();
+        Queue<Integer> queue = new LinkedList<>();
 
         for (int i = 0; i < N; ++i) {
             if (G[i].length == 0)
@@ -111,18 +111,22 @@ class Solution {
             }
         }
 
-        List<Integer> ans = new ArrayList();
+        List<Integer> ans = new ArrayList<>();
         for (int i = 0; i < N; ++i) if (safe[i])
             ans.add(i);
 
         return ans;
     }
 
-
+    /*
+     * states: unknown, visiting, unsafe, safe
+     * a node is unsafe if it forms a cycle
+     * DFS找环 并且有状态
+     */
     public List<Integer> eventualSafeNodesII(int[][] graph) {
         int N = graph.length;
         int[] color = new int[N];
-        List<Integer> ans = new ArrayList();
+        List<Integer> ans = new ArrayList<>();
 
         for (int i = 0; i < N; ++i)
             if (dfs(i, color, graph))
@@ -132,18 +136,20 @@ class Solution {
 
     // colors: WHITE 0, GRAY 1, BLACK 2;
     public boolean dfs(int node, int[] color, int[][] graph) {
-        if (color[node] > 0)
-            return color[node] == 2;
+        if (color[node] > 0) // color > 1，表示被访问过
+            return color[node] == 2; // color == 2，表示它的children已经search完了
 
-        color[node] = 1;
+        // 走到这里，说明这是一个新的node
+        color[node] = 1; // mark为search过
         for (int nei: graph[node]) {
             if (color[node] == 2)
-                continue;
+                continue; // children都被search过就不用再search了
             if (color[nei] == 1 || !dfs(nei, color, graph))
-                return false;
+                return false; 
         }
 
         color[node] = 2;
         return true;
     }
+
 }
