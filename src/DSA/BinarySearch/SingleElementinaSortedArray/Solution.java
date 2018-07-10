@@ -1,6 +1,7 @@
 package DSA.BinarySearch.SingleElementinaSortedArray;
 
 /*
+ * G 面经出现
  * Given a sorted array consisting of only integers where every element appears twice except for one element which appears once. Find this single element that appears only once.
 
 Example 1:

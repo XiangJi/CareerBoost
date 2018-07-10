@@ -59,6 +59,8 @@ https://www.youtube.com/watch?v=VJnUwsE4fWA&list=PLLuMmzMTgVK5Hy1qcWYZcd7wVQQ1v0
 
 需要有UnionFindSet 模板数据结构, 不同的题目需要的UF模板可以功能简化
 
+可以用hash表来替代root数组
+
 ```java
 class UnionFind {
         private int count = 0; // WEIGHT

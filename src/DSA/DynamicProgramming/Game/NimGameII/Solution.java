@@ -14,7 +14,7 @@ dp[i][j] = max(sum[i][j-k] - dp[i][j-k] + sum[j-k][j]) 1<=k<=3
 这个是两边的情况
 
  *
- * 一维dp，minimax没错， 一维dp，最小值中找最大
+ * 一维dp，递推方程minimax没错， 一维dp，最小值中找最大
  *
  * G 面经 这两个月高频
  */

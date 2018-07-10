@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.TreeMap;
-
+/*
+ * 基础问题是sweep line with start end time intervals count number of flights in the sky
+ */
 class Solution {
-    /** Sweep line 画出天际线
+    /** Sweep line 画出天际线 
      * 用线去扫描：起点：最高点 终点：第二高 
      * time : O(nlogn)
      * space : O(n)

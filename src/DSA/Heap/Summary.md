@@ -1,13 +1,13 @@
 # Priority Queue/ Heap
 
+## Concepts
+
 PQ是一种树(tree), 准确的说, 是一种二叉树(binary tree), 说得再准确一点, 它是一种完全二叉树(complete binary tree): 没错, PQ是一种满足某些条件的完全二叉树.
 
 所谓的"完全二叉树", 要满足:
 
 除了最后一层, 所有层都排满(没有非空节点)
 最后一层的所有非空节点都排在左边
-
-
 
 Insert/delete logN
 
@@ -16,14 +16,18 @@ peek   O(1)
 **add**
 加入新元素的时候, 只要先把它放在最后面, 然后调用siftup()函数调整一下pq即可:
 
-
-
 **poll**
 堆顶元素被拿走以后, 我们可以先把最后一个元素放在顶部, 然后调用siftdown进行调整:
 
 
 
-应用
+### 应用场景
+
+多次求集合的最大值或者最小值 可以用heap空间来换取时间
+
+PriorityQueue<Integer> heap = new PriorityQueue<Integer>();
+
+
 
 1. heap sort
 
@@ -71,5 +75,5 @@ peek   O(1)
 
 
 
-Queue<Integer> qi = new PriorityQueue<Integer>();
+
 
