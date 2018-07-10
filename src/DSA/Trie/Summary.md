@@ -56,6 +56,17 @@ class Trie {
                }
            }
        }
+       public void insert(String word) {
+        TrieNode node = root;
+        for (int i = 0; i< word.length(); i++) {
+            int j = word.charAt(i) - 'a';
+            if (node.children[j] == null) {
+                node.children[j] = new TrieNode();
+            }
+            node = node.children[j];
+        }
+        node.isWord = true;
+    }
 
        List<String> findByPrefix(String prefix) {
            List<String> ans = new ArrayList<>();
