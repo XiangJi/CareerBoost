@@ -12,34 +12,36 @@ import java.util.Queue;
 We start at bus stop S (initially not on a bus), and we want to go to bus stop T. Travelling by buses only, what is the least number of buses we must take to reach our destination? Return -1 if it is not possible.
 
 Example:
-Input: 
+Input:
 routes = [[1, 2, 7], [3, 6, 7]]
 S = 1
 T = 6
 Output: 2
-Explanation: 
+Explanation:
 The best strategy is take the first bus to the bus stop 7, then take the second bus to the bus stop 6
 
 可以看成无向图 联通分量 看走了bfs多少层到达终点
+
+G 半年高频hard
  */
 class Solution {
     public int numBusesToDestination(int[][] routes, int S, int T) {
        HashSet<Integer> visited = new HashSet<>();
        Queue<Integer> q = new LinkedList<>();
        HashMap<Integer, ArrayList<Integer>> map = new HashMap<>();
-       int ret = 0; 
-        
-       if (S==T) return 0; 
-        
+       int ret = 0;
+
+       if (S==T) return 0;
+
        for(int i = 0; i < routes.length; i++){
             for(int j = 0; j < routes[i].length; j++){
                 ArrayList<Integer> buses = map.getOrDefault(routes[i][j], new ArrayList<>());
                 buses.add(i);
-                map.put(routes[i][j], buses);                
-            }       
+                map.put(routes[i][j], buses);
+            }
         }
-                
-       q.offer(S); 
+
+       q.offer(S);
        while (!q.isEmpty()) {
            int len = q.size();
            ret++;
@@ -51,7 +53,7 @@ class Solution {
                     visited.add(bus);
                     for (int j = 0; j < routes[bus].length; j++) {
                         if (routes[bus][j] == T) return ret;
-                        q.offer(routes[bus][j]);  
+                        q.offer(routes[bus][j]);
                    }
                }
            }
