@@ -45,7 +45,7 @@ Keep track of prev, the filled seat at or to the left of i, and future, the fill
 
 Then at seat i, the closest person is min(i - prev, future - i), with one exception. i - prev should be considered infinite if there is no person to the left of seat i, and similarly future - i is infinite if there is no one to the right of seat i.
 
-
+各种条件双指针
 O(N) O(1)
  */
 public class Solution {
@@ -65,6 +65,43 @@ public class Solution {
                 int right = future == N ? N : future - i;
                 ans = Math.max(ans, Math.min(left, right));
             }
+        }
+
+        return ans;
+    }
+    /*
+     * Intuition
+
+    In a group of K adjacent empty seats between two people, the answer is (K+1) / 2.
+
+    Algorithm
+
+    For each group of K empty seats between two people, we can take into account the candidate answer (K+1) / 2.
+
+    For groups of empty seats between the edge of the row and one other person, the answer is K, and we should take into account those answers too.
+     */
+    public int maxDistToClosestII(int[] seats) {
+        int N = seats.length;
+        int K = 0; //current longest group of empty seats
+        int ans = 0;
+
+        for (int i = 0; i < N; ++i) {
+            if (seats[i] == 1) {
+                K = 0;
+            } else {
+                K++;
+                ans = Math.max(ans, (K + 1) / 2);
+            }
+        }
+
+        for (int i = 0; i < N; ++i)  if (seats[i] == 1) {
+            ans = Math.max(ans, i);
+            break;
+        }
+
+        for (int i = N-1; i >= 0; --i)  if (seats[i] == 1) {
+            ans = Math.max(ans, N - 1 - i);
+            break;
         }
 
         return ans;

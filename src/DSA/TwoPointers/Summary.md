@@ -12,7 +12,7 @@ sliding windows的题目也用的这个实现技巧
 
 1. 头尾对撞型双指针
 
-- 通过判断条件优化算法
+- 通过判断条件优化算法 containers with most water, 
 - Partition类 比如sort colors, valid palindrome
 
 
@@ -26,4 +26,6 @@ sliding windows的题目也用的这个实现技巧
 
 3. 两个数组 并行双指针
 
-   
+    Backspace 并行从后往前扫
+
+   isSubsequence
