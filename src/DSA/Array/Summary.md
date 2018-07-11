@@ -33,3 +33,5 @@ TreeMap内部使用红黑树实现，自动以key排序
 排好序的hash表
 
 
+
+Find missing number in a positive integer array, 用tricky的桶排序

@@ -9,18 +9,20 @@ Input:
  [0,0,0,1]]
 Output: 3
 
+矩阵操作
+
 N ^ 2
  * 对于一个mxn的矩阵，对角线和逆对角线的排数都是m+n-1个，
  * 难点在于我们要确定每一排上的数字的坐标，如果i是从0到m+n-1之间遍历，
  * j是在i到0之间遍历，那么对角线的数字的坐标就为(i-j, j)，逆对角线的坐标就为(m-1-i+j, j)
- * 
+ *
  */
 public class Solution {
 
     int longestLine(int[][] M) {
         if (M.length == 0 || M[0].length == 0) return 0;
         int res = 0;
-        int m = M.length; 
+        int m = M.length;
         int n = M[0].length;
         for (int i = 0; i < m; i++) { // Check horizontal
             int cnt = 0;

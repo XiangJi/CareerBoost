@@ -16,6 +16,8 @@ Output: 3
 Explanation: All the three 'B's are black lonely pixels.
 Note:
 The range of width and height of the input 2D array is [1,500].
+
+Like set matrix zero, tricky
  */
 class Solution {
     // O(mn)
