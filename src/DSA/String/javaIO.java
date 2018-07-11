@@ -56,5 +56,9 @@ public class javaIO {
         javaIO test = new javaIO();
         String input = test.readFile("F:\\testlog.txt");
         test.writeFile(input);
+        String s = "abcdefg";
+        System.out.println(s.substring(0, 6));
+        StringBuilder sb = new StringBuilder(s);
+        System.out.println(sb.substring(0, 7).toString());
     }
 }

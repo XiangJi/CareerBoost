@@ -6,9 +6,9 @@ if all a - z, use diff int[26], like "x" - "a" : 0 ~25
 
 注意string to int method: Integer.parseInt()
 
-  String 是对象 比较用equals
+String 是对象 比较用equals
 
-
+String是不可变的对象 所以不能pass by "reference"
 
 Methods
 
@@ -22,23 +22,29 @@ matches(String regex)
 
 replace(char oldChar, char newChar)
 
-
+startsWith(String word, int offset)  ---> return boolean
 
 split(String regex)
 Splits this string around matches of the given regular expression
 
-
-
 substring(int beginIndex, int endIndex)
 Returns a new string that is a substring of this string.
 
-string.*substring* (j, i) mean index j to i - 1
+String s = String.join(" ", sentence) + " ";// 先join成一个string 最后加个空格 
 
+string.*substring* (j, i) mean index j to i - 1, stringBuilder也是一样的
 
+```java
+String s = "abcdefg";
+System.out.println(s.substring(0, 6));
+StringBuilder sb = new StringBuilder(s);
+System.out.println(sb.substring(0, 7).toString());
+
+abcdef
+abcdefg
+```
 
 toCharArray() ： 用这个节省时间
-
-
 
 trim()
 Returns a copy of the string, with leading and trailing whitespace omitted.
@@ -52,6 +58,8 @@ append(char or char array or string )
 charAt
 
 delete(int index)
+
+setCharAt
 
 toString()
 
