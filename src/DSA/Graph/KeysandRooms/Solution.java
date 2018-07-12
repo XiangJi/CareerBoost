@@ -35,6 +35,8 @@ Explanation: We can't enter the room with number 2.
 dfs bfs 都可以做
 
 DFS: check all nodes visited
+
+Input adjacency list
  */
 public class Solution {
     // DFS,这里输入必须是list 不然没法pass

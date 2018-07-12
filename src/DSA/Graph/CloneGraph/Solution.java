@@ -11,6 +11,9 @@ import java.util.Queue;
  * BFS, DFS
  * T: O( E + V) V:Node E: Edge
  * S: O(V)
+ * 
+ * 用一个map才存两个图之间的map 然后直接dfs就行了
+ * Input 一个起始node
  */
 public class Solution {
     // DFS

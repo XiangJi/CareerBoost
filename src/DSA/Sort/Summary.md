@@ -15,3 +15,23 @@
 - Bucket Sort
 - Counting Sort
 - Radix Sort
+
+
+
+不要老是先想数据结构 很多时候greedy法的时候
+
+需要按规则直接讲数组sort
+
+要会写comparator和lamda expression
+
+```java
+Collections.sort(list, new Comparator<String>() {
+            @Override
+            public int compare(String a, String b) {
+                String X = a + b;
+                String Y = b + a;
+                return Y.compareTo(X) > 0 ? 1: - 1;
+            }
+        });
+```
+
