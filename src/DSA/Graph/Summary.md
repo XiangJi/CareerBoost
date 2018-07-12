@@ -4,7 +4,9 @@ https://www.khanacademy.org/computing/computer-science/algorithms/graph-represen
 
 ### Adjacency lists 
 
-一般这种时候不在matrix上面 就是在用hashmap构图 
+一般这种时候不在matrix上面 就是在用hashmap构图 给节点的情况
+
+或者list<List<>> 哈希表在搜索的时候效率更加好一点 
 
 ![img](https://ka-perseus-images.s3.amazonaws.com/cc82379521bd84738e86d6cf9552738ca9138420.png)
 
