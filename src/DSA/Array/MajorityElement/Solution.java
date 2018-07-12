@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class Solution {
     // The ideal algorithm: Moore voting algorithm
+    // 一个投票算法 记住
     public int majorityElement3(int[] nums) {
         int count = 0, ret = 0;
         for (int num : nums) {

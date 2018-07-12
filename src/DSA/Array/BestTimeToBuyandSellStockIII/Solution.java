@@ -26,6 +26,13 @@ Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
+数组l[i]记录了price[0..i]的最大profit，
+
+数组r[i]记录了price[i..n]的最大profit。
+
+已知l[i]，求l[i+1]是简单的，同样已知r[i]，求r[i-1]也很容易。
+
+最后，我们再用O(n)的时间找出最大的l[i]+r[i]，即为题目所求。
  */
 public class Solution {
     public int maxProfit(int[] prices) {

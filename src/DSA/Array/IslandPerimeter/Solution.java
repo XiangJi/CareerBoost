@@ -1,5 +1,7 @@
 package DSA.Array.IslandPerimeter;
-
+/*
+ * 下面这种方法对于每个岛屿格子先默认加上四条边，然后检查其左面和上面是否有岛屿格子，有的话分别减去两条边，这样也能得到正确的结果
+ */
 public class Solution {
     public int islandPerimeter(int[][] grid) {
         int islands = 0, neighbours = 0;

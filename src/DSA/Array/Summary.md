@@ -33,3 +33,23 @@ TreeMap内部使用红黑树实现，自动以key排序
 排好序的hash表
 
 
+
+Find missing number in a positive integer array, 用tricky的桶排序
+
+```java
+// The ideal algorithm: Moore voting algorithm
+// 一个投票算法 记住
+    public int majorityElement3(int[] nums) {
+        int count = 0, ret = 0;
+        for (int num : nums) {
+            if (count == 0)
+                ret = num;
+            if (num != ret)
+                count--;
+            else
+                count++;
+        }
+        return ret;
+    }
+```
+
