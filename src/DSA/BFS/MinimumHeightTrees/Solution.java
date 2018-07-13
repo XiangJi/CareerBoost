@@ -51,7 +51,7 @@ public class Solution {
             res.add(0);
             return res;
         }
-        // use hash set to avoid duplicate
+        // use hash set to avoid duplicate 把edge放到map里面构图
         List<HashSet<Integer>> adj = new ArrayList<>();
         // add graph 用list of hashset来记录每个点的边 hash拿来去重
         for (int i = 0; i < n; i++) {

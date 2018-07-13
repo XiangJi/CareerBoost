@@ -22,16 +22,19 @@
 
 ```java
 Queue<> q = new LinkedList<>;
-
+// 注意 这里可用2个q来记录matrix上面的坐标移动xy
 // put BFS start point(s) into the queue
  q.offer();
+// 注意 这里可以只入q一个 也可以多个点同时入q
 
 // if in 2D matrix, use direction array
+// 如果输入是2D matrix 用这个来移动坐标
 int[] dx = {0,1,0,-1};
 int[] dy = {1,0,-1,0}
 while(!q.isEmpty()) {
-
-    // 如果需要算距离 先拿size 然后for loop
+	// while了几次就是走过了几层 可以在这边count 距离
+    // 如果需要算距离 先拿size,   然后这边可以放变量来level control 从走了多少步 或者这层发生了上面
+    // 然后for loop 
     // if you use for loop here, get the size first outside the loop
     
         q.poll(); // get your starting node
@@ -40,7 +43,32 @@ while(!q.isEmpty()) {
     
     // put qualificated new start into the queue
     q.offer
+        
+        
 }
+
+		int cx = qx.poll();
+            int cy = qy.poll();
+            for (int i = 0; i < 4; i++) {
+                // new coordinate
+                int nx = cx + dx[i];
+                int ny = cy + dy[i];
+                if (0 <= nx && nx < m && 0 <= ny && ny < n
+                        && matrix[nx][ny] >= matrix[cx][cy] + 1) {
+                    matrix[nx][ny] = matrix[cx][cy] + 1;
+                    qx.offer(nx);
+                    qy.offer(ny);
+                }
+            }
 
 ```
 
+练习题
+
+Buses route
+
+Sliding Puzzle
+
+Kill process
+
+zero one matrix
