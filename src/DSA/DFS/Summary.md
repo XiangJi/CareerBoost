@@ -41,25 +41,49 @@ When solving a backtracking problem, pay attention to whether it’s a Permutati
 A general recursive template for backtracking may look like this:
 
 ```java
-//可以用的参数 input list, temp list, visited (map or array), dfs cursor index 
+/*可以用的参数 
+ * input list, 输入一般都要传进去 可以是list或者string
+ * temp list， 当需要存储temp结果 最后加入到res里面使用
+ * 当结果只能用一次时候使用 visited (map or array)
+ * cursor index 一般都会需要 除非在树上面
+ * res list, 当需要求全部结果的时候使用
+ * 用于计算的value(e.g. remain - see combination sum)
+ * 
+ */
 	dfs (parameters of given data and current recursive level) {
         // Handle base cases, i.e. the last level of recursive call
-        // 退出条件 
-        if (level == lastLevel) {
-            record result;
-            return sth;
+        // 退出条件 return一定不要忘记写
+        if (root == null) {
+                return;
         }
-        // Optional: 提前退出条件 或者一定的对这个定点的条件操作
-       
+        // 提前退出条件 或者一定的对这个定点的条件操作
+       		if (level == lastLevel) {
+            record result;
+             // result.add(new ArrayList<Integer>(tmp)); 一般用深拷贝
+            return sth;
+        	}
+        if (root.left == null && root.right == null) {
+            result.add(path);
+            return;
+        }
+        
         // Otherwise permute every possible value for this level.
         for (every possible value for this level) {
-            if (condition) // 满足某个条件吗 
+            // 满足某个条件吗
+            // 比如处理有duplicate的情况 
+            //i > pos && candidates[i] == candidates[i - 1], then continue
+            if (condition)  
             {
-                add..;
+                tmp.add(candidates[i]);
                 used..;
-                dfs(index + 1, used, input, temp); //确定给下一层的数据
+                //确定给下一层的数据
+                //如果我们可以一直用同一个数的时候index不需要+1
+                // 如果index只能用一次 + 1
+                dfs(index + 1, used, input, temp); 
+                
+                
                 delete the last;
-                used remove;
+                tmp.remove(tmp.size() - 1); //删掉最后一个
              
             } 
             
@@ -101,6 +125,10 @@ permutation:
 
 ### Graph DFS
 
+```java
+import
+```
+
 
 
 ### Tree DFS
@@ -112,3 +140,5 @@ Please see content in Tree summary
 练得越多就越熟练
 
 Longest Increasing Path in a Matrix 
+
+Cracking the safe

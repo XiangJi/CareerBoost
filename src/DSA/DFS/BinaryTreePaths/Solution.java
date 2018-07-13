@@ -1,5 +1,5 @@
 package DSA.DFS.BinaryTreePaths;
-
+// 基础题 穷举树的所有路径
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +7,6 @@ import DSA.Tree.TreeNode;
 
 public class Solution {
     public List<String> binaryTreePaths(TreeNode root) {
-        // DFS, -- DC implenmetation, Recursive implementation, Stack implementation
         List<String> result = new ArrayList<String>();
         if (root == null) {
                 return result;
@@ -15,17 +14,18 @@ public class Solution {
         dfs(root, String.valueOf(root.val), result);
         return result;
     }
-
+    // cursor, tmp, res
     private void dfs(TreeNode root, String path, List<String> result) {
+        // exist
         if (root == null) {
                 return;
         }
-
+        // final level
         if (root.left == null && root.right == null) {
             result.add(path);
             return;
         }
-
+        // 只有两种选择 所以不用for循环，树的路径保证了不用backtracking
         if (root.left != null) {
             dfs(root.left, path + "->" + String.valueOf(root.left.val), result);
         }
