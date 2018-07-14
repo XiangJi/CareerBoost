@@ -10,7 +10,7 @@ Usage:
 
 new ArrayList<String>(Arrays.asList("0", "1", "8"));
 
-
+swap()操作经常会被用到
 
 Collection——List and Set, 用iterator向后便利，set里unique
 
