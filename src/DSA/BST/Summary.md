@@ -78,6 +78,8 @@ public boolean book(int start, int end) {
         return true;
     }
 
-// my caldenar 3 就是airplane 就同时有多少在
+// my caldenar 3 就是airplane 就同时有多少在 
+// 类似于meeting rooms2 但是那题不用BST，用两个数组来boundary count
+end指针, if (start[i] < end) rooms++
 ```
 

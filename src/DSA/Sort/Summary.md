@@ -35,3 +35,4 @@ Collections.sort(list, new Comparator<String>() {
         });
 ```
 
+Lamda expression, (a, b) -> (the return value of compare function), if computation is complex here, then write a com

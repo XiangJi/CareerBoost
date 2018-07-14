@@ -26,25 +26,39 @@ graph partition
 
 Follow up:
 需要返回每个room占用的具体时间
+
+sweep line, boundary count, just like my calendar 3
+这种更trick一点 要记住
  */
-public class Solution {
+class Solution {
     public int minMeetingRooms(Interval[] intervals) {
-        int[] starts = new int[intervals.length];
-        int[] ends = new int[intervals.length];
-        for(int i=0; i<intervals.length; i++) {
-            starts[i] = intervals[i].start;
-            ends[i] = intervals[i].end;
+        int m = intervals.length;
+        if (m == 0) {
+            return 0;
         }
-        Arrays.sort(starts);
-        Arrays.sort(ends);
-        int rooms = 0;
-        int endsItr = 0;
-        for(int i=0; i<starts.length; i++) {
-            if(starts[i]<ends[endsItr])
-                rooms++;
-            else
-                endsItr++;
+        int[] start = new int[m];
+        int[] end = new int[m];
+        
+
+        for (int i = 0; i < m; i++) {
+            start[i] = intervals[i].start;
+            end[i] = intervals[i].end;
         }
-        return rooms;
+        // sort!
+        Arrays.sort(start);
+        Arrays.sort(end);
+        
+        int room = 0;
+        int j = 0; // yes is used for track the last session
+        for (int i = 0; i < m; i++) {
+            if (start[i] < end[j]) {
+                room++;
+            } else {
+                j++;
+            }
+        }
+        return room;
     }
+    
+    // 也可以用treemap来boundary count
 }
