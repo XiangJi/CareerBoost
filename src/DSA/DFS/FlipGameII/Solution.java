@@ -12,6 +12,8 @@ Write a function to determine if the starting player can guarantee a win.
 For example, given s = "++++", return true. The starting player can guarantee a win by flipping the middle "++" to become "+--+".
 
 2 ^ N ? N! ? N!!
+
+这题的hashmap是加速用的
  */
 public class Solution {
 
@@ -34,10 +36,12 @@ public class Solution {
                 String other = s.substring(0, i) + "--" + s.substring(i + 2);
                 // recursion
                 if (!dfs(other, map)) {
+                    map.put(s, true);
                     return true;
                 }
             }
         }
+        map.put(s, false);
         return false;
     }
     // not optimized yet

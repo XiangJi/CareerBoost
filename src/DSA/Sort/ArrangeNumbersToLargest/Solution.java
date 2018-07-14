@@ -26,7 +26,7 @@ public class Solution {
       }
       
       public static void main(String[] args) {
-          List<String> list = Arrays.asList("1", "3", "2", "5", "6");
+        List<String> list = Arrays.asList("1", "3", "2", "5", "6");
         System.out.println(constructLargestNumber(list));
      
       }

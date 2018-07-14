@@ -34,6 +34,13 @@ TreeMap内部使用红黑树实现，自动以key排序
 
 
 
+```java
+new ArrayList<String>(Arrays.asList("0", "1", "8")) 
+    List<String> list = Arrays.asList("1", "3", "2", "5", "6");
+```
+
+
+
 Find missing number in a positive integer array, 用tricky的桶排序
 
 ```java

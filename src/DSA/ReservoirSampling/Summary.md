@@ -1,8 +1,22 @@
 # Reservoir Sampling
 
+## Concept
+
 Reservoir sampling 是一个随机采样算法，简单来说就是从 n 个 items 中随机选择 k 个items，并且每个 item 被选择的概率应该都一样。
 
+
+
+```java
+if (rnd.nextInt(++count) == 0) {
+               result = val; //  核心算法 iterate过去 然后每个位置都有1/count的概率来赋值
+            }
+```
+
+
+
 这个算法的优点在于时空复杂度都不高，其中时间复杂度为 O(n), 空间复杂度为 O(1)。
+
+算法
 
 数学证明：
 

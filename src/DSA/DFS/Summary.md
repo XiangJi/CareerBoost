@@ -48,6 +48,10 @@ A general recursive template for backtracking may look like this:
  * cursor index 一般都会需要 除非在树上面, 意义是这轮search的start cursor, permutationb不需要这个 直接从0开始就行
  * res list, 当需要求全部结果的时候使用
  * 用于计算的value(e.g. remain - see combination sum)
+ * Memoization: 拿一个cache来存储结果 这样可以提前返回 剪枝
+ 
+ * 可用的返回值 boolean 或者int 这种时候一般可以用cache加速 一般不是穷举所有值 而是求一个boolean或者int的时候 就需要把它变成返回值
+ 
  * 
  */
 	dfs (parameters of given data and current recursive level) {
@@ -126,7 +130,65 @@ permutation:
 ### Graph DFS
 
 ```java
-import
+public List<String> findItinerary(String[][] tickets) {
+        if (tickets == null || tickets.length == 0) {
+            return null;
+        }
+    	// 输入是edges 先把它变成adjacency list
+        int total = tickets.length + 1; // total passed number of nodes
+        HashMap<String, List<String>> map = new HashMap<>();
+        // construct the graph, store with the hash
+        for (String[] ticket : tickets) {
+            if (!map.containsKey(ticket[0])) {
+                map.put(ticket[0], new ArrayList<>());
+            }
+            map.get(ticket[0]).add(ticket[1]);
+        }
+
+        // sort the list destination
+        for (List<String> list : map.values()) {
+            Collections.sort(list); // no comparator needed
+        }
+
+        String start = "JFK";
+        List<String> path = new ArrayList<>();
+        path.add(start);
+        if (dfs(start, path, total, map)) {
+            return path;
+        }
+        return null;
+    }
+
+    // use boolean as a return value
+    private boolean dfs(String start, List<String> path, int total, HashMap<String, List<String>> map) {
+        if (path.size() == total) {
+            return true;
+        }
+
+        // prune invalid search
+        if (!map.containsKey(start)) {
+            return false;
+        }
+        List<String> destination = map.get(start);
+
+        // search in the start
+        for (int i = 0; i < destination.size(); i++) {
+            String dest = destination.get(i);
+            // we can only use the node once, so remove
+            destination.remove(i);
+            path.add(dest);
+            if (dfs(dest, path, total, map )) {
+                return true;
+            }
+            // if not found, backtrack, and add back this node
+            path.remove(path.size() - 1);
+            destination.add(i, dest);
+        }
+        return false;
+    }
+
+
+在matrix上面直接dfs 看word search，找四个方向
 ```
 
 
@@ -142,3 +204,19 @@ Please see content in Tree summary
 Longest Increasing Path in a Matrix 
 
 Cracking the safe
+
+Expression add operation 变形 四则运算和括号 看能不能得到目标值 
+
+升级版是24Game 如何构造这些dfs场景和条件变量
+
+
+
+Generate abbreviations
+
+FlipGameII
+
+Pyramid
+
+ReconstructItinerary
+
+WordSearch I II
