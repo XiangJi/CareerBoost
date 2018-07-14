@@ -41,7 +41,7 @@ class MyCalendar {
     public MyCalendar() {
         calendar = new ArrayList<>();
     }
-
+    // 条件是如果比较头尾，头大小于尾小说明有重叠
     public boolean book(int start, int end) {
         for (int[] t : calendar) {
             if (Math.max(t[0], start) < Math.min( t[1], end)) {

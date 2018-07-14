@@ -1,4 +1,4 @@
-package DSA.Misc.TheSkylineProblem;
+package DSA.BST.TheSkylineProblem;
 
 import java.util.ArrayList;
 import java.util.Collections;
