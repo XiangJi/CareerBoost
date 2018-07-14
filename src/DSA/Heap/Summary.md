@@ -23,9 +23,19 @@ peek   O(1)
 
 ### 应用场景
 
+1. top k, kth problem求k大或者第i小的问题 lgN+- O(1)看
+2. 优化排序，或者排序非collection的object 比如map
+3. 求median
+
 多次求集合的最大值或者最小值 可以用heap空间来换取时间
 
-PriorityQueue<Integer> heap = new PriorityQueue<Integer>();
+
+
+一般要先全部offer 然后根据k来拿
+
+```java
+PriorityQueue<Integer> heap = new PriorityQueue<Integer>(这里可以直接写lamda表达式);
+```
 
 
 
@@ -69,11 +79,15 @@ PriorityQueue<Integer> heap = new PriorityQueue<Integer>();
 
    ​                                                                                  
 
-   ​
 
 
 
+### Practice
 
+mincostToHireWorkers 贪心法和sort
 
+sliding window median 记住整个算法和数据结构
 
+topK frequent words
 
+kth larger element

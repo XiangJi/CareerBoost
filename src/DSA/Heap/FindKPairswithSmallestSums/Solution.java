@@ -46,6 +46,7 @@ public class Solution {
         }
         for (int i = 0; i < nums1.length && i < k; i++)
             pq.offer(new int[] { nums1[i], nums2[0], 0 });
+        
         while (k-- > 0 && !pq.isEmpty()) {
             int[] cur = pq.poll();
             result.add(new int[] { cur[0], cur[1] });
