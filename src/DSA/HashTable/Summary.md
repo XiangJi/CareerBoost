@@ -6,29 +6,37 @@ key value的选择
 
 因为要用到containsKey做判断，key一定要是尽量不能重复的选项，和本能反一反选择
 
+```java
 <String, Integer>
 
-HashMap
+//HashMap
 
 get(key)
+getOrDefault(key, default value: 0)
 
 put(key, value)
 
 containsKey(key)
 
 containsValue(value)
+    
 
 isEmpty()
 
 size()
 
 remove(key, <optional - value>)
+    
+    keySet
+    values
+    entrySet
 
-HashSet
+//HashSet
 add
 remove
 contains
 isEmpty
+```
 
 
 

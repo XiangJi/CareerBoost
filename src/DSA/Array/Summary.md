@@ -1,8 +1,23 @@
 # Array and List
 
-List a;
+```java
+//Collections
+List, Stack
+Set
+Queue, Deque
+Map
 
-a.size();   not length()!
+int size();
+isEmpty()
+boolean contains(Object o)
+Iterator<E> iterator();
+boolean add(E e);
+boolean addAll(Collection<? extends E> c)
+boolean remove(Object o)
+boolean equals(Object o)
+```
+
+
 
 if (//condition && make sure index not out of bound)
 
