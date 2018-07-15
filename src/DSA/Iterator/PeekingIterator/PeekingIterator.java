@@ -45,35 +45,3 @@ public class PeekingIterator implements Iterator<Integer> {
         return head != null;
     }
 }
-
-class StringIterator {
-    ArrayList<Character> list;
-    Iterator<Character> iter;
-    public StringIterator(String compressedString) {
-        list = new ArrayList<>();
-        int i = 0;
-        while (i < compressedString.length()) {
-            char c = compressedString.charAt(i);
-            int j = i + 1;
-            int n = 0;
-            while (Character.isDigit(compressedString.charAt(j))){
-                n = 10 * n + (compressedString.charAt(j) - '0');
-            }
-
-            while (n > 0) {
-                list.add(c);
-                n--;
-            }
-            i = j - 1;
-        }
-        iter = list.iterator();
-    }
-
-    public char next() {
-        return iter.next();
-    }
-
-    public boolean hasNext() {
-        return iter.hasNext();
-    }
-}

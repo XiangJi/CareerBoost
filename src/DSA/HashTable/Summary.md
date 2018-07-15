@@ -32,6 +32,10 @@ isEmpty
 
 
 
+很多情况也可以用array来简化 如果只存一个boolean 或者count的话
+
+常用于adjacent list用
+
 When using hash map to store string count, can just use array instead.
 
 128 ACSII characters for string, next 128 are extended special characters

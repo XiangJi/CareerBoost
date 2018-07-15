@@ -20,7 +20,7 @@
 
 不要老是先想数据结构 很多时候greedy法的时候
 
-需要按规则直接讲数组sort
+需要按规则直接把数组sort
 
 要会写comparator和lamda expression
 

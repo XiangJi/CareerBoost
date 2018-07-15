@@ -1,4 +1,8 @@
 package DSA.Iterator.DesignCompressedStringIterator;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /*
  * Design and implement a data structure for a compressed string iterator. It should support the following operations: next and hasNext.
 
@@ -56,5 +60,37 @@ public class StringIterator {
     }
     public boolean hasNext() {
         return ptr != res.length() || num != 0;
+    }
+}
+
+class StringIteratorBF {
+    ArrayList<Character> list;
+    Iterator<Character> iter;
+    public StringIteratorBF(String compressedString) {
+        list = new ArrayList<>();
+        int i = 0;
+        while (i < compressedString.length()) {
+            char c = compressedString.charAt(i);
+            int j = i + 1;
+            int n = 0;
+            while (Character.isDigit(compressedString.charAt(j))){
+                n = 10 * n + (compressedString.charAt(j) - '0');
+            }
+
+            while (n > 0) {
+                list.add(c);
+                n--;
+            }
+            i = j - 1;
+        }
+        iter = list.iterator();
+    }
+
+    public char next() {
+        return iter.next();
+    }
+
+    public boolean hasNext() {
+        return iter.hasNext();
     }
 }
