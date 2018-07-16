@@ -131,6 +131,6 @@ GroupAnagram
 
 LineReflection
 
+MaximumSizeSubarraySumEquals, subarray sum equals k count
 
-
-MaximumSizeSubarraySumEqualsk 
+拓展问题见slidingWindows专题
