@@ -2,6 +2,7 @@ package DSA.HashTable.PalindromePermutation;
 
 // brute force, use hashmap to store the string count, odd count can not be more than 1
 // Single pass approach: use a int count to store the odd number on flight, update it always then determine in the end
+// parlindrome hash问题 类似于longest palindrome
 public class Solution {
     public boolean canPermutePalindrome(String s) {
         if (s == null || s.length() == 0) {

@@ -36,7 +36,7 @@ public class Solution {
             String key = "";
             int offset = word.charAt(0) - 'a';
             for(int i = 1; i < word.length(); i++){
-                key += (word.charAt(i) - offset) % 26; // trick
+                key += (word.charAt(i) - offset) % 26; // trick to deal with negative values
             }
 
             if(!map.containsKey(key)){

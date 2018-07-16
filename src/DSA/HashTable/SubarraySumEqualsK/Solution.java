@@ -18,6 +18,8 @@ use getOrDefault to save if statement
 因为求这样的人数 所以存个数
 
 O(N) O(N)
+
+和maximun size subarray sum一样 但是因为是求个数 所以存个数
  */
 public class Solution {
     public int subarraySum(int[] nums, int k) {
