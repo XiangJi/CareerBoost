@@ -2,7 +2,12 @@ package DSA.HashTable.LongestPalindrome;
 
 import java.util.HashSet;
 
-// 有一个count统计pairs，最后看有没有计数项剩下 就加一
+/*
+ * Given a string which consists of lowercase or uppercase letters, find the length of the longest palindromes that can be built with those letters.
+
+This is case sensitive, for example "Aa" is not considered a palindrome here
+ */
+// Just count pairs
 public class Solution {
     public int longestPalindrome(String s) {
         if (s == null || s.length() == 0) {
