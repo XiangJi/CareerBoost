@@ -51,7 +51,7 @@ public class Solution {
             String string = "";
             for (int i = 0; i < count.length; i++) {
                 if (count[i] != 0) {
-                    string += String.valueOf(count[i]) + String.valueOf('a' + i);
+                    string += count[i] + ('a' + i);
                 }
             }
             

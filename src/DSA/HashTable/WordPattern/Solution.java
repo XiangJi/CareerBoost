@@ -3,7 +3,7 @@ package DSA.HashTable.WordPattern;
 import java.util.HashMap;
 
 public class Solution {
-    // same problem with isomorphicStrings
+    // duplicate problem with isomorphicStrings
     public boolean wordPattern(String pattern, String str) {
         String[] array = str.split(" ");
         if (pattern.length() != array.length) {

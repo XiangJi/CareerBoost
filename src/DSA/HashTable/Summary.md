@@ -62,7 +62,7 @@ getOrDefault(key, default value: 0)
 
 put(key, value)
 
-containsKey(key)
+containsKey(key) // 注意 hashMap一定是containsKey
 
 containsValue(value)
     
