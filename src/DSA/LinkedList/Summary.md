@@ -12,6 +12,8 @@ fast slow pointers
 
 Dummy node 用于头结点会改变的情况
 
+prev指针
+
 
 
 链表实际在考察的是指针操作 画图屡清楚就行 考得不太多因为比较简单
@@ -26,9 +28,32 @@ public class ListNode {
     }
 }
 
+// reverse
+1. t, cn, p, c
+2. t, cn tn , pn
 ```
 
 
 
 Important Operation:
 
+```java
+ListNode dummy
+ListNode prev
+ListNode slow
+ListNode fast
+```
+
+
+
+### Practice
+
+LRUCache
+
+MergeKSortList
+
+merge sort list
+
+ReorderList
+
+ReverseList I, ii

@@ -4,6 +4,8 @@ import DSA.LinkedList.ListNode;
 
 /*
  * range reverse
+ * 
+ * sing 4 pointers: dummy, pre, tmp, cur
  */
 public class Solution {
     /**
@@ -33,6 +35,10 @@ public class Solution {
          * 2 -> 4
          * 3 -> 2
          * 1 -> 3
+         * First swap: 1 3 2 4 5 
+         * Second swap 1 4 3 2 5
+         * 这个操作每次把cur的下一个放到最前面去
+         * 
          * 两两互换
          * t, cn, tn,pn
          */
