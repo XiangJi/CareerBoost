@@ -30,7 +30,7 @@ public class Solution {
         int sum = candies[ratings.length - 1];
         for (int i = ratings.length - 2; i >= 0; i--) {
             if (ratings[i] > ratings[i + 1]) {
-                candies[i] = Math.max(candies[i], candies[i + 1] + 1);
+                candies[i] = Math.max(candies[i], candies[i + 1] + 1); // 注意这边就要取max了
             }
             sum += candies[i];
         }
