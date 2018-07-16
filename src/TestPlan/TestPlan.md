@@ -60,15 +60,25 @@ EarlGrey works in conjunction with the XCTest framework and integrates with Xcod
 
 Web, Mocha, for both unit, Selenium Web Driver for system end - to- end
 
-Load balance
+#### Load balance testing
+
+use tools to test response of all the servers, check if they can return the results
 
 Servers, message queue (JUnit test, Integeration test, REST assured (API)test
 
-Databases, cache, nosql (Test DB consisting DB trigger) ( database functions, triggers, views, [SQL](https://en.wikipedia.org/wiki/SQL) queries )
+#### Database testing
+
+Write scripts, test results, cache, nosql (Test DB consisting DB trigger) ( database functions, triggers, views, [SQL](https://en.wikipedia.org/wiki/SQL) queries )
+
+#### Reliability testing
 
 logging, metrics, monitoring,automation (Reliability testing/ High availability testing)
 
+#### Performance testing
+
 <Performance, load, stress test(something went down)> Gatling 
+
+#### Stress testing
 
 Use Chaos Monkey, get random tests
 
