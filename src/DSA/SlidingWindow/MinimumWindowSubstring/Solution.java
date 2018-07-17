@@ -19,6 +19,13 @@ time : O(n)
      
      Variables：
      
+     我们最开始先扫描一遍T，把对应的字符及其出现的次数存到哈希表中。
+
+- 然后开始遍历S，遇到T中的字符，就把对应的哈希表中的value减一，直到包含了T中的所有的字符，纪录一个字串并更新最小字串值。
+
+将子窗口的左边界向右移，略掉不在T中的字符，如果某个在T中的字符出现的次数大于哈希表中的value，则也可以跳过该字符。
+
+其实是在考类似于find all anagrams in a string的two pointers sliding windows最优解
  */
 class Solution {
     public static String minWindow(String s, String t) {

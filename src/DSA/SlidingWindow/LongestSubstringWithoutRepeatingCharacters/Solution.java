@@ -42,6 +42,7 @@ public class Solution {
         }
 
         int max = 0;
+        // store character and index
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
 
         for (int i = 0, j = 0; i < s.length(); i++) {
