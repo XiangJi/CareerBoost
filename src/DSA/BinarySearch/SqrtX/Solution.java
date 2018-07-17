@@ -1,4 +1,4 @@
-package DSA.Math.SqrtX;
+package DSA.BinarySearch.SqrtX;
 
 /*
  * Implement int sqrt(int x).
@@ -12,18 +12,22 @@ public class Solution {
      * @param x: An integer
      * @return: The sqrt of x
      */
+    // 九章的模板是万能的 最后再来处理start end结果
     public int mySqrt(int x) {
         // write your code here
         long left = 0;
         long right = x;
-        while (left <= right) {
+        while (left + 1 < right) {
             long mid = (left + right) / 2;
             if (x < mid * mid) {
-                right = mid - 1; // Binary search, but trick her.
+                right = mid; // Binary search, but trick her.
             } else {
-                left = mid + 1;
+                left = mid;
             }
         }
-        return (int) right;
+        if (right * right <= x) {
+            return (int) right;
+        }
+        return (int) left;
     }
 }

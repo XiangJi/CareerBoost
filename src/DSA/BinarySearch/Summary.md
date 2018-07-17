@@ -71,7 +71,7 @@ public int search(int[] nums, int target) {
 
 **第二类： 查找第一个不小于目标值的数，可变形为查找最后一个小于目标值的数**
 
-这是比较常见的一类，因为我们要查找的目标值不一定会在数组中出现，也有可能是跟目标值相等的数在数组中并不唯一，而是有多个，那么这种情况下nums[mid] == target这条判断语句就没有必要存在。比如在数组[2, 4, 5, 6, 9]中查找数字3，就会返回数字4的位置；在数组[0, 1, 1, 1, 1]中查找数字1，就会返回第一个数字1的位置。我们可以使用如下代码：
+这是比较常见的一类，因为我们要查找的目标值不一定会在数组中出现, 可能是找最近的insert position，也有可能是跟目标值相等的数在数组中并不唯一，而是有多个，那么这种情况下nums[mid] == target这条判断语句就没有必要存在。比如在数组[2, 4, 5, 6, 9]中查找数字3，就会返回数字4的位置；在数组[0, 1, 1, 1, 1]中查找数字1，就会返回第一个数字1的位置。我们可以使用如下代码：
 
  
 
@@ -97,7 +97,7 @@ int find(vector<int>& nums, int target) {
 
 第二类应用实例：
 
-[Heaters](http://www.cnblogs.com/grandyang/p/6181626.html)， [Arranging Coins](http://www.cnblogs.com/grandyang/p/6026066.html)， [Valid Perfect Square](http://www.cnblogs.com/grandyang/p/5619296.html)，[Max Sum of Rectangle No Larger Than K](http://www.cnblogs.com/grandyang/p/5617660.html)，[Russian Doll Envelopes](http://www.cnblogs.com/grandyang/p/5568818.html)
+[Heaters](http://www.cnblogs.com/grandyang/p/6181626.html)， [Arranging Coins](http://www.cnblogs.com/grandyang/p/6026066.html)， [Valid Perfect Square](http://www.cnblogs.com/grandyang/p/5619296.html)，[Max Sum of Rectangle No Larger Than K](http://www.cnblogs.com/grandyang/p/5617660.html)，[Russian Doll Envelopes](http://www.cnblogs.com/grandyang/p/5568818.html)， 
 
  
 
