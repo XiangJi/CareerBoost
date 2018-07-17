@@ -80,3 +80,25 @@ recursive approach,   use memoization 可以加速
     6. 从要求的状态用依赖关系往下推，就可以发现规律  
     7. dp决策与递归相同可照抄  
     8. 最终就可以算出要求的dp状态（或者通过再次处理得出）
+
+
+
+
+
+### Practice
+
+Coin Change I II
+
+Bomb Enemy
+
+Burst Balloons
+
+Decode ways
+
+Predict the winner
+
+NIM Game I II III
+
+edit distance
+
+几乎所有题都很重要 自己推一遍公式
