@@ -1,6 +1,6 @@
-Binary Search
+# Binary Search
 
-Implementation 
+
 
 在一个由从1到n元素组成的n+1长的数列中输出任意一个有重复的元素。这题需要写出四种写法。并且会考察test case。我以前一直没注意过testcase，就考官的思路是，test case要覆盖程序的所有branch。 
 
@@ -10,11 +10,9 @@ binary search on value, not index. 每次value range 减半，check （O(n)) if 
 
 
 
-GrandYang大神的总结
+Reference from Grand Yang大神的总结
 
-二分查找法作为一种常见的查找方法，将原本是线性时间提升到了对数时间范围，大大缩短了搜索时间，具有很大的应用场景，而在LeetCode中，要运用二分搜索法来解的题目也有很多，但是实际上二分查找法的查找目标有很多种，而且在细节写法也有一些变化。之前有网友留言希望博主能针对二分查找法的具体写法做个总结，博主由于之前一直很忙，一直拖着没写，为了树立博主言出必行的正面形象，不能再无限制的拖下去了，那么今天就来做个了断吧，总结写起来~ (以下内容均为博主自己的总结，并不权威，权当参考，欢迎各位大神们留言讨论指正)
-
-根据查找的目标不同，博主将二分查找法主要分为以下四类：
+二分查找法作为一种常见的查找方法，将原本是线性时间提升到了对数时间范围，大大缩短了搜索时间，具有很大的应用场景，而在LeetCode中，要运用二分搜索法来解的题目也有很多，但是实际上二分查找法的查找目标有很多种，而且在细节写法也有一些变化。
 
  
 
@@ -26,14 +24,24 @@ GrandYang大神的总结
 
 
 
-```c++
-int find(vector<int>& nums, int target) {
-    int left = 0, right = nums.size();
-    while (left < right) {
-        int mid = left + (right - left) / 2;
-        if (nums[mid] == target) return mid;
-        else if (nums[mid] < target) left = mid + 1;
-        else right = mid;
+```java
+public int search(int[] nums, int target) {
+    int start = 0;
+    int end = nums.length - 1;
+    while (start + 1 < end) {
+        int mid = (end - start) / 2 + start;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] > target) {
+            end = mid;
+        } else {
+            start = mid;
+        }
+    }
+    if (nums[start] == target) {
+        return start;
+    } else if (nums[end] == target) {
+        return end;
     }
     return -1;
 }
@@ -69,7 +77,7 @@ int find(vector<int>& nums, int target) {
 
 [![复制代码](http://common.cnblogs.com/images/copycode.gif)](javascript:void(0);)
 
-```c++
+```java
 int find(vector<int>& nums, int target) {
     int left = 0, right = nums.size();
     while (left < right) {
@@ -103,7 +111,7 @@ int find(vector<int>& nums, int target) {
 
  
 
-```c++
+```java
 int find(vector<int>& nums, int target) {
     int left = 0, right = nums.size();
     while (left < right) {
