@@ -1,4 +1,4 @@
-package DSA.BinarySearch.SqrtX;
+package DSA.Math.SqrtX;
 
 /*
  * Implement int sqrt(int x).
