@@ -16,6 +16,8 @@ Reference from Grand Yang大神的总结
 
  
 
+#### 其实前三类都可以用九章的模板handle掉
+
 **第一类： 需查找和目标值完全相等的数**
 
 这是最简单的一类，也是我们最开始学二分查找法需要解决的问题，比如我们有数组[2, 4, 5, 6, 9]，target = 6，那么我们可以写出二分查找法的代码如下：
@@ -150,3 +152,24 @@ int find(vector<int>& nums, int target) {
  
 
 综上所述，博主大致将二分搜索法的应用场景分成了主要这四类，其中第二类和第三类还有各自的扩展。根据目前博主的经验来看，第二类和第三类的应用场景最多，也是最重要的两类。第一类和第四类较少，其中第一类最简单，第四类最难，遇到这类，博主也没啥好建议，多多练习吧～
+
+
+
+### Practice
+
+Find k closest elements
+
+find kth smallest pair distance 重要
+
+minimize max distance to gas station 也是第四种
+
+Screen fiting
+
+search 2D matrix II
+
+heaters 这题出的很好
+
+median of two sorted array
+
+Single element in and sorted array 很好用
+

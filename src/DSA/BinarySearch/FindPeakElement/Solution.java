@@ -13,7 +13,7 @@ For example, in array [1, 2, 3, 1], 3 is a peak element and your function should
 
 G tag
 
-搜索的一个局部峰值, 比较和后一位的大小就可以了
+搜索的一个局部峰值, 比较和后一位的大小就可以了 这样可以确保搜出峰值 画图可知
 
  */
 public class Solution {

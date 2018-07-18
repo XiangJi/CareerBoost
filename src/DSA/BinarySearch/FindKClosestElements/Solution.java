@@ -28,7 +28,8 @@ Absolute value of elements in the array and x will not exceed 104
  * 近距离子数组的起始位置，
  *
  * 考察2分法的条件变形能力
- */
+ * 
+ * 0 。。。。 M 。 M + k。。。 N-k */
 public class Solution {
 
     // nlogn
@@ -42,11 +43,15 @@ public class Solution {
     public List<Integer> findClosestElementsII(int[] arr, int k, int x) {
         int start = 0;
         int end = arr.length - k;
-        // search for the k beginning
+        // search for the k beginning, 所有end起始位置是这样
         while (start < end) {
             int mid = start + (end - start) / 2;
-            if (x - arr[mid]> arr[mid + k] - x) {
-                start = mid + 1;
+            if (arr[mid] < x) { //这边加一层更加好理解
+                if (x - arr[mid]> arr[mid + k] - x) { // 确定窗口的移动方向
+                    start = mid + 1;
+                } else {
+                    end = mid;
+                }
             } else {
                 end = mid;
             }

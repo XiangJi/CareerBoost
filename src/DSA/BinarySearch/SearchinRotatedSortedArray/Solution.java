@@ -1,5 +1,6 @@
 package DSA.BinarySearch.SearchinRotatedSortedArray;
 
+// 这题电面面过 画图想好如果移动index
 public class Solution {
     public int search(int[] A, int target) {
         if (A.length == 0) {

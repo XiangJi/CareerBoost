@@ -29,7 +29,7 @@ class Solution {
                     start = mid;
                 }
             }
-            // 对每个房子都找到一个最近的heaters距离，然后不断更新就好
+            // 对每个房子都找到一个最近的heaters距离，然后不断更新就好 在
             current = Math.min(Math.abs(houses[i] - heaters[start]), Math.abs(heaters[end] - houses[i]));
             result = Math.max(result, current);
         }

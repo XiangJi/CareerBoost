@@ -24,6 +24,7 @@ public class Solution {
             }
         }
         
+        // io 上面面过 就正常BS 然后最后处理
         if (nums[start] >= target) {
             return start;
         } else if (nums[end] >= target) {

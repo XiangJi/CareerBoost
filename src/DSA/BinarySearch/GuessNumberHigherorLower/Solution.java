@@ -4,7 +4,7 @@ package DSA.BinarySearch.GuessNumberHigherorLower;
 @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
    int guess(int num); */
 
-
+// 利用外部函数的题 像find k th smallest pair distance的题需要自己写那个条件
 public class Solution extends GuessGame {
     public int guessNumber(int n) {
         if (n < 1) {

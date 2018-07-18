@@ -4,6 +4,7 @@ package DSA.BinarySearch.SearchinRotatedSortedArrayII;
 
 // just o(N) is the right solution
 // if have to use binary search, like below logN ~ N
+// if dup, just scan? why, give all same case
 
 public class Solution {
     public boolean search(int[] nums, int target) {
