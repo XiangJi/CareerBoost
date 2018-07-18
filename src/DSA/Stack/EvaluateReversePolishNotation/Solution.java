@@ -14,6 +14,11 @@ Some examples:
   标准用stack的题，实现细节 注意string to int method: Integer.parseInt()
   String 是对象 比较用equals
   G tag 很好记忆
+
+
+  当我们需要的是一个基本类型* int *的时候我们需要使用Integer.parseInt()函数
+当我们需要的是一个Integer对象类的时候我们就是用Integer.valueOf()函数
+
  */
 
 public class Solution {

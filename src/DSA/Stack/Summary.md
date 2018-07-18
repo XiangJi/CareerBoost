@@ -14,9 +14,9 @@ LIFO的数据结构
 
 ### Practice
 
-Basic calculator I II 
+Basic calculator I II III
 
-evaluate reverse polish notion
+evaluate reverse polish notion 因为已经转化好了 每次处理最后两个数
 
 decode string
 
