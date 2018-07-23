@@ -9,6 +9,8 @@ click to show more practice.
 
 More practice:
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+
+ 重要经典DP题
  */
 class Solution {
     public int maxSubArray(int[] nums) {
@@ -21,7 +23,7 @@ class Solution {
         }
         return result;
     }
-    
+
     // Save some space
     public int maxSubArrayII(int[] nums) {
         if (nums == null || nums.length == 0) {
@@ -30,11 +32,11 @@ class Solution {
         // initial
         int max = Integer.MIN_VALUE;
         int sum = 0;
-        
+
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i]; // log sum
             max = Math.max(max, sum); // function
-            
+
             // if sum < 0, start from 0;
             if (sum < 0) {
                 sum = 0;
