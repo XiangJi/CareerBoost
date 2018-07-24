@@ -1,4 +1,4 @@
-package DSA.BinaryIndexTree.RangeSumQuery2DMutable;
+package DSA.BinaryIndexedTree.RangeSumQuery2DMutable;
 
 public class Solution {
 // use BIT or Binary Segment Tree 这个不学 太复杂了
