@@ -40,7 +40,7 @@ Design 题目 Java constuctor是拿来初始化的， 成员变量的定义应�
 
 size = size, ——X, dead assignment
 
-== 和 = 不要写错
+== 和 = 不要写错,要想清楚
 
 记得初始化变量
 
