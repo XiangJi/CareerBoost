@@ -24,6 +24,8 @@ TreeSet or TreeMap
 
  把输入放进去 就可以logN check同时有多少
 
+Binary Search Tree 特殊用法 找到最近的值 ContainsDupIII
+
 
 
 ## Code temple

@@ -27,34 +27,45 @@ Expression: An expression is a string whose value is to be calculated. Every exp
 对每一个不同的token类型做不同的处理
 
 Use stack to implement 实现题 G
-
+1. ignore spaces
 
  */
-public class Solution {
+class Solution {
     public int calculate(String s) {
-        Stack<Character> ops = new Stack<>();
-        Stack<Integer> nums = new Stack<>();
-        int result = 0;
-        int number = 0; // 关键遍历
-        for (int i = 0; i < s.length(); i++) {
+        
+        Stack<Integer> numStack = new Stack<Integer>();
+        Stack<Character> signStack = new Stack<Character>();
+        int num = 0;
+        char sign = '+';
+        
+        for(int i = 0; i < s.length(); i ++) {
             char c = s.charAt(i);
-            if (Character.isDigit(c)) {
-                number = 10 * number + c - '0';
-            } else if (c == '+') {
-
-            } else if (c == '-') {
-
-            } else if (c == '(') {
-
-            } else if (c == ')') {
-
-
-            }
+            if(c == '(') {
+                numStack.push(num);
+                signStack.push(sign);
+                num = 0;
+                sign = '+';
+            } else if(c == ')') {
+                int prevNum = numStack.pop();
+                char prevSign = signStack.pop();
+                if(prevSign == '+') num += prevNum;
+                else num = prevNum - num;
+            } else if(c == '+') {
+                sign = '+';
+            } else if(c == '-') {
+                sign = '-';
+            } else if(Character.isDigit(c)) {
+                StringBuilder sb = new StringBuilder();
+                while(i < s.length() && Character.isDigit(s.charAt(i))) {
+                    sb.append(s.charAt(i));
+                    i ++;
+                }
+                i --;
+                int cur = Integer.valueOf(sb.toString());
+                if(sign == '+') num += cur;
+                else num = num - cur;
+            } 
         }
-        // before return, do the rest of the calculation
-        if (number != 0)
-            result += sign * number;
-        return result;
+        return num;
     }
-
 }

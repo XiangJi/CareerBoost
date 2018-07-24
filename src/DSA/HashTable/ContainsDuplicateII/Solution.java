@@ -8,21 +8,14 @@ import java.util.HashMap;
  * and the absolute difference between i and j is at most k.
  */
 public class Solution {
+    // algorithm: HashMap<Integer, Integer> num and index
     public boolean containsNearbyDuplicate(int[] nums, int k) {
-        if (nums.length == 0 || nums == null) {
-            return false;
-        }
-
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-
+        HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            if (!map.containsKey(nums[i])) {
-                map.put(nums[i], i);
-            } else if (Math.abs(map.get(nums[i]) - i) <=k ){
+            if (map.containsKey(nums[i]) && i - map.get(nums[i]) <= k) {
                 return true;
-            } else {
-                map.put(nums[i], i);
             }
+            map.put(nums[i], i);
         }
         return false;
     }
