@@ -1,4 +1,4 @@
-package DSA.BinaryIndexTree.RangeSumQueryImmutable;
+package DSA.BinaryIndexedTree.RangeSumQueryImmutable;
 
 /*
  * Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
