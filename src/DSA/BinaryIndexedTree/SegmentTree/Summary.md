@@ -92,3 +92,7 @@ public void modify(SegmentTreeNode root, int index, int value) {
 ```
 
 Segment Tree解题构造比较复杂，一般它的问题都可以用树状数组BIT来解决。 直接用树状数组。
+
+
+
+BIT的补充材料
