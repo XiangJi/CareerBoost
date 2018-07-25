@@ -15,34 +15,38 @@ import DSA.Tree.TreeNode;
  * G tag
  *
  * 同时track两个 inr dcr 放在返回值里面传
+ * post order 拿到左右节点的返回值再更新
  */
-public class Solution {
-    int maxval = 0;
-
+class Solution {
+    private int max = 0;
     public int longestConsecutive(TreeNode root) {
-        longestPath(root);
-        return maxval;
+        dfs(root);
+        return max;
     }
-
-    public int[] longestPath(TreeNode root) {
-        if (root == null)
-            return new int[] { 0, 0 };
-        int inr = 1, dcr = 1;
-        if (root.left != null) {
-            int[] l = longestPath(root.left);
-            if (root.val == root.left.val + 1)
-                dcr = l[1] + 1;
-            else if (root.val == root.left.val - 1)
-                inr = l[0] + 1;
+    
+    private int[] dfs(TreeNode cur) {
+        if (cur == null) {
+            return new int[] {0, 0};
         }
-        if (root.right != null) {
-            int[] r = longestPath(root.right);
-            if (root.val == root.right.val + 1)
-                dcr = Math.max(dcr, r[1] + 1);
-            else if (root.val == root.right.val - 1)
-                inr = Math.max(inr, r[0] + 1);
+        int ins = 1, des = 1;
+        if (cur.left != null) {
+            int[] l = dfs(cur.left);
+            if (cur.val == cur.left.val + 1) {
+                des = l[1] + 1;
+            } else if (cur.val == cur.left.val - 1) {
+                ins = l[0] + 1;
+            }
         }
-        maxval = Math.max(maxval, dcr + inr - 1);
-        return new int[] { inr, dcr };
+        if (cur.right != null) {
+            int[] r = dfs(cur.right);
+            if (cur.val == cur.right.val + 1) {
+                des = Math.max(des, r[1] + 1); // 注意这边要更新, 而不是简单的 + 1了
+            } else if (cur.val == cur.right.val - 1) {
+                ins =  Math.max(ins, r[0] + 1);
+            }
+            
+        }
+        max = Math.max(max, ins + des - 1);
+        return new int[] {ins, des};
     }
 }
