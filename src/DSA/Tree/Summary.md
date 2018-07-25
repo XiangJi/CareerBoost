@@ -17,6 +17,7 @@ stack queue iterative solution\
 
       ```java
       <tmp, max, target number > //dfs层之间比较 用next 或者prev args
+          min max 根据物理意义确定初始化是MAX MIN or 0
       ```
 
       
