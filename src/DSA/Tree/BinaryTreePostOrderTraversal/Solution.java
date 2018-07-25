@@ -17,7 +17,7 @@ public class Solution {
         stack.push(root);
         while (!stack.isEmpty()) {
             TreeNode cur = stack.pop();
-            res.addFirst(cur.val); // trick
+            res.addFirst(cur.val); // 每次add在头上， 所以顺序从左右根变成了根右左， 然后下面两个反一下就行
             if (cur.left != null) stack.push(cur.left);
             if (cur.right != null) stack.push(cur.right);
         }

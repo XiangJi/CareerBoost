@@ -40,7 +40,7 @@ public class Solution {
         stack.push(root);
         while(!stack.isEmpty()) {
             TreeNode cur = stack.pop();
-            if (cur.right != null) stack.push(cur.right);
+            if (cur.right != null) stack.push(cur.right); // 因为是根左右 所以右边先进去 这样可以后出
             if (cur.left != null) stack.push(cur.left); 
             res.add(cur.val);
         }
