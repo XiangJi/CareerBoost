@@ -122,6 +122,18 @@ Oh, also if you are available to do a coaching session the Google offers candida
 
 
 
+How to test a camera system, ask for the details, how is the white-box looks like?
+
+How would you test google map, gmail, google self driving car, camera?
+
+写test case 写test plan 然后写一些伪代码
+
+简历上面的项目怎么测？
+
+most interesting bug you found？
+
+
+
 ## Q&A
 
 1. **Question 1. What Is A Test Plan?**
