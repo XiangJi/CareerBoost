@@ -15,11 +15,11 @@ bst的inorder是升序的 所以直接dfs遍历即可，但是因为是iterator 
 
  */
 public class BSTIterator {
-    TreeNode current;
+    TreeNode current; // the cursor and stack
     Stack<TreeNode> stack;
     public BSTIterator(TreeNode root) {
         current = root;
-        stack = new Stack<>();
+        stack = new Stack<>(); // don't forget to new stack
     }
 
     /** @return whether we have a next smallest number */
@@ -32,7 +32,7 @@ public class BSTIterator {
 
     /** @return the next smallest number */
     public int next() {
-        while (current != null) {
+        while (current != null) { // code block
             stack.push(current);
             current = current.left;
         }

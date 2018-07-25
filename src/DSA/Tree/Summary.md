@@ -6,7 +6,7 @@ Most of them can be solved by Divide and conquer, DFS(recursive), BFS
 
 DFS BFS
 
-stack queue iterative solution
+stack queue iterative solution\
 
 1. 选遍历方式  
    1. preorder 从上到下 <总常用>
@@ -14,6 +14,11 @@ stack queue iterative solution
       Do you determine some parameters to help the node know the answer of itself? Can you use these parameters and the value of the node itself to determine what should be the parameters parsing to its children?
 
       利用自己定义的参数和node的结果 往下传
+
+      ```java
+      <tmp, max, target number > //dfs层之间比较 用next 或者prev args
+          min max 根据物理意义确定初始化是MAX MIN or 0
+      ```
 
       
 
@@ -116,3 +121,8 @@ recursive first, or operation first?
 
 Do not test it, think if correct first!
 
+
+
+### Practice 
+
+Binary Tree Longest Consecutive Sequence I, II

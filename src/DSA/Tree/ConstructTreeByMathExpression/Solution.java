@@ -1,7 +1,7 @@
 package DSA.Tree.ConstructTreeByMathExpression;
 /*
  * 字符串转为二叉树 输入是一个字符串
-一个数组 数组里存着加减乘除的顺序 可能是+-* / 可能是* - + /之类的. 1point3acres
+一个数组 数组里存着加减乘除的顺序 可能是+-* / 可能是* - + /之类的 
 
 比如给你个1 * 9 - 3 +2 *7
 

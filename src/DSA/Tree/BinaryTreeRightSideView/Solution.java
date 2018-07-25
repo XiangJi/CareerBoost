@@ -30,11 +30,11 @@ class Solution {
             return;
         }
 
-        // op, root
-        if (level == res.size()) {
+        // op, root, 注意调节
+        if (level == res.size()) { 
             res.add(current.val);
         }
-        // op right, then left
+        // op right, then left、从右边一路加下去
         dfs(current.right, res, level + 1);
         dfs(current.left, res, level + 1);
     }
