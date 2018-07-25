@@ -6,9 +6,17 @@ package DSA.BFS.FindBicycle;
  * 构建图用BFS
  * 或者dfs也行
  * 高频题 一定要写一遍
- * 
+ *
  * 我的算法：把每个人同时进Q, 然后同时开始bfs 碰到车就拿掉 然后停止搜索 求这个人拿到哪个车
  * 既然是矩阵就使用matrix构图
+ *
+ *
+ *https://www.careercup.com/question?id=5664498449907712
+ *
+ * 从人0车0 人1车1 这样的搭配找出总共的路程，然后人0车1，人1车2。。。这样
+希望你能看懂233
+
+找出人车之间的distance的那个函数interviewer说你不用写了，我就写了个getDists(...);
  */
 public class Solution {
 
