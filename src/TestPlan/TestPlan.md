@@ -1,9 +1,5 @@
 # Test plan/strategy
 
-Please think about this from all the angels and several google applications, like Gmail, GoogleMap, 
-
-
-
 Show test passion！During the interview, show user/product experts
 
 Test plan (Timeline! Leadership!) and test strategy(All parts and frameworks, test types), test environment.
@@ -16,23 +12,29 @@ testing, performance testing, environments,
 
 
 
-### How to test Gmail?
+### How to test Gmail/ Map / Camera/ Self Drive car/ Chromebook?
 
-Testing is an art
+Testing is an art:
 
-How does user use it?
+Princple:
 
-### Draw out the system design diagram, with confirm, communication!
+Big picture (come up/ ask for multiple pieces)
 
-General testing, then ask for fraigle part~
+integration with other things
+
+Structred manner(do test cases for each part) (Camera, taking photos, image management, settings, all the angles)
+
+
+
+1. Ask a lots of questions! Come up /ask for features and test cases, 
+   1. Who will be the user? How would user use it? Come up features and Test Cases( new feature and apps) to be tested design, ask for example workflow, remember, it's not decided by you, work with your interviewers
+   2. What's the boundary? how many users?
+2. Draw out the system design diagram, with confirm, communication!
+3. Test each parts (automation)
+4. Test plan schedule (breifly mention)
+5. General testing, then ask for fraigle part~ (Optional)
 
 CDN DNS
-
-
-
-### Example 
-
-1. Test Case( new feature and apps) to be tested design, ask for example workflow
 
 ### Approarch
 
@@ -41,8 +43,6 @@ CDN DNS
 Expresso咖啡
 
 integrating test frameworks such as [Mockito](https://github.com/mockito/mockito) to test Android API calls in your local unit tests, and [Espresso](https://developer.android.com/topic/libraries/testing-support-library/index.html#Espresso) or [UI Automator](https://developer.android.com/topic/libraries/testing-support-library/index.html#UIAutomator) to exercise user interaction in your instrumented tests. You can generate Espresso tests automatically using[Espresso Test Recorder](https://developer.android.com/studio/test/espresso-test-recorder.html). 
-
-
 
 #### iOS:
 
@@ -53,8 +53,6 @@ With the EarlGrey framework, you have access to enhanced synchronization feature
 EarlGrey’s synchronization features help to ensure that the UI is in a steady state before actions are performed. This greatly increases test stability and makes tests highly repeatable.
 
 EarlGrey works in conjunction with the XCTest framework and integrates with Xcode’s Test Navigator so you can run tests directly from Xcode or the command line (using xcodebuild).
-
-
 
 #### Front-end and back-end
 
@@ -88,7 +86,93 @@ Use Chaos Monkey, get random tests
 
 Develop the unit tests during the developing phase
 
+```java
+import org.junit.Test;
+import org.junit.Ignore;
+import static org.junit.Assert.assertEquals;
+
+public class TestJunit1 {
+
+   String message = "Robert";	
+   MessageUtil messageUtil = new MessageUtil(message);
+   
+   @Test
+   public void testPrintMessage() {	
+      System.out.println("Inside testPrintMessage()");    
+      assertEquals(message, messageUtil.printMessage());     
+   }
+}
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+//JUnit Suite Test
+@RunWith(Suite.class)
+
+@Suite.SuiteClasses({ 
+   TestJunit1.class ,TestJunit2.class
+})
+
+public class JunitTestSuite {
+}
+```
+
 Mockout the backend.
+
+```javascript
+var assert = require('assert');
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      assert.equal([1,2,3].indexOf(4), -1);
+    });
+  });
+});
+```
+
+
+
+```java
+package com.example.android.testing.espresso.BasicSample;
+
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
+...
+
+@RunWith(AndroidJUnit4.class)
+@LargeTest
+public class ChangeTextBehaviorTest {
+
+    private String mStringToBetyped;
+
+    @Rule
+    public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
+            MainActivity.class);
+
+    @Before
+    public void initValidString() {
+        // Specify a valid string.
+        mStringToBetyped = "Espresso";
+    }
+
+    @Test
+    public void changeText_sameActivity() {
+        // Type text and then press the button.
+        onView(withId(R.id.editTextUserInput))
+                .perform(typeText(mStringToBetyped), closeSoftKeyboard());
+        onView(withId(R.id.changeTextBt)).perform(click());
+
+        // Check that the text was changed.
+        onView(withId(R.id.textToBeChanged))
+                .check(matches(withText(mStringToBetyped)));
+    }
+}
+```
 
 TDD: Write the system test for  (Run them after development done):
 
@@ -122,15 +206,13 @@ Oh, also if you are available to do a coaching session the Google offers candida
 
 
 
-How to test a camera system, ask for the details, how is the white-box looks like?
-
-How would you test google map, gmail, google self driving car, camera?
-
 写test case 写test plan 然后写一些伪代码
 
-简历上面的项目怎么测？
+简历上面的项目怎么测？Perl, REST assured, JS framework, Expresso  Junit for intern, Mocha
 
-most interesting bug you found？
+most interesting bug you found？Found a design, the fixed can not be merge back, but the qualification job cannot go, try to give real story
+
+Given a scenaio, just freestyle troubleshooting
 
 
 
