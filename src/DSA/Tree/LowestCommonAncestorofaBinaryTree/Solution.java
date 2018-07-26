@@ -18,7 +18,7 @@ For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3. Another exa
 
 
 Algorithm
-
+Postorder
  */
 public class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
