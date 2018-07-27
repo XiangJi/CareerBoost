@@ -62,7 +62,7 @@ public class Solution {
         return null;
     }
 
-    // use boolean as a return value
+    // use boolean as a return value，当需要判断要不要往下搜索的时候用boolean
     private boolean dfs(String start, List<String> path, int total, HashMap<String, List<String>> map) {
         if (path.size() == total) {
             return true;

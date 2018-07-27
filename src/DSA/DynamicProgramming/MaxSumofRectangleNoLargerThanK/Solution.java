@@ -1,7 +1,8 @@
 package DSA.DynamicProgramming.MaxSumofRectangleNoLargerThanK;
 
 /*
- * Given a non-empty 2D matrix matrix and an integer k, find the max sum of a rectangle in the matrix such that its sum is no larger than k.
+ * Given a non-empty 2D matrix matrix and an integer k, find the max sum of a rectangle in the matr
+ix such that its sum is no larger than k.
 
 Example:
 Given matrix = [
@@ -19,6 +20,8 @@ What if the number of rows is much larger than the number of columns?
  * Tushar用kadan算法mmn再优化一下
  * time : O[min(m,n)^2 * max(m,n) * log(max(m,n))]
      space : O(max(m, n))
+     
+     G tag
  */
 import java.util.TreeSet;
 

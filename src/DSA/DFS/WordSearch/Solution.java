@@ -16,6 +16,8 @@ board =
 Given word = "ABCCED", return true.
 Given word = "SEE", return true.
 Given word = "ABCB", return false.
+
+// 我的写法用boolean[][] used来backtracking, 下面的trick更加方便
  */
 public class Solution {
     public boolean exist(char[][] board, String word) {
