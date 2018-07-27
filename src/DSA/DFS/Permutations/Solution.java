@@ -5,31 +5,28 @@ import java.util.List;
 
 public class Solution {
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        // corner case
-        if (nums == null || nums.length == 0) {
-            return result;
-        }
-        dfs(result, new ArrayList<Integer>(), nums);
-        return result;
+        List<List<Integer>> res = new ArrayList<>();
+        dfs(res, new ArrayList<Integer>(), 0, nums, new int[nums.length]);
+        return res;
     }
-
-    private void dfs(List<List<Integer>> result, List<Integer> list, int[] nums) {
-        //exit condition
-        if (list.size() == nums.length) {
-            result.add(new ArrayList<Integer>(list)); //be carefull, deep copy here!
+    
+    private void dfs(List<List<Integer>> res, List<Integer> tmp, int index, int[] nums, int[] used) {
+        if ( index == nums.length ) {
+            res.add(new ArrayList<Integer>(tmp));
             return;
         }
+        
         for (int i = 0; i < nums.length; i++) {
-            if (list.contains(nums[i])) {
-                continue;
-            }
-        list.add(nums[i]);
-        dfs(result, list, nums);
-        list.remove(list.size() - 1);
+            if (used[i] == 1) continue;
+            used[i] = 1;
+            tmp.add(nums[i]);
+            dfs(res, tmp, index + 1, nums,used); // permutation used boolean array, here is index + 1, not i + 1
+            used[i] = 0;
+            tmp.remove(tmp.size() - 1);
         }
-
     }
+
+    
 
     // recursive test, use print instead of debugger
     // variables i, temp, list,

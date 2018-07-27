@@ -34,7 +34,7 @@ dfs+pruning 剪枝就是去冗余
 
 先写dfs函数 退出条件后写 想清楚是最后还是最前
 
-### Backtracking
+### Backtracking（n-ary tree search）
 
 When solving a backtracking problem, pay attention to whether it’s a Permutation problem, or a Combination.
 
@@ -42,17 +42,18 @@ A general recursive template for backtracking may look like this:
 
 ```java
 /*可以用的参数 
- * input list, 输入一般都要传进去 可以是list或者string
+ * input list, 输入一般都要传进去 可以是list或者string, 或者int N
  * temp list， 当需要存储temp结果 最后加入到res里面使用
  * 当结果只能用一次时候使用 visited (hash or boolean array), permutation一般需要
- * cursor index 一般都会需要 除非在树上面, 意义是这轮search的start cursor, permutationb不需要这个 直接从0开始就行
+ * cursor: pos 一般都会需要 除非在树上面, 意义是这轮search的start cursor, permutationb不需要这个 直接从0开始就行, combination and subsets一般需要, 直接帮忙去重了, 关键看数字能不能重用
  * res list, 当需要求全部结果的时候使用
  * 用于计算的value(e.g. remain - see combination sum)
  * Memoization: 拿一个cache来存储结果 这样可以提前返回 剪枝
+ * index 记录层数 用于permutation, 和combination用的地方不一样 
  
  * 可用的返回值 boolean 或者int 这种时候一般可以用cache加速 一般不是穷举所有值 而是求一个boolean或者int的时候 就需要把它变成返回值
  
- * 
+ * 如果subset只能用一次 cursor i要+1,  然后要判断相邻两个是不是一样 i > pos && ?==
  */
 	dfs (parameters of given data and current recursive level) {
         // Handle base cases, i.e. the last level of recursive call
@@ -127,9 +128,16 @@ permutation:
 
 计算复杂度的公式 `O(构造解的复杂度 * 解的个数)` 
 
-### Graph DFS
+### Graph DFS (matrix, adjency list, trie)
 
 ```java
+//Matrix
+Word Search, longest increasing path in a matrix
+
+在matrix上面直接dfs 看word search，找四个方向
+
+
+// Normal list graph
 public List<String> findItinerary(String[][] tickets) {
         if (tickets == null || tickets.length == 0) {
             return null;
@@ -187,15 +195,11 @@ public List<String> findItinerary(String[][] tickets) {
         return false;
     }
 
-
-在matrix上面直接dfs 看word search，找四个方向
+// Trie
+Word Squre
 ```
 
 
-
-### Tree DFS
-
-Please see content in Tree summary
 
 ## Practice
 
@@ -208,8 +212,6 @@ Cracking the safe
 Expression add operation 变形 四则运算和括号 看能不能得到目标值 
 
 升级版是24Game 如何构造这些dfs场景和条件变量
-
-
 
 Generate abbreviations
 
