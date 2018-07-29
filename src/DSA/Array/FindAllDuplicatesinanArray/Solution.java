@@ -36,4 +36,9 @@ public class Solution {
         }
         return result;
     }
+    
+    public static void main(String[] args) {
+        Solution test = new Solution();
+        System.out.println(test.findDuplicates(new int[]{1,2,4,4,5,5,5,5}));
+    }
 }

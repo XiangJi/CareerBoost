@@ -12,6 +12,7 @@ On space extra space method is trival, remember k % length;
 class Solution {
     //O1 space method
     // 三次翻转 1到n -k, n
+    // 翻转n - k 个 再翻转
     public void rotate(int[] nums, int k) {
         if (nums.length == 0) {
             return;
