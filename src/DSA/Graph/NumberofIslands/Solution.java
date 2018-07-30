@@ -22,7 +22,46 @@ public class Solution {
     //O（mn）
     private int m, n;
     public int numIslands(char[][] grid) {
-        int result = 0;
+        int res = 0;
+        int m = grid.length;
+        if (m == 0) {
+            return 0;
+        }
+        int n = grid[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    dfs(grid, i, j);
+                    res++;
+                }
+            }
+        }
+        return res;
+    }
+    
+    private void dfs(char[][] grid, int i, int j) {
+        if (i < 0 || i >= grid.length || j < 0 || j > grid[0].length) {
+            return;
+        }
+        if (grid[i][j] == '0') {
+            return;
+        }
+            
+        grid[i][j] = '0';
+
+        dfs(grid, i + 1, j);
+        dfs(grid, i, j + 1);
+        dfs(grid, i - 1, j);
+        dfs(grid, i, j - 1);
+    }
+
+    // BFS
+    //O(mn)
+    int[] dx = {1, 0, -1, 0};
+    int[] dy = {0, 1, 0, -1};
+
+    public int numIslandsII(char[][] grid) {
+        int res = 0;
         m = grid.length;
         if (m == 0) {
             return 0;
@@ -31,83 +70,32 @@ public class Solution {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (grid[i][j] == '1') {
-                    dfs(grid, i, j);
-                    result++;
-                }
-            }
-        }
-        return result;
-    }
-
-    private void dfs(char[][] grid, int i, int j) {
-        // exsit condition
-        if (i < 0 || j < 0 || i >= m || j >= n || grid[i][j] == '0') {
-            return;
-        }
-        // dfs operations
-        grid[i][j] = '0';
-        // recursion
-        dfs(grid, i + 1, j);
-        dfs(grid, i - 1, j);
-        dfs(grid, i, j + 1);
-        dfs(grid, i, j - 1);
-    }
-
-    // BFS
-    //O(mn)
-    public int numIslands2(char[][] grid) {
-        int result = 0;
-        int m = grid.length;
-        if (m == 0) {
-            return 0;
-        }
-        int n = grid[0].length;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (grid[i][j] == '1') {
+                    grid[i][j] = '0';
                     bfs(grid, i, j);
-                    result++;
+                    res++;
                 }
             }
         }
-        return result;
+        return res;
     }
-
+    
     private void bfs(char[][] grid, int x, int y) {
-        grid[x][y] = 0;
-        int m = grid.length;
-        int n = grid[0].length;
-        Queue<Integer> queue = new LinkedList<>();
-        // trick for transfer 2D to 1D
-        // 转换的时候从上往下数，公式为行数 * 每列个数n + 列数
-        int code = x * n + y;
-        queue.offer(code);
-
-        while(!queue.isEmpty()) {
-            code = queue.poll();
-            int i = code / n;
-            int j = code % n;
-
-            // up
-            if (i > 0 && grid[i - 1][j] == '1') {
-                queue.offer(((i - 1) * n) + j);
-                grid[i - 1][j] = '0';
-            }
-            // down
-            if (i < m - 1 && grid[i + 1][j] == '1') {
-                queue.offer(((i + 1) * n) + j);
-                grid[i + 1][j] = '0';
-            }
-
-            // left
-            if (j > 0 && grid[i][j - 1] == '1') {
-                queue.offer(i * n + j - 1);
-                grid[i][j - 1] = '0';
-            }
-            // right
-            if (j < n - 1 && grid[i][j + 1] == '1') {
-                queue.offer(i * n + j + 1);
-                grid[i][j + 1] = '0';
+        Queue<Integer> qx = new LinkedList<>();
+        Queue<Integer> qy = new LinkedList<>();
+        qx.offer(x);
+        qy.offer(y);
+        while (!qx.isEmpty()) {
+            int cx = qx.poll();
+            int cy = qy.poll();
+            // four direction
+            for (int i = 0; i < 4; i++) {
+                int nx = cx + dx[i];
+                int ny = cy + dy[i];
+                if (nx >= 0 && nx < m && ny >= 0 && ny < n && grid[nx][ny] == '1') {
+                    qx.offer(nx);
+                    qy.offer(ny);
+                    grid[nx][ny] = '0';
+                }
             }
         }
     }

@@ -79,7 +79,7 @@ public class Solution {
                 int ny = cy + dy[i];
                 if (0 <= nx && nx < n && 0 <= ny && ny < m
                         && board[nx][ny] == 'O') {
-                    board[nx][ny] = 'W';              // 'W' ->  Water
+                    board[nx][ny] = 'W';              // 'W' ->  Water  操作放在这边不会超时
                     qx.offer(nx);
                     qy.offer(ny);
                 }
