@@ -9,7 +9,7 @@ public class Solution {
         }
         
         HashMap<Character, Character> mapOne = new HashMap<Character, Character>();
-        HashMap<Character       , Character> mapTwo = new HashMap<Character, Character>();
+        HashMap<Character, Character> mapTwo = new HashMap<Character, Character>();
         
         for (int i = 0; i < s.length(); i++) {
             char c1 = s.charAt(i);
