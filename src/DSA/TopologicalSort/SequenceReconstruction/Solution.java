@@ -81,7 +81,7 @@ public class Solution {
         }
         int index = 0;
         while(!q.isEmpty()){
-            if(q.size()>1) return false; //check with org
+            if(q.size()>1) return false; //check with org since needs to be unique!
             int cur = q.poll();
             if(org[index++] != cur) return false; //check with org
             if(!map.containsKey(cur)) continue; //don't forget
