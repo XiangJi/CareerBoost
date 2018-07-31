@@ -12,32 +12,36 @@ import java.util.Queue;
  * use int[] and k as index cursor
  */
 class Solution {
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        int[] indegree = new int[numCourses];
-        int[] res = new int[numCourses];
-        int k = 0;
-        for (int[] pair : prerequisites) {
-            indegree[pair[0]]++;
+    public int[] findOrder(int n, int[][] edges) {
+        // build the graph list
+        int[] res = new int[n];
+        int[] degree = new int[n]; // 需要一格degree入度数组
+        int count = 0; // 需要一格count来做TS最后的判断
+        // 
+        for (int[] edge : edges) {
+            degree[edge[0]]++;
         }
-        Queue<Integer> queue = new LinkedList<>();
-        for (int i = 0; i < indegree.length; i++) {
-            if (indegree[i] == 0) {
+        Queue<Integer> queue = new LinkedList<Integer>();
+        // Topogolical sort
+        for (int i = 0; i < n; i++) {
+            if (degree[i] == 0) {
                 queue.offer(i);
-                res[k++] = i;
             }
         }
+        
         while (!queue.isEmpty()) {
-            int pre = queue.poll();
-            for (int[] pair : prerequisites) {
-                if (pair[1] == pre) {
-                    indegree[pair[0]]--;
-                    if (indegree[pair[0]] == 0) {
-                        queue.offer(pair[0]);
-                        res[k++] = pair[0];
+            int node = queue.poll();
+            res[count] = node;
+            count++; // 每消除一格0点 在这边加count
+            for (int[] edge : edges) {
+                if (edge[1] == node) {
+                    degree[edge[0]]--; //新点入度--
+                    if (degree[edge[0]] == 0) { // 如果到1了加入
+                        queue.offer(edge[0]);
                     }
                 }
             }
         }
-        return (k == numCourses) ? res : new int[0];
+        return count == n ? res : new int[0];
     }
 }

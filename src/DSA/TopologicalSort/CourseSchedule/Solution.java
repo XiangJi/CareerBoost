@@ -42,35 +42,35 @@ T: O(V+E)
 
 DFS BFS 两种实现最好都掌握
  */
-public class Solution {
-    public boolean canFinish(int numCourses, int[][] pairs) {
-        // construct the graph by just use data indegree
-        int[] indegree = new int[numCourses];
-        int result = numCourses;
-        for (int[] pair : pairs) {
-            indegree[pair[0]]++;
+class Solution {
+    public boolean canFinish(int n, int[][] edges) {
+        // build the graph list
+        int[] degree = new int[n]; // 需要一格degree入度数组
+        int count = 0; // 需要一格count来做TS最后的判断
+        // 
+        for (int[] edge : edges) {
+            degree[edge[0]]++;
         }
-        Queue<Integer> queue = new LinkedList<>();
-        // BFS
-        for (int i = 0; i < indegree.length; i++) {
-            if (indegree[i] == 0) {
+        Queue<Integer> queue = new LinkedList<Integer>();
+        // Topogolical sort
+        for (int i = 0; i < n; i++) {
+            if (degree[i] == 0) {
                 queue.offer(i);
             }
         }
-
-        while(!queue.isEmpty()) {
-            int pre = queue.poll();
-            result--;
-            for (int[] pair : pairs) {
-                if (pair[1] == pre) {
-                    indegree[pair[0]]--;
-                    if (indegree[pair[0]] == 0) {
-                        queue.offer(pair[0]);
+        
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            count++; // 每消除一格0点 在这边加count
+            for (int[] edge : edges) {
+                if (edge[1] == node) {
+                    degree[edge[0]]--; //新点入度--
+                    if (degree[edge[0]] == 0) { // 如果到1了加入
+                        queue.offer(edge[0]);
                     }
                 }
             }
         }
-
-        return result == 0;
+        return count == n;
     }
 }
