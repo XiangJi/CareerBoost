@@ -61,7 +61,7 @@ class Solution {
         StringBuilder res = new StringBuilder();
         HashMap<Character, Set<Character>> map = new HashMap<>();
         int[] degree = new int[26];
-        int count = 0;
+        int count = 0; // 这题的count是应有的字符
 
         // count 找到了所有独一无二字母，一开始把所有入度变成1
         for (String word : words) {
