@@ -45,6 +45,7 @@ public class Solution {
 
     private int find(int[] parent, int i) {
         while ( i != parent[i]) { // if not when init as the node itself
+            parent[i] = parent[parent[i]]; // path compression
             i = parent[i];
         }
         return i;

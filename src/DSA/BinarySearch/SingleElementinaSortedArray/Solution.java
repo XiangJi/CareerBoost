@@ -25,7 +25,7 @@ public class Solution {
             // Index: 0 1 2 3 4 5 6
             // Array: 1 1 3 3 4 8 8
             int mid = start + (end - start) / 2;
-            if (mid % 2 == 1) mid--;
+            if (mid % 2 == 1) mid--; // 不过不是even 往下挪一格
             if (nums[mid] != nums[mid + 1]) {
                 end = mid;
             } else {

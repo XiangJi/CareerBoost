@@ -30,6 +30,8 @@ The input is always valid. You may assume that evaluating the queries will resul
  * 高频  高频  高频 超高频
  * follow up 使得query时间最优:
  * Union find
+ * 
+ * 用DFS写一遍 然后提一下可以用union find
  */
 class Solution {
     HashMap<String, List<GraphNode>> map;
@@ -65,7 +67,6 @@ class Solution {
             double sub = find(next.den, end, value * next.val, visited);
             if (sub != -1.0) return sub;
         }
-        visited.remove(start);
         return -1;
     }
 

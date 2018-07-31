@@ -32,30 +32,30 @@ public class Solution {
     public int countComponents(int n, int[][] edges) {
         int result = n;
 
-        int[] parent  = new int[n];
+        int[] root  = new int[n];
 
         // initialization
         for (int i = 0; i < n; i++) {
-            parent[i] = -1;
+            root[i] = i;
         }
 
         for (int[] edge : edges) {
-            int x = find(edge[0], parent);
-            int y = find(edge[1], parent);
+            int x = find(edge[0], root);
+            int y = find(edge[1], root);
             if (x != y) {
                 // no loop
                 result--;
-                parent[y] = x; // parent[x] = y also works, just make sure has one mark direction
+                root[y] = x; // parent[x] = y also works, just make sure has one mark direction
             }
 
         }
         return result;
     }
 
-    private int find(int node, int[] parent) {
-        while (parent[node] != -1) {
-            node = parent[node];
+    private int find(int i, int[] root) {
+        while (root[i] != i) {
+            i = root[i];
         }
-        return node;
+        return i;
     }
 }
