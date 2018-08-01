@@ -90,7 +90,7 @@ class Solution {
             graph.add(new HashSet<>());
             rgraph.add(new HashSet<>());
         }
-
+        // 这题入度用set保存更加方便
         Queue<Integer> queue = new LinkedList<>();
 
         for (int i = 0; i < N; ++i) {
