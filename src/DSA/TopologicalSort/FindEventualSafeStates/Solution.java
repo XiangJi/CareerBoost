@@ -81,8 +81,9 @@ In order to exit our search quickly when we
 class Solution {
     public List<Integer> eventualSafeNodes(int[][] G) {
         int N = G.length;
-        boolean[] safe = new boolean[N];
-
+        boolean[] safe = new boolean[N]; // safe数组
+        
+        // 使用正反两个图, 用list因为点数固定
         List<Set<Integer>> graph = new ArrayList<>();
         List<Set<Integer>> rgraph = new ArrayList<>();
         for (int i = 0; i < N; ++i) {
@@ -94,7 +95,7 @@ class Solution {
 
         for (int i = 0; i < N; ++i) {
             if (G[i].length == 0)
-                queue.offer(i);
+                queue.offer(i); // 如果没有 肯定是
             for (int j: G[i]) {
                 graph.get(i).add(j);
                 rgraph.get(j).add(i);
@@ -104,9 +105,9 @@ class Solution {
         while (!queue.isEmpty()) {
             int j = queue.poll();
             safe[j] = true;
-            for (int i: rgraph.get(j)) {
-                graph.get(i).remove(j);
-                if (graph.get(i).isEmpty())
+            for (int i: rgraph.get(j)) { // 对于每个指向这个点的树
+                graph.get(i).remove(j); // 删除指向边
+                if (graph.get(i).isEmpty()) // 如果他不指向任何边 说明term了 进queue
                     queue.offer(i);
             }
         }
