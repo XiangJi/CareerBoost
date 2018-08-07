@@ -42,19 +42,22 @@ public class Solution {
     }
 
     // STACK O(m+n) o(m + n)
-    public int[] nextGreaterElementII(int[] findNums, int[] nums) {
-        Stack<Integer> stack = new Stack<>();
+    public int[] nextGreaterElementII(int[] nums1, int[] nums2) {
         HashMap<Integer, Integer> map = new HashMap<>();
-        int[] res = new int[findNums.length];
-        for (int i = 0; i < nums.length; i++) {
-            while (!stack.empty() && nums[i] > stack.peek())
-                map.put(stack.pop(), nums[i]);
-            stack.push(nums[i]);
+        Stack<Integer> stack = new Stack<>();
+        int[] res = new int[nums1.length];
+        for (int i = 0; i < nums2.length; i++) {
+            while(!stack.isEmpty() && nums2[i] > stack.peek()) {
+                map.put(stack.pop(), nums2[i]);
+            }
+            stack.push(nums2[i]);
         }
-        while (!stack.empty())
-            map.put(stack.pop(), -1);
-        for (int i = 0; i < findNums.length; i++) {
-            res[i] = map.get(findNums[i]);
+        for (int i = 0; i < nums1.length; i++) {
+            if (map.containsKey(nums1[i])) {
+                res[i] = map.get(nums1[i]);
+            } else {
+                res[i] = -1;
+            }
         }
         return res;
     }
