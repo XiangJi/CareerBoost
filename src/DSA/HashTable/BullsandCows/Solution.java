@@ -48,6 +48,10 @@ Follow up:
 用count hash存储
 如果正负号
 secret 出现过就++ 如果<0 cows++ vice versa
+
+用一个count数组 hash
+
+一个永远++另一个--
  */
 public class Solution {
     public String getHint(String secret, String guess) {
