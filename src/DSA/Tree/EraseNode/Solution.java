@@ -44,7 +44,10 @@ public class Solution {
         if (root == null) {
             return res;
         }
-
+        TreeNode top = dfs(root, res);
+        if (top != null) {
+            res.add(top.val);
+        }
         return res;
     }
 
