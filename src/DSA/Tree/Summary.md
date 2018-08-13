@@ -2,6 +2,24 @@
 
 Most of them can be solved by Divide and conquer, DFS(recursive), BFS
 
+## 递归(Recursion)
+
+#### 递归三部曲
+
+1.define subproblem：定义子问题
+ 2.find recursion rule: 找出递归规则
+ 3.define base case: 定义退出条件
+
+#### 知识点
+
+1. 表象上: function calls itself
+2. 实质上: reduce a big problem to smaller ones(size n depends on size n-1, or size n-2 or n/2...)
+3. implementation上:
+    1).base case: smallest problem to solve
+    2).Recursive rule. how to make the problem smaller
+    (if we can resolve the same problem but with a smaller size,
+    then what is left to do for the current problem size n)  
+
 
 
 DFS BFS
@@ -20,7 +38,7 @@ stack queue iterative solution\
           min max 根据物理意义确定初始化是MAX MIN or 0
       ```
 
-      
+      **base case** usually refers to the null ChildNode below the leaf node. (null pointer under the leaf node) 
 
    2. inorder从左到右  <常用在BST，BST的inorder遍历从小到大，反中根降序>
 
@@ -29,6 +47,13 @@ stack queue iterative solution\
       Or you can think the problem in this way: for a node in a tree, if you know the answer of its children, can you calculate the answer of the node?
 
       知道子的结果能不能求根的结果？
+
+      Tree+Recursion：从下往上返值
+       way of thinking(Tricks)
+       1.What do you expect from your lchild / rchild?
+       (usually it is the return type of the recursion function)
+       2.What do you want to do in the current layer?
+       3.What do you want to report to your parent?(same as Q1=Q3)
 
    4. BFS size要用于控制每个层数的个数 没有得话也是level order 但是不知道每层有多少个
 
@@ -105,6 +130,10 @@ BST 和二分法的思想一样
 
 
 
+
+
+
+
 自己想办法构建递归：
 
 想传参应该是什么 boolean？ int? int[]
@@ -120,6 +149,15 @@ For this tasks, what's the order?
 recursive first, or operation first?
 
 Do not test it, think if correct first!
+
+
+
+2.只把value从下往上传递
+ 2.1 getHeight(Node root) 是把integer value 从下往上传递
+ 2.2 isBalanced(Node root)是把boolean value 从下往上传递
+ 2.3 isSymmetric(Node root)是把boolean value 从下往上传递
+ 2.4 assign the value of each node to be the total number of nodes that belong to its left subtree
+ (是把integer value从下往上传递的题目)
 
 
 
