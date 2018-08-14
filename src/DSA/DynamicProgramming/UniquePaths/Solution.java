@@ -6,6 +6,8 @@ The robot can only move either down or right at any point in time. The robot is 
 
 How many possible unique paths are there?
 
+1维DP 只有一个变量 在矩阵上面变化
+
  */
 public class Solution {
     // typical 2D DP
@@ -18,11 +20,11 @@ public class Solution {
         for (int i = 0; i < m; i++) {
             dp[i][0] = 1;
         }
-        
+
         for (int i = 0; i < n; i++) {
             dp[0][i] = 1;
         }
-        
+
         // dp
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {

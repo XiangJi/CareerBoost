@@ -50,7 +50,7 @@ public class Solution {
                         if (obstacleGrid[i][j] != 1) {
                                 pathNum[i][j] = pathNum[i][j - 1] + pathNum[i - 1][j];
                         } else {
-                                pathNum[i][j] = 0;
+                                pathNum[i][j] = 0; // 按定义来就行
                         }
                 }
         }

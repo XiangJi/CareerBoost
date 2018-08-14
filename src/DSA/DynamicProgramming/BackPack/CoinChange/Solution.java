@@ -20,8 +20,7 @@ dp[amount] : the minimun number of coins for amount i
 
 min = Math.min(min, dp[i - coins[j]] + 1);
 
-其实是2D dp min来降维
-using first j coins
+using first j coins, j这个维度只是在遍历
 
  */
 public class Solution {
@@ -36,11 +35,11 @@ public class Solution {
 
         int[] dp = new int[amount + 1];
         dp[0] = 0;
-        for (int i = 1; i <= amount; i++) {
-            int min  = Integer.MAX_VALUE;
+        for (int i = 1; i <= amount; i++) { // DP 层
+            int min  = Integer.MAX_VALUE; // 每次求出当前的最小值
             for (int j = 0; j < coins.length; j++) {
-                if (i >= coins[j] && dp[i - coins[j]] != -1) {
-                    min = Math.min(min, dp[i - coins[j]] + 1);
+                if (i >= coins[j] && dp[i - coins[j]] != -1) { // 之前的格子可以跳到
+                    min = Math.min(min, dp[i - coins[j]] + 1); // 跳一步
                 }
             }
             dp[i] = min == Integer.MAX_VALUE ? -1 : min;

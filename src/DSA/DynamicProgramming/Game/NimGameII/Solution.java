@@ -20,6 +20,8 @@ dp[i][j] = max(sum[i][j-k] - dp[i][j-k] + sum[j-k][j]) 1<=k<=3
  */
 public class Solution {
     public int nimGameMax(int[] n) {
-        int[] dp = new int[n+1];// the max score I can get at
+        int[] dp = new int[n.length+1];// the max score I can get at
+        //直接用predict winner的方法去推
+        return 0;
     }
 }

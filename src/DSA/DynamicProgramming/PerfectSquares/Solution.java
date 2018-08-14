@@ -10,6 +10,9 @@ DP 问题的风格 想推倒公式
 Arrays.fill(array, num);
 Implementation trick, j * j <= i (not n!)
 T(n sqrt root n)
+
+一维DP
+
  */
 public class Solution {
     public int numSquares(int n) {

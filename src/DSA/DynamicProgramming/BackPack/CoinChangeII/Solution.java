@@ -31,6 +31,8 @@ Output: 1
 Number of ways question
 
 算法：
+
+直接定义 number of ways
 ways[]
 if (amount >= coin） then
   ways[amount] += ways[amount -coin]
