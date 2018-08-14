@@ -1,4 +1,7 @@
 package DSA.Tree.kthElementinaTree;
+
+import DSA.Tree.TreeNode;
+
 /*
  * kth element in a tree. 每个Node中包含有所有子节点的个数
  *
@@ -11,7 +14,56 @@ package DSA.Tree.kthElementinaTree;
  *查询是logN的
  */
 public class Solution {
-    // Solution 1: just inorder and count, when kth, just return
+    // Solution 1: just inorder and count, when kth, just return which is naive
+    // T: o(N), S: O(h)
+    int count;
 
-    // Solution 2 , first inorder to count the sum of these left, then binary search
+    public TreeNode findkth(TreeNode root, int k) {
+        TreeNode res = null;
+        count = k;
+        helper(root, res);
+        return res;
+    }
+
+    public void helper(TreeNode cur, TreeNode res) {
+        if (cur == null) {
+            return;
+        }
+        helper(cur.left, res);
+        count--;
+        if (count == 0) {
+            res = cur;
+        }
+        helper(cur.right, res);
+    }
+
+    // Solution 2 , first inorder to count the sum of these left, then binary search in the BST
+    int cnt;
+    public TreeNode findkthInorder(TreeNode root, int k) {
+        cnt = 0;
+        helper2(root);
+        TreeNode cur = root;
+        // binary search in Tree
+        while (cur != null) {
+            if (cur.val == k) {
+                return cur;
+            } else if (cur.val < k) {
+                cur = cur.right;
+            } else {
+                cur = cur.left;
+            }
+        }
+        return null;
+    }
+    // inorder add count
+    public void helper2(TreeNode cur) {
+        if (cur == null) {
+            return;
+        }
+        helper2(cur.left);
+        cnt++;
+        cur.val = count;
+        helper2(cur.right);
+    }
+
 }
