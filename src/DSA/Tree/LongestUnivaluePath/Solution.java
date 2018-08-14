@@ -48,7 +48,7 @@ public class Solution {
         if (current == null) {
             return 0;
         }
-        // DC
+        // postorder
         int left = pathLength(current.left);
         int right = pathLength(current.right);
         int l = 0;

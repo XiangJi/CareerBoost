@@ -24,6 +24,10 @@ Most of them can be solved by Divide and conquer, DFS(recursive), BFS
 
 DFS BFS
 
+穷举的时候才需要backtracking
+
+Tree  的问题space通常是O（h）如果没有存别的东西的话，时间是O（N）
+
 stack queue iterative solution\
 
 1. 选遍历方式  

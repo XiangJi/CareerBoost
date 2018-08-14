@@ -22,6 +22,7 @@ public class Solution {
         return compare(root.left, root.right);
     }
     
+    // preorder
     public boolean compare(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;
