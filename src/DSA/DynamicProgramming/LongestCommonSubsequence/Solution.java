@@ -4,6 +4,7 @@ package DSA.DynamicProgramming.LongestCommonSubsequence;
 
 Your code should return the length of LCS.
 
+2D
  */
 public class Solution {
     /**

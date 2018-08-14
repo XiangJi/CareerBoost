@@ -15,12 +15,14 @@ Return true because "leetcode" can be segmented as "leet code".
 
 l e e t c o d e
        i
-j 
+j
 
 string.substring (j, i) mean index j to i - 1
+
+就简单一维DP推一下就行了
  */
 public class Solution {
-    
+
     // DP
     public boolean wordBreak(String s, List<String> wordDict) {
         boolean[] dp = new boolean[s.length() + 1];
@@ -35,7 +37,7 @@ public class Solution {
         }
         return dp[s.length()];
     }
-    
+
     // Other solution:
     // 1. brute force DFS
     // 2. DFS with memoization

@@ -14,6 +14,8 @@ Characters in given words can only be lower-case letters.
 To make them identical, just find the longest common subsequence. The rest of the characters have to be deleted from the both the strings, which does not belong to longest common subsequence.
 
 LCS 问题被用于字符串比较 git diff
+
+2D DP
  */
 class Solution {
     public int minDistance(String A, String B) {

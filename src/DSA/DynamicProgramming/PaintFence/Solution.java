@@ -10,7 +10,8 @@ Note:
 n and k are non-negative integers.
 
 不是典型的一维 需要直接用概念滚动优化
-              
+
+number of ways 就看可以从哪几个dp格子跳过来
  */
 class Solution {
     // no 3 adj has the same color
@@ -25,7 +26,7 @@ class Solution {
         int same = 0;
         int diff = k;
         int total = k;
-        
+
         for (int i = 2; i <= n; i++) {
             same = diff;
             diff = (k - 1) * total;
