@@ -64,7 +64,7 @@ public class Codec {
     }
     // use linkedlist which has remove from the list and return method
     private TreeNode buildTree(LinkedList<String> nodes) {
-        String val = nodes.remove();
+        String val = nodes.remove(); // remore the first of linked list 
         if (val.equals(NN)) return null;
         else {
             TreeNode node = new TreeNode(Integer.valueOf(val));
