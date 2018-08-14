@@ -38,6 +38,7 @@ A recursive method maxPathDown(TreeNode node) (1) computes the maximum path sum 
  maximum if necessary (2) returns the maximum sum of the path that can be extended to input node's parent.
 
 
+Post order
  */
 class Solution {
     int max = Integer.MIN_VALUE; // here it must start from min
@@ -47,6 +48,7 @@ class Solution {
     }
     
     // return the max sum from this node down to some below point
+    // 返回的常常和更新的不一样
     private int dfs(TreeNode cur) { 
         if (cur == null) {
             return 0;

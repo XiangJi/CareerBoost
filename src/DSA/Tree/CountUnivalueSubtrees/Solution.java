@@ -33,6 +33,8 @@ class Solution {
         helper(root);
         return res;
     }
+    // post order 下面的值往上传
+    // 返回是否符合univalue条件
     public boolean helper(TreeNode root) {
         if (root == null) return true;
 

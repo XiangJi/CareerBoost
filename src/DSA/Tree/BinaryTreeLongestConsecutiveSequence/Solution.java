@@ -42,6 +42,9 @@ public class Solution {
         return max;
     }
     // variable tmp, next target
+    // preorder
+    // no return value since no value need to be pass to next level, the target is in parameters
+    // need dfs helper because need multiple parameters
     public void dfs(TreeNode current, int tmp, int target) {
         if (current == null) {
             return;
