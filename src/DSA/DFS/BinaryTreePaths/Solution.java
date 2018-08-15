@@ -26,6 +26,7 @@ public class Solution {
             return;
         }
         // 只有两种选择 所以不用for循环，树的路径保证了不用backtracking
+        // 要做的事情 树上就两种 条件执行即可
         if (root.left != null) {
             dfs(root.left, path + "->" + String.valueOf(root.left.val), result);
         }

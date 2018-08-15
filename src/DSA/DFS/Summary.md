@@ -4,7 +4,9 @@
 
 DFS分为枚举型，分治型 和在图上面搜索，
 
-枚举型常见于暴力搜索，回溯遍历。
+枚举型常见于暴力搜索，回溯遍历。 每步穷举自己要做的事情 然后进入下一层
+
+
 
 分治型常见于二叉树分类处理 其实本质也是正常dfs只不过call两个children的dfs
 
@@ -30,6 +32,8 @@ DFS分为枚举型，分治型 和在图上面搜索，
 
 dfs+pruning 剪枝就是去冗余
 
+backtracking的本质就是多叉树遍历的时候 不停尝试 来穷举符合条件的结果
+
 ## Code template
 
 先写dfs函数 退出条件后写 想清楚是最后还是最前
@@ -51,7 +55,7 @@ A general recursive template for backtracking may look like this:
  * Memoization: 拿一个cache来存储结果 这样可以提前返回 剪枝
  * index 记录层数 用于permutation, 和combination用的地方不一样 
  
- * 可用的返回值 boolean 或者int 这种时候一般可以用cache加速 一般不是穷举所有值 而是求一个boolean或者int的时候 就需要把它变成返回值
+ * 可用的返回值 boolean 或者int 这种时候一般可以用cache加速 一般不是穷举所有值 而是求一个boolean或者int的时候 就需要把它变成返回值, 一般这种时候需要把结果传给下一层
  
  * 如果subset只能用一次 cursor i要+1,  然后要判断相邻两个是不是一样 i > pos && ?==
  */
