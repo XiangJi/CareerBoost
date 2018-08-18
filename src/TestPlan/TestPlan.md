@@ -10,6 +10,55 @@ testing, performance testing, environments,
 
 -Always try to connect interview scenarios and answers to examples from personal experience (school projects, professional experience, blogs/ publications)  
 
+### Introduction
+
+
+
+### Test challenge
+
+
+
+### Bug challenge
+
+
+
+
+
+### Junit
+
+```java
+import junit.framework.Assert;
+ 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+ 
+public class TournamentTest {
+  Tournament tournament;
+ 
+  @Before
+  public void init() throws Exception {
+    System.out.println("Setting up ...");
+    tournament = new Tournament(100, 60);
+  }
+ 
+  @After
+  public void destroy() throws Exception {
+    System.out.println("Tearing down ...");
+    tournament = null;
+  }
+ 
+  @Test
+  public void testGetBestTeam() {
+    Assert.assertNotNull(tournament);
+ 
+    Team team = tournament.getBestTeam();
+    Assert.assertNotNull(team);
+    Assert.assertEquals(team.getName(), "Test1");
+  }
+}
+```
+
 
 
 ### How to test Gmail/ Map / Camera/ Self Drive car/ Chromebook?
