@@ -12,6 +12,8 @@ Explanation:
 'e' is the letter that was added.
 
 brute force: hash map
+
+exclusive or bitwise operation
  */
 public class Solution {
     public char findTheDifference(String s, String t) {
