@@ -18,13 +18,13 @@ TreeSet or TreeMap
 
 ### 应用场景
 
-几乎只出现在sweep line扫描线算法的时候，并不是很常见 所以一般不往这上面想
+1. sweep line扫描线算法的时候，并不是很常见 所以一般不往这上面想
 
 这种题的输入一般是一堆event, interval merge 问题或者这种天际线， 来求同时有多少在线上
 
  把输入放进去 就可以logN check同时有多少
 
-Binary Search Tree 特殊用法 找到最近的值 ContainsDupIII
+2. Binary Search Tree 特殊用法 找到最近的值 ContainsDupIII,  打牌作为有序的结构
 
 
 

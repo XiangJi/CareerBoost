@@ -12,15 +12,27 @@ testing, performance testing, environments,
 
 ### Introduction
 
-
+I am a software engineer in test at MathWorks, my team is building our own continuous integeration system doing build and test for matlab source code, my role is mainly taking charge our test infrasture, including test framework, testbed libary, setup and maintain our test enviroment, test plan for our new components and features.
 
 ### Test challenge
 
+我是如何测试bat cave
 
+situation
+
+Draw out our architecture, the DOM issue
+
+action RESTful, Sencha Test
+
+results
 
 ### Bug challenge
 
+p4svc的performance bug 感觉不太好用 
 
+the bug you find
+
+之前的bug
 
 
 
@@ -50,6 +62,8 @@ public class TournamentTest {
  
   @Test
   public void testGetBestTeam() {
+    这边写几个test cases input
+    后面来assert
     Assert.assertNotNull(tournament);
  
     Team team = tournament.getBestTeam();
