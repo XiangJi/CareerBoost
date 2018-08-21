@@ -12,27 +12,146 @@ testing, performance testing, environments,
 
 ### Introduction
 
-I am a software engineer in test at MathWorks, my team is building our own continuous integeration system doing build and test for matlab source code, my role is mainly taking charge our test infrasture, including test framework, testbed libary, setup and maintain our test enviroment, test plan for our new components and features.
+My name is Xiang Ji, and I am a software engineer in test at MathWorks, my team is building our own continuous integeration system, doing build and test for matlab/simulink source code.  my role is mainly taking charge of our test infrasture, including test frameworks, test libaries, setup and maintain our test enviroments, wrote and executed test plan for our new components and features.
 
 ### Test challenge
 
-我是如何测试bat cave
+Situation
 
-situation
+Last year, I was asked to develop test automation solution for our UI component bat cave
 
-Draw out our architecture, the DOM issue
+Draw out our architecture, Cave, JMD, Perforce SCM, previously it's all manually testing, painful and not scalable.
 
-action RESTful, Sencha Test
+ This application is using a JS MVC framework called ExtJs, 
 
-results
+the DOM issue
+
+Action:
+
+Doing research
+
+Fixed the unit testing , RESTful to verify the REST calls, 
+
+Jasmine is a behavior-driven development framework for testing JavaScript code. Jasmine<甲司漫>
+
+Unit BDD testing instead of DOM testing
+
+Jasmine can be integrated easily to test ExtJS applications behavior because the controller/store/model of ExtJS are functional pieces of code with minimal reference to the UI. The controller in the ExtJS binds to the different UI events like click, selection etc. and delegates it to the respective event Handlers defined as function in the controller. We can leverage the Jasmine framework to test these event delegates without actually generating the events from the UI.
+
+It does not require a DOM
+
+#### Suite
+
+A Jasmine suite is a group of test cases that can be used to test a specific behavior of the JavaScript code (a JavaScript object or function). This begins with a call to the Jasmine global function `describe`with two parameters – first parameter represents the title of the test suite and second parameter represents a function that implements the test suite.
+
+
+
+```java
+describe ("ExtJS Question App Test Suite", function () {
+var mainPanel = null;
+var questionStore = null;
+var questionStore = null;
+var storeLength = -1;
+var controller = null;
+  /* Setup method to be called before each Test case.*/
+  beforeEach (function () {
+        // Initializing the mainPanel.
+       mainPanel = Ext.create ('QAApp.view.MainPanel');
+       questionStore = Ext.StoreManager.lookup ('QuestionStore');
+       controller = Ext.create ('QAApp.controller.QuestionController');
+       storeLength = questionStore.data.items.length;
+  }); // before each
+
+  /* Test if View is created Successfully.*/
+  it ('Main View is loaded', function () {
+        expect (mainPanel != null).toBeTruthy ();
+  });
+
+ /* Test if store is loaded successfully.*/ 
+  it ('Store shouldn’t be null', function () {
+        expect (questionStore != null).toBeTruthy();
+   });
+
+  /* Test controller is initialized successfully.*/ 
+  it ('Controller shouldn’t be null', function () {
+        expect (controller != null).toBeTruthy();
+   });
+
+/* Test if Grid in MainPanel is loaded successfully.*/   
+  it ('Grid should be loaded', function () {
+        expect (Ext.getCmp ("questionGrid") != null).toBeTruthy ();
+  });
+
+ /* Test if Grid in MainPanel is loaded successfully.*/   
+  it ('Store has items', function () {
+  
+       expect (questionStore.data.items.length).toBe (storeLength);
+  });
+
+ /* Test if new item is added to store.*/   
+ it ('New item should be added to store', function () {
+        var record = Ext.create ("QAApp.model.Question");
+        record.id = 1;
+        record.question = 'Questions 3';
+        questionStore.add (record);
+        expect (questionStore.data.items.length).toBe (storeLength + 1);
+        questionStore.removeAt (storeLength);
+ });
+
+/* Item should be removed from store via controller.*/   
+ it ('Item should be removed from store', function () {
+        var record = Ext.create ("QAApp.model.Question");
+        record.id = 1;
+        record.question = 'Questions 3';
+        questionStore.add (record);
+
+        /* Removing item from controller API.*/   
+        controller.deleteQuestionFromStore(record);
+        questionStore.removeAt (storeLength);
+        expect (questionStore.data.items.length).toBe (storeLength);
+ });
+
+});
+```
+
+```java
+   import static com.jayway.restassured.RestAssured.given;
+
+    import org.junit.Test;
+
+    public class HelloWorldRestAssured {
+
+     @Test
+     public void makeSureThatGoogleIsUp() {
+         given().when().get("http://www.google.com").then().statusCode(200);
+     }
+
+    }
+```
+
+Results:
+
+The test automation is setup and running in our CI system now.
 
 ### Bug challenge
 
-p4svc的performance bug 感觉不太好用 
+Most interesting bug you found
 
-the bug you find
+最近发现的
 
-之前的bug
+p4svc的performance bug
+
+还是draw diagram
+
+Retry police， cold cache
+
+the command doesn't finish
+
+Hystrix closed the API
+
+Found it in our test environment, not responding, check the P4SVC log, find the issue
+
+Added performance test suite to it.  
 
 
 
