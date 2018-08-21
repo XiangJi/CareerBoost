@@ -153,7 +153,11 @@ Found it in our test environment, not responding, check the P4SVC log, find the 
 
 Added performance test suite to it.  
 
+### Questions for this round
 
+May I ask which team are you working with? The major project you are working on ?
+
+What do you think are the most important qualities to be a excellent test engineer ?
 
 ### Junit
 
@@ -406,8 +410,6 @@ Given a scenaio, just freestyle troubleshooting
 
    A Test Plan is a document describing the scope, approach, resources, and schedule of intended testing activities. It identifies test items, the features to be tested, the testing tasks and who will do each task (roles and responsibilities) and any risks and its solutions.
 
-   
-
 2. **Question 2. What Does Test Plan Include?**
 
    **Answer :** Objective, scope, approach, focus
@@ -433,8 +435,6 @@ Given a scenaio, just freestyle troubleshooting
 
    This is a standard approach to prepare test plan and test strategy documents, but things can vary company-to-company.
 
-   
-
 3. **Question 3. What Are The Levels Of Test Plan?**
 
    **Answer :**
@@ -453,15 +453,11 @@ Given a scenaio, just freestyle troubleshooting
 
    A Test Strategy document is a high level document and normally developed by project manager. This document defines “Software Testing Approach” to achieve testing objectives. The Test Strategy is normally derived from the Business Requirement Specification document.
 
-   
-
 5. **Question 5. What Does The Test Strategy Include?**
 
    **Answer :**
 
    The test strategy includes introduction, resource, scope and schedule for test activities, test tools, test priorities, test planning and the types of test that has to be performed.
-
-   
 
 6. **Question 6. What Is Test Case?**
 
@@ -490,15 +486,11 @@ Given a scenaio, just freestyle troubleshooting
 
      Plans for major types of testing like Performance Test Plan and Security Test Plan.
 
-   
-
 8. **Question 8. What Is Master Test Plan?**
 
    **Answer :**
 
    A single high-level test plan for a project/product that unifies all other test plans.
-
-   
 
 9. **Question 9. What Are Testing Level Specific Test Plans?**
 
