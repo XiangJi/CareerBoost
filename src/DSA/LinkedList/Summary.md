@@ -12,7 +12,9 @@ fast slow pointers
 
 Dummy node 用于头结点会改变的情况
 
-prev指针
+prev指针 用于给node变换顺序
+
+不断debug就可以 记住 next指针只不过也是listNode的一个数据而已
 
 
 

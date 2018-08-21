@@ -25,11 +25,11 @@ public class Solution {
             // Index: 0 1 2 3 4 5 6
             // Array: 1 1 3 3 4 8 8
             int mid = start + (end - start) / 2;
-            if (mid % 2 == 1) mid--; // 不过不是even 往下挪一格
+            if (mid % 2 == 1) mid--; // 不过不是even 往下挪一格 这样的话就确保了一直在check应该的pair
             if (nums[mid] != nums[mid + 1]) {
                 end = mid;
             } else {
-                start = mid + 2;
+                start = mid + 2; // 如果一样 那么前面的都是pairs start = mid + 2
             }
         }
 
