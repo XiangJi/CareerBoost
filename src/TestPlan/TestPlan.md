@@ -402,6 +402,51 @@ Given a scenaio, just freestyle troubleshooting
 
 
 
+### Test factors
+
+For designing Test Cases the following factors are considered:
+
+1. Correctness
+2. Negative
+3. User Interface
+4. Usability
+5. Performance
+6. Security
+7. Integration
+8. Reliability
+9. Compatibility
+
+**Correctness :** Correctness is the minimum requirement of software, the essential purpose of testing. The tester may or may not know the inside details of the software module under test e.g. control flow, data flow etc.
+
+**Negative :** In this factor we can check what the product it is not supposed to do.
+**User Interface :** In UI testing we check the user interfaces. For example in a web page we may check for a button. In this we check for button size and shape. We can also check the navigation links.
+**Usability :** Usability testing measures the suitability of the software for its users, and is directed at measuring the following factors with which specified users can achieve specified goals in particular environments.
+
+1. **Effectiveness :** The capability of the software product to enable users to achieve specified goals with the accuracy and completeness in a specified context of use.
+2. **Efficiency :** The capability of the product to enable users to expend appropriate amounts of resources in relation to the effectiveness achieved in a specified context of use.
+
+**Performance :** In software engineering, performance testing is testing that is performed from one perspective to determine how fast some aspect of a system performs under a particular workload.
+Performance testing can serve various purposes. It can demonstrate that the system needs performance criteria.
+
+1. **Load Testing:** This is the simplest form of performance testing. A load test is usually conducted to understand the behavior of the application under a specific expected load.
+2. **Stress Testing:** Stress testing focuses on the ability of a system to handle loads beyond maximum capacity. System performance should degrade slowly and predictably without failure as stress levels are increased.
+3. **Volume Testing:** Volume testing belongs to the group of non-functional values tests. Volume testing refers to testing a software application for a certain data volume. This volume can in generic terms be the database size or it could also be the size of an interface file that is the subject of volume testing.
+
+**Security :** Process to determine that an Information System protects data and maintains functionality as intended. The basic security concepts that need to be covered by security testing are the following:
+
+1. **Confidentiality :** A security measure which protects against the disclosure of information to parties other than the intended recipient that is by no means the only way of ensuring
+2. **Integrity:** A measure intended to allow the receiver to determine that the information which it receives has not been altered in transit other than by the originator of the information.
+3. **Authentication:** A measure designed to establish the validity of a transmission, message or originator. Allows a receiver to have confidence that the information it receives originated from a specific known source.
+4. **Authorization:** The process of determining that a requester is allowed to receive a service/perform an operation.
+
+**Integration :** Integration testing is a logical extension of unit testing. In its simplest form, two units that have already been tested are combined into a component and the interface between them is tested.
+
+**Reliability :** Reliability testing is to monitor a statistical measure of software maturity over time and compare this to a desired reliability goal.
+
+**Compatibility :** Compatibility testing of a part of software's non-functional tests. This testing is conducted on the application to evaluate the application's compatibility with the computing environment. Browser compatibility testing can be more appropriately referred to as user experience testing. This requires that the web applications are tested on various web browsers to ensure the following:
+
+
+
 ## Q&A
 
 1. **Question 1. What Is A Test Plan?**
