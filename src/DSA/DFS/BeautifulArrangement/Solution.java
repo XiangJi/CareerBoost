@@ -35,17 +35,17 @@ public class Solution {
         return count;
     }
     
-    private void dfs(int pos, int n, int[] used) {
+    private void dfs(int index, int n, int[] used) {
         // exit condition, the last level
-        if (pos > n) {
+        if (index > n) {
             count++;
             return;
         }
         
         for (int i = 1; i <= n; i++) {
-            if (used[i] == 0 && (i % pos == 0 || pos % i == 0)) {
+            if (used[i] == 0 && (i % index == 0 || index % i == 0)) {
                 used[i] = 1;
-                dfs(pos + 1, n, used);
+                dfs(index + 1, n, used);
                 used[i] = 0;
             }
         }
