@@ -1,4 +1,4 @@
-package DSA.HashTable.ThreeSumClosest;
+package DSA.TwoPointers.ThreeSumClosest;
 
 import java.util.Arrays;
 
