@@ -50,22 +50,24 @@ public class Solution {
         connect(root.left);
         connect(root.right);
     }
+    // 巧妙有意思！
     public void connect(TreeLinkNode root) {
         TreeLinkNode dummy = new TreeLinkNode(-1);
+        TreeLinkNode cur = root;
         TreeLinkNode pre = dummy;
-        while (root != null) {
-            if (root.left != null) {
-                pre.next = root.left;
+        while (cur != null) {
+            if (cur.left != null) {
+                pre.next = cur.left;
                 pre = pre.next;
             }
-            if (root.right != null) {
+            if (cur.right != null) {
                 pre.next = root.right;
                 pre = pre.next;
             }
-            root = root.next;
-            if (root == null) {
+            cur = cur.next;
+            if (cur == null) {
                 pre = dummy;
-                root = dummy.next;
+                cur = dummy.next;
                 dummy.next = null;
             }
             
