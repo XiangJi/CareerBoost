@@ -12,17 +12,19 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
  */
 class Solution {
     // recursive check all node, the depth of left and right
-    // preorder
+    // postorder
     public boolean isBalanced(TreeNode root) {
         if (root == null) {
             return true;
         }
+        
+        boolean left = isBalanced(root.left);
+        boolean right = isBalanced(root.right);
+        
         if (Math.abs(maxDepth(root.left) - maxDepth(root.right)) > 1) {
             return false;
         }
-        boolean left = isBalanced(root.left);
-        boolean right = isBalanced(root.right);
-
+        
         return left && right;
     }
     

@@ -18,6 +18,10 @@ Given binary tree
 Returns [4, 5, 3], [2], [1].
 
 find height for each node, DFS, we can use hash to store height, but not necessary
+
+post order, dfs with level count
+从下往上面传height 这边的height是从下往上面数的
+好题
  */
 public class Solution {
     public List<List<Integer>> findLeaves(TreeNode root) {
