@@ -1,4 +1,4 @@
-package DSA.UnionFind.EvaluateDivision;
+package DSA.Graph.EvaluateDivision;
 
 import java.util.ArrayList;
 import java.util.HashMap;
