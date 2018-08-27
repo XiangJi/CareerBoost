@@ -43,7 +43,7 @@ public class Solution {
             result.add(new ArrayList<>(path));
             path.remove(path.size() - 1);// don't forget to remove the last
                                          // integer
-            return;
+            return; // check return
         }
 
         // backtracking add operation

@@ -7,6 +7,8 @@ import DSA.Tree.TreeNode;
 
 For example:
 Given the below binary tree and sum = 22,
+
+preorder
  */
 public class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {

@@ -32,7 +32,7 @@ Output:
 
 2
 
-
+post order
  */
 public class Solution {
     int res;

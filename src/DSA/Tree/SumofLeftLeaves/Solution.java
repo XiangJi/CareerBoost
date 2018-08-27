@@ -12,7 +12,6 @@ public class Solution {
         }
         int sum = 0;
         // Clarify the questions, not all the left node, only leaf node
-        //DC int, the left sum of left/right tree
         if (root.left != null && root.left.left == null && root.left.right == null) {
             sum += root.left.val;
         }
@@ -21,5 +20,4 @@ public class Solution {
         return sum + leftSum + rightSum;
     }
 
-    //TODO learn how to convert DC DFS into iterative implementation using stack
 }
