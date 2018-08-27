@@ -30,15 +30,57 @@ public class Solution {
         return res;
     }
 
+    // post order return the height from the end, 有点tricky
     private int height(TreeNode node,
             List<List<Integer>> res) {
-        if (null == node)
-            return -1;
-        int level = 1 + Math.max(height(node.left, res),
-                height(node.right, res));
-        if (res.size() < level + 1)
+        if (node == null)
+            return -1; // return -1
+        
+        int level = 1 + Math.max(height(node.left, res), height(node.right, res));
+        
+        // 给这层全加上
+        if (level + 1 > res.size()) { // 用dfs来做level 就用res.size和level比
             res.add(new ArrayList<>());
+        }
         res.get(level).add(node.val);
         return level;
+    }
+}
+
+// BF
+class Solution2 {
+    public List<List<Integer>> findLeaves(TreeNode root) {
+
+        List<List<Integer>> leavesList = new ArrayList<List<Integer>>();
+        List<Integer> leaves = new ArrayList<Integer>();
+
+        while (root != null) {
+            if (isLeave(root, leaves))
+                root = null;
+            leavesList.add(leaves);
+            leaves = new ArrayList<Integer>();
+        }
+        return leavesList;
+    }
+
+    public boolean isLeave(TreeNode node,
+            List<Integer> leaves) {
+
+        if (node.left == null && node.right == null) {
+            leaves.add(node.val);
+            return true;
+        }
+
+        if (node.left != null) {
+            if (isLeave(node.left, leaves))
+                node.left = null;
+        }
+
+        if (node.right != null) {
+            if (isLeave(node.right, leaves))
+                node.right = null;
+        }
+
+        return false;
     }
 }

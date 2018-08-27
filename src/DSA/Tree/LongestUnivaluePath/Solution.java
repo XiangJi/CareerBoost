@@ -42,7 +42,7 @@ public class Solution {
         pathLength(root);
         return res;
     }
-
+    // 不过root的距离 就用lr的trick来算 返回单边最大 结果根据l + r来更新
     // find the one side max univalue path
     public int pathLength(TreeNode current) {
         if (current == null) {
