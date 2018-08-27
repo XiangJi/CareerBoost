@@ -2,6 +2,9 @@ package DSA.Tree.SumofLeftLeaves;
 
 import DSA.Tree.TreeNode;
 
+/*
+ * preorder, prev, sum, target
+ */
 public class Solution {
     public int sumOfLeftLeaves(TreeNode root) {
         if (root == null) {

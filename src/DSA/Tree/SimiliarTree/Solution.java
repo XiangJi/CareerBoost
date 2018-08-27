@@ -18,6 +18,7 @@ We simultaneously traverse both trees. Let the current internal nodes of two tre
 ……a) Left child of n1 is isomorphic to left child of n2 and right child of n1 is isomorphic to right child of n2.
 ……b) Left child of n1 is isomorphic to right child of n2 and right child of n1 is isomorphic to left child of n2.
 
+双prev看递归
  */
 public class Solution {
     /* Given a binary tree, print its nodes in reverse level order */

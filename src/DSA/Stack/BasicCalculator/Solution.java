@@ -34,9 +34,9 @@ class Solution {
     public int calculate(String s) {
         
         Stack<Integer> numStack = new Stack<Integer>();
-        Stack<Character> signStack = new Stack<Character>();
-        int num = 0;
-        char sign = '+';
+        Stack<Character> signStack = new Stack<Character>(); // store sign
+        int num = 0; // temp number
+        char sign = '+'; // sign
         
         for(int i = 0; i < s.length(); i ++) {
             char c = s.charAt(i);

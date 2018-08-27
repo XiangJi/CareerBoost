@@ -3,7 +3,7 @@ package DSA.Tree.SameTree;
 import DSA.Tree.TreeNode;
 
 /*
- * preorder
+ * 双preorder
  */
 public class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {

@@ -46,6 +46,8 @@ stack queue iterative solution\
 
       递归的传递值 无非是boolean int int数组 TreeNode
 
+      更新结果 但是return的是单边的值 boolean 或者 int TreeNode
+
    2. inorder从左到右  <常用在BST，BST的inorder遍历从小到大，反中根降序>
 
    3. postorder从下到上比较 <用于子模块操作 常用于subtree 也可能和层数有关>

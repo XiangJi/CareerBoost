@@ -39,6 +39,8 @@ A recursive method maxPathDown(TreeNode node) (1) computes the maximum path sum 
 
 
 Post order
+
+结合了DP的subarray sum
  */
 class Solution {
     int max = Integer.MIN_VALUE; // here it must start from min

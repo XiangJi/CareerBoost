@@ -13,7 +13,7 @@ public class Solution {
         int len;
         if (s == null || (len = s.length()) == 0)
             return 0;
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<Integer>(); // just put number
         int num = 0;
         char sign = '+';
         for (int i = 0; i < len; i++) {
