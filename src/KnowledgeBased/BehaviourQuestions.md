@@ -17,7 +17,7 @@ Pros and cons
 What’s the culture? How to succeed in the company? Most important skills or personality you should have?
 
 1. Tell me about yourself (Self introduction)
-My name is Xiang Ji, sde at MathWorks, what role 1min - 1:30, job responsibility, graduate from UVa.
+My name is Xiang Ji,1min - 1:30, job responsibility, graduate from UVa.
 2. About the projects. 
 3. Why this position? Love software, capability,etc.
 4. About teamwork or confilcts
