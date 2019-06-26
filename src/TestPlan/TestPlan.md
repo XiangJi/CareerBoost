@@ -10,10 +10,6 @@ testing, performance testing, environments,
 
 -Always try to connect interview scenarios and answers to examples from personal experience (school projects, professional experience, blogs/ publications)  
 
-### Introduction
-
-My name is Xiang Ji, and I am a software engineer in test at MathWorks, my team is building our own continuous integeration system, doing build and test for matlab/simulink source code.  my role is mainly taking charge of our test infrasture, including test frameworks, test libaries, setup and maintain our test enviroments, wrote and executed test plan for our new components and features.
-
 ### Test challenge
 
 Situation
